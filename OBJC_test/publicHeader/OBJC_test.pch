@@ -1,0 +1,11 @@
+//
+//  OBJC_test.pch
+//  OBJC_test
+//
+//  Created by liu dante on 2021/7/27.
+//
+
+#ifndef OBJC_test_pch
+#define OBJC_test_pch
+#import "ortherFramwork.h"
+#endif /* OBJC_test_pch */

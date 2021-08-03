@@ -16,14 +16,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UIView *one=View.addTo(self.view).bgColor(@"random")
-    .onClick(^(UIView *s){
+    UILabel *one=Label.addTo(self.view).lines(0).lineGap(5).bgColor(@"random")
+    .onClick(^(void){
         Log(@"你好");
     });
+    NSString *str=@"<h1>Demo iOS application built to highlight MVP (Model View Presenter) and Clean Architecture concepts</h1>";
+    
+    one.str([self showInHTMLString:str]);
     [one mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(20, 20, 20, 20));
+        make.edges.mas_equalTo(Insets(100,0,0,0));
     }];
 }
-
+-(NSAttributedString*)showInHTMLString:(NSString*)str{/**<  根据HTML字符串显示HTML */
+    NSAttributedString * attrStr = [[NSAttributedString alloc] initWithData:[str dataUsingEncoding:NSUnicodeStringEncoding]
+                                                                    options:@{
+                                                                        NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType
+                                                                    }
+                                                         documentAttributes:nil
+                                                                      error:nil];
+    return attrStr;
+}
 
 @end

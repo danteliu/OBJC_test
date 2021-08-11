@@ -15,4 +15,6 @@
 #import <NerdyUI/NerdyUI.h>
 #import <RBDateTime/RBDateTime.h>
 
+#import "HDHScrollPlusView.h"
+
 #endif /* ortherFramwork_h */

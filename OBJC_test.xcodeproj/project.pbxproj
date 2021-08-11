@@ -16,6 +16,7 @@
 		256B47CE26AFABFE007E13C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47CD26AFABFE007E13C8 /* main.m */; };
 		256B47D826AFABFF007E13C8 /* OBJC_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47D726AFABFF007E13C8 /* OBJC_testTests.m */; };
 		256B47E326AFABFF007E13C8 /* OBJC_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47E226AFABFF007E13C8 /* OBJC_testUITests.m */; };
+		25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */; };
 		7323C8A035A3C46FC4C5F3EF /* Pods_OBJC_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4787541F7B188C8C8AA79325 /* Pods_OBJC_test.framework */; };
 		B0534568FE5EDA62061D8173 /* Pods_OBJC_test_OBJC_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FA1E887ED5831CFD426687 /* Pods_OBJC_test_OBJC_testUITests.framework */; };
 		C55011541C6058E47D1D4800 /* Pods_OBJC_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECACE1CBBAC4D80C01436A4E /* Pods_OBJC_testTests.framework */; };
@@ -60,6 +61,8 @@
 		256B47E426AFABFF007E13C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		256B47F226AFAE01007E13C8 /* ortherFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ortherFramwork.h; sourceTree = "<group>"; };
 		256B47F326AFB3CA007E13C8 /* OBJC_test.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJC_test.pch; sourceTree = "<group>"; };
+		25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHScrollPlusView.m; sourceTree = "<group>"; };
+		25CA3EC326C3C1DE006117D7 /* HDHScrollPlusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHScrollPlusView.h; sourceTree = "<group>"; };
 		4787541F7B188C8C8AA79325 /* Pods_OBJC_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DEF03574F21C33116E76C47 /* Pods-OBJC_test-OBJC_testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test-OBJC_testUITests.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_test-OBJC_testUITests/Pods-OBJC_test-OBJC_testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7AB19B46E53667510816D605 /* Pods-OBJC_test-OBJC_testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test-OBJC_testUITests/Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				256B47F126AFADD9007E13C8 /* publicHeader */,
+				25CA3EC126C3C1DE006117D7 /* ScrollView */,
 				256B47BB26AFABFB007E13C8 /* AppDelegate.h */,
 				256B47BC26AFABFB007E13C8 /* AppDelegate.m */,
 				256B47BE26AFABFB007E13C8 /* SceneDelegate.h */,
@@ -164,6 +168,15 @@
 				256B47F326AFB3CA007E13C8 /* OBJC_test.pch */,
 			);
 			path = publicHeader;
+			sourceTree = "<group>";
+		};
+		25CA3EC126C3C1DE006117D7 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				25CA3EC326C3C1DE006117D7 /* HDHScrollPlusView.h */,
+				25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */,
+			);
+			path = ScrollView;
 			sourceTree = "<group>";
 		};
 		45FE9DAAD6FED2BF9481C561 /* Pods */ = {
@@ -430,6 +443,7 @@
 				256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */,
 				256B47CE26AFABFE007E13C8 /* main.m in Sources */,
 				256B47C026AFABFB007E13C8 /* SceneDelegate.m in Sources */,
+				25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

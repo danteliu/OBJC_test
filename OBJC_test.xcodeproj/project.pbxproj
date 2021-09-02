@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25387B0026D5D01F0026BAEC /* NSMutableAttributedString+WY_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25387AFE26D5D01F0026BAEC /* NSMutableAttributedString+WY_Extension.m */; };
+		25387B0326D5D03C0026BAEC /* UILabel+WY_RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 25387B0126D5D03C0026BAEC /* UILabel+WY_RichText.m */; };
+		25387B0626D5D06C0026BAEC /* NSMutableParagraphStyle+WY_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 25387B0526D5D06C0026BAEC /* NSMutableParagraphStyle+WY_Extension.m */; };
+		25387B0926D5DD5C0026BAEC /* UITapGestureRecognizer+test.m in Sources */ = {isa = PBXBuildFile; fileRef = 25387B0826D5DD5C0026BAEC /* UITapGestureRecognizer+test.m */; };
+		254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A126E06608007A7F50 /* AAQYAlertView.m */; };
+		254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A526E066C2007A7F50 /* UIView+CreateObj.m */; };
 		256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47BC26AFABFB007E13C8 /* AppDelegate.m */; };
-		256B47C026AFABFB007E13C8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47BF26AFABFB007E13C8 /* SceneDelegate.m */; };
 		256B47C326AFABFB007E13C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47C226AFABFB007E13C8 /* ViewController.m */; };
 		256B47C626AFABFC007E13C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256B47C426AFABFC007E13C8 /* Main.storyboard */; };
 		256B47C826AFABFE007E13C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 256B47C726AFABFE007E13C8 /* Assets.xcassets */; };
@@ -41,11 +46,21 @@
 
 /* Begin PBXFileReference section */
 		2498971F482A606920567723 /* Pods-OBJC_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_test/Pods-OBJC_test.debug.xcconfig"; sourceTree = "<group>"; };
+		25387AFE26D5D01F0026BAEC /* NSMutableAttributedString+WY_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+WY_Extension.m"; sourceTree = "<group>"; };
+		25387AFF26D5D01F0026BAEC /* NSMutableAttributedString+WY_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+WY_Extension.h"; sourceTree = "<group>"; };
+		25387B0126D5D03C0026BAEC /* UILabel+WY_RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WY_RichText.m"; sourceTree = "<group>"; };
+		25387B0226D5D03C0026BAEC /* UILabel+WY_RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+WY_RichText.h"; sourceTree = "<group>"; };
+		25387B0426D5D06C0026BAEC /* NSMutableParagraphStyle+WY_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableParagraphStyle+WY_Extension.h"; sourceTree = "<group>"; };
+		25387B0526D5D06C0026BAEC /* NSMutableParagraphStyle+WY_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableParagraphStyle+WY_Extension.m"; sourceTree = "<group>"; };
+		25387B0726D5DD5C0026BAEC /* UITapGestureRecognizer+test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITapGestureRecognizer+test.h"; sourceTree = "<group>"; };
+		25387B0826D5DD5C0026BAEC /* UITapGestureRecognizer+test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITapGestureRecognizer+test.m"; sourceTree = "<group>"; };
+		254A07A026E06608007A7F50 /* AAQYAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAQYAlertView.h; sourceTree = "<group>"; };
+		254A07A126E06608007A7F50 /* AAQYAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAQYAlertView.m; sourceTree = "<group>"; };
+		254A07A426E066C2007A7F50 /* UIView+CreateObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CreateObj.h"; sourceTree = "<group>"; };
+		254A07A526E066C2007A7F50 /* UIView+CreateObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CreateObj.m"; sourceTree = "<group>"; };
 		256B47B826AFABFB007E13C8 /* OBJC_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OBJC_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		256B47BB26AFABFB007E13C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		256B47BC26AFABFB007E13C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		256B47BE26AFABFB007E13C8 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		256B47BF26AFABFB007E13C8 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		256B47C126AFABFB007E13C8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		256B47C226AFABFB007E13C8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		256B47C526AFABFC007E13C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +116,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		254A079F26E065DF007A7F50 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				254A07A026E06608007A7F50 /* AAQYAlertView.h */,
+				254A07A126E06608007A7F50 /* AAQYAlertView.m */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		254A07A326E06688007A7F50 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				254A07A426E066C2007A7F50 /* UIView+CreateObj.h */,
+				254A07A526E066C2007A7F50 /* UIView+CreateObj.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		256B47AF26AFABFB007E13C8 = {
 			isa = PBXGroup;
 			children = (
@@ -127,11 +160,11 @@
 			isa = PBXGroup;
 			children = (
 				256B47F126AFADD9007E13C8 /* publicHeader */,
+				254A07A326E06688007A7F50 /* UIView */,
+				254A079F26E065DF007A7F50 /* AlertView */,
 				25CA3EC126C3C1DE006117D7 /* ScrollView */,
 				256B47BB26AFABFB007E13C8 /* AppDelegate.h */,
 				256B47BC26AFABFB007E13C8 /* AppDelegate.m */,
-				256B47BE26AFABFB007E13C8 /* SceneDelegate.h */,
-				256B47BF26AFABFB007E13C8 /* SceneDelegate.m */,
 				256B47C126AFABFB007E13C8 /* ViewController.h */,
 				256B47C226AFABFB007E13C8 /* ViewController.m */,
 				256B47C426AFABFC007E13C8 /* Main.storyboard */,
@@ -173,6 +206,14 @@
 		25CA3EC126C3C1DE006117D7 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				25387B0726D5DD5C0026BAEC /* UITapGestureRecognizer+test.h */,
+				25387B0826D5DD5C0026BAEC /* UITapGestureRecognizer+test.m */,
+				25387AFF26D5D01F0026BAEC /* NSMutableAttributedString+WY_Extension.h */,
+				25387AFE26D5D01F0026BAEC /* NSMutableAttributedString+WY_Extension.m */,
+				25387B0426D5D06C0026BAEC /* NSMutableParagraphStyle+WY_Extension.h */,
+				25387B0526D5D06C0026BAEC /* NSMutableParagraphStyle+WY_Extension.m */,
+				25387B0226D5D03C0026BAEC /* UILabel+WY_RichText.h */,
+				25387B0126D5D03C0026BAEC /* UILabel+WY_RichText.m */,
 				25CA3EC326C3C1DE006117D7 /* HDHScrollPlusView.h */,
 				25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */,
 			);
@@ -439,11 +480,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25387B0026D5D01F0026BAEC /* NSMutableAttributedString+WY_Extension.m in Sources */,
 				256B47C326AFABFB007E13C8 /* ViewController.m in Sources */,
+				25387B0626D5D06C0026BAEC /* NSMutableParagraphStyle+WY_Extension.m in Sources */,
+				254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */,
 				256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */,
 				256B47CE26AFABFE007E13C8 /* main.m in Sources */,
-				256B47C026AFABFB007E13C8 /* SceneDelegate.m in Sources */,
+				254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */,
 				25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */,
+				25387B0926D5DD5C0026BAEC /* UITapGestureRecognizer+test.m in Sources */,
+				25387B0326D5D03C0026BAEC /* UILabel+WY_RichText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +567,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -582,7 +628,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
@@ -628,7 +674,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dante-life.OBJC-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -646,7 +692,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dante-life.OBJC-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

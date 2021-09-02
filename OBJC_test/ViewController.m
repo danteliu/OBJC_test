@@ -26,7 +26,7 @@
 //    [self HScro];
 //    [self createAttr];
     self.view.onClick(^(void){
-        [self showAlert];
+        [self showAlert];//测试弹框
     });
 }
 -(void)showAlert{

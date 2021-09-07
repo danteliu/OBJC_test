@@ -17,6 +17,8 @@
 
 #import "NSMutableAttributedString+WY_Extension.h"
 #import "UILabel+WY_RichText.h"
+#import "NSString+Pinyin.h"
+
 #import "UIView+CreateObj.h"
 
 #import "HDHScrollPlusView.h"

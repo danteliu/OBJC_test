@@ -40,6 +40,11 @@
     view.titleLB.str(@"测试");
     view.messageLB.str(@"测试内容");
     [view show];
+    
+    
+    [@"你好" chineseConvertToPinYinFirstLetterWithCompletionBlock:^(NSString * _Nonnull mark) {
+        NSLog(@"%@",mark);
+    }];
 }
 
 -(void)createAttr{/**<  创建富文本 */

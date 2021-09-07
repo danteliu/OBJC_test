@@ -13,6 +13,7 @@
 		25387B0926D5DD5C0026BAEC /* UITapGestureRecognizer+test.m in Sources */ = {isa = PBXBuildFile; fileRef = 25387B0826D5DD5C0026BAEC /* UITapGestureRecognizer+test.m */; };
 		254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A126E06608007A7F50 /* AAQYAlertView.m */; };
 		254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A526E066C2007A7F50 /* UIView+CreateObj.m */; };
+		2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2558F66726E7098D00117C3A /* NSString+Pinyin.m */; };
 		256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47BC26AFABFB007E13C8 /* AppDelegate.m */; };
 		256B47C326AFABFB007E13C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47C226AFABFB007E13C8 /* ViewController.m */; };
 		256B47C626AFABFC007E13C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256B47C426AFABFC007E13C8 /* Main.storyboard */; };
@@ -58,6 +59,8 @@
 		254A07A126E06608007A7F50 /* AAQYAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAQYAlertView.m; sourceTree = "<group>"; };
 		254A07A426E066C2007A7F50 /* UIView+CreateObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CreateObj.h"; sourceTree = "<group>"; };
 		254A07A526E066C2007A7F50 /* UIView+CreateObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CreateObj.m"; sourceTree = "<group>"; };
+		2558F66626E7098D00117C3A /* NSString+Pinyin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Pinyin.h"; sourceTree = "<group>"; };
+		2558F66726E7098D00117C3A /* NSString+Pinyin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Pinyin.m"; sourceTree = "<group>"; };
 		256B47B826AFABFB007E13C8 /* OBJC_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OBJC_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		256B47BB26AFABFB007E13C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		256B47BC26AFABFB007E13C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,6 +137,15 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		2558F66526E7096500117C3A /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				2558F66626E7098D00117C3A /* NSString+Pinyin.h */,
+				2558F66726E7098D00117C3A /* NSString+Pinyin.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
 		256B47AF26AFABFB007E13C8 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				256B47F126AFADD9007E13C8 /* publicHeader */,
+				2558F66526E7096500117C3A /* NSString */,
 				254A07A326E06688007A7F50 /* UIView */,
 				254A079F26E065DF007A7F50 /* AlertView */,
 				25CA3EC126C3C1DE006117D7 /* ScrollView */,
@@ -490,6 +503,7 @@
 				25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */,
 				25387B0926D5DD5C0026BAEC /* UITapGestureRecognizer+test.m in Sources */,
 				25387B0326D5D03C0026BAEC /* UILabel+WY_RichText.m in Sources */,
+				2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

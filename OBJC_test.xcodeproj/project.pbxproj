@@ -22,6 +22,7 @@
 		256B47CE26AFABFE007E13C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47CD26AFABFE007E13C8 /* main.m */; };
 		256B47D826AFABFF007E13C8 /* OBJC_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47D726AFABFF007E13C8 /* OBJC_testTests.m */; };
 		256B47E326AFABFF007E13C8 /* OBJC_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47E226AFABFF007E13C8 /* OBJC_testUITests.m */; };
+		25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */; };
 		25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */; };
 		7323C8A035A3C46FC4C5F3EF /* Pods_OBJC_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4787541F7B188C8C8AA79325 /* Pods_OBJC_test.framework */; };
 		B0534568FE5EDA62061D8173 /* Pods_OBJC_test_OBJC_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FA1E887ED5831CFD426687 /* Pods_OBJC_test_OBJC_testUITests.framework */; };
@@ -79,6 +80,8 @@
 		256B47E426AFABFF007E13C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		256B47F226AFAE01007E13C8 /* ortherFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ortherFramwork.h; sourceTree = "<group>"; };
 		256B47F326AFB3CA007E13C8 /* OBJC_test.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJC_test.pch; sourceTree = "<group>"; };
+		25AD660526F48CE800DA671A /* HDHVerticalPMDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHVerticalPMDView.h; sourceTree = "<group>"; };
+		25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHVerticalPMDView.m; sourceTree = "<group>"; };
 		25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHScrollPlusView.m; sourceTree = "<group>"; };
 		25CA3EC326C3C1DE006117D7 /* HDHScrollPlusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHScrollPlusView.h; sourceTree = "<group>"; };
 		4787541F7B188C8C8AA79325 /* Pods_OBJC_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,10 +213,20 @@
 		256B47F126AFADD9007E13C8 /* publicHeader */ = {
 			isa = PBXGroup;
 			children = (
+				25AD660426F48CE800DA671A /* HDHVerticalPMDView */,
 				256B47F226AFAE01007E13C8 /* ortherFramwork.h */,
 				256B47F326AFB3CA007E13C8 /* OBJC_test.pch */,
 			);
 			path = publicHeader;
+			sourceTree = "<group>";
+		};
+		25AD660426F48CE800DA671A /* HDHVerticalPMDView */ = {
+			isa = PBXGroup;
+			children = (
+				25AD660526F48CE800DA671A /* HDHVerticalPMDView.h */,
+				25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */,
+			);
+			path = HDHVerticalPMDView;
 			sourceTree = "<group>";
 		};
 		25CA3EC126C3C1DE006117D7 /* ScrollView */ = {
@@ -502,6 +515,7 @@
 				254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */,
 				25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */,
 				25387B0926D5DD5C0026BAEC /* UITapGestureRecognizer+test.m in Sources */,
+				25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */,
 				25387B0326D5D03C0026BAEC /* UILabel+WY_RichText.m in Sources */,
 				2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */,
 			);

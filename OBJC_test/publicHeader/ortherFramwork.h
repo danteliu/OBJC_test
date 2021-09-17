@@ -23,6 +23,7 @@
 
 #import "HDHScrollPlusView.h"
 #import "AAQYAlertView.h"
+#import "HDHVerticalPMDView.h"
 
 
 #endif /* ortherFramwork_h */

@@ -30,7 +30,7 @@
         [self test_group];
     });
 }
--(void)test_group{/**<  测试gcdgroup  */
+-(void)test_group {/**<  测试gcdgroup  */
     dispatch_group_t downloadGroup = dispatch_group_create();
     for (int i=0; i<10; i++) {
         dispatch_group_enter(downloadGroup);//备注:dispatch_group_enter 与 dispatch_group_leave成对出现
@@ -43,7 +43,7 @@
         NSLog(@"end");
     });
 }
--(void)testblock:(void(^)(void))c{
+-(void)testblock:(void (^)(void))c {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         c();
     });

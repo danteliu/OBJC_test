@@ -26,7 +26,26 @@
 //    [self HScro];
 //    [self createAttr];
     self.view.onClick(^(void){
-        [self showAlert];//测试弹框
+//        [self showAlert];//测试弹框
+        [self test_group];
+    });
+}
+-(void)test_group{/**<  测试gcdgroup  */
+    dispatch_group_t downloadGroup = dispatch_group_create();
+    for (int i=0; i<10; i++) {
+        dispatch_group_enter(downloadGroup);//备注:dispatch_group_enter 与 dispatch_group_leave成对出现
+        [self testblock:^{
+            NSLog(@"%d---%d",i,i);
+            dispatch_group_leave(downloadGroup);
+        }];
+    }
+    dispatch_group_notify(downloadGroup, dispatch_get_main_queue(), ^{
+        NSLog(@"end");
+    });
+}
+-(void)testblock:(void(^)(void))c{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        c();
     });
 }
 -(void)showAlert{

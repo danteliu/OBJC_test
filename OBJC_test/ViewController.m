@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "UITapGestureRecognizer+test.h"
+#import "SaveInfoVC.h"
 @interface ViewController ()
 
 @end
@@ -19,16 +20,31 @@
     NSRange puts;
     
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setTranslucent:NO];
     // Do any additional setup after loading the view.
 //    [self getAttr];
 //    [self HScro];
 //    [self createAttr];
-    self.view.onClick(^(void){
-//        [self showAlert];//测试弹框
-        [self test_group];
+    UIView *one=({
+        UIView *obj=View.addTo(self.view).bgColor(@"random");
+        obj.onClick(^(void){
+            SaveInfoVC *info=[[SaveInfoVC alloc] init];
+            [self.navigationController pushViewController:info animated:YES];
+        });
+        obj;
     });
+    [one mas_makeConstraints:^(MASConstraintMaker *make) {
+       make.left.top.right.offset(0);
+        make.height.mas_equalTo(40);
+    }];
+    
+//    self.view.onClick(^(void){
+////        [self showAlert];//测试弹框
+//        [self test_group];
+//    });
 }
 -(void)test_group {/**<  测试gcdgroup  */
     dispatch_group_t downloadGroup = dispatch_group_create();

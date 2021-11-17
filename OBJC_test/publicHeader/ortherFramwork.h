@@ -25,5 +25,6 @@
 #import "AAQYAlertView.h"
 #import "HDHVerticalPMDView.h"
 
+#import "String_Dfine.h"//公共字符串
 
 #endif /* ortherFramwork_h */

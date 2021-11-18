@@ -229,7 +229,7 @@
 }
 -(void)setPasteString{/**<  设置剪贴板内容 */
     NSString *pStr=[UIPasteboard generalPasteboard].string;
-    f1.str(pStr);
+    f1.str([pStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]);
     f2.str(@"");
 }
 @end

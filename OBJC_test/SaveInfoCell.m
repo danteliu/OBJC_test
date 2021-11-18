@@ -15,6 +15,10 @@
 - (instancetype (^)(NSDictionary *res))addModel {/**<  添加数据模型 */
     return ^(NSDictionary *res){
         SaveInfoModel *m=[SaveInfoModel mj_objectWithKeyValues:res];
+        m.pasteContent=[m.pasteContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        m.pasteDes=[m.pasteDes stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
+        
         fuvicontent.str(m.pasteContent.length==0?@"复制内容: 当前记录无效,请左滑删除!!!":Str(@"复制内容: %@",m.pasteContent));
         fuviDes.str(m.pasteDes.length==0?@"复制内容: 空":Str(@"复制内容: %@",m.pasteDes));
         return self;

@@ -125,16 +125,33 @@
 }
 - ( UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath  API_AVAILABLE(ios(11.0)){
     //删除
-    UIContextualAction *deleteRowAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive
-                                                                                  title:@"删除"
-                                                                                handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-        [data removeObject:data[indexPath.row]];
-        [self updateDataSourceForLocal];
-        [self updateData];
-    }];
-    deleteRowAction.backgroundColor = [UIColor redColor];
+    UIContextualAction *deleteRowAction =({
+        UIContextualAction *obj=[UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive
+                                                                        title:@"删除"
+                                                                      handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            [data removeObject:data[indexPath.row]];
+            [self updateDataSourceForLocal];
+            [self updateData];
+        }];
+        obj.backgroundColor = [UIColor redColor];
+        obj;
+    });
+    UIContextualAction *editRowAction =({
+        UIContextualAction *obj=[UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive
+                                                                        title:@"编辑"
+                                                                      handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            NSLog(@"点击了编辑");
+//            [data removeObject:data[indexPath.row]];
+//            [self updateDataSourceForLocal];
+//            [self updateData];
+        }];
+        obj.backgroundColor = [UIColor orangeColor];
+        obj;
+    });
     
-    UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[deleteRowAction]];
+    
+    
+    UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[deleteRowAction,editRowAction]];
     return config;
 }
 

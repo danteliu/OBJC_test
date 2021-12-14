@@ -10,6 +10,7 @@ target 'OBJC_test' do
   pod 'RBDateTime', '~> 0.1'
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'MJExtension', '~> 3.2.1'#模型转字典
+  pod 'PrintBeautifulLog', '~> 1.0.0'#控制台打印字典
   target 'OBJC_testTests' do
     inherit! :search_paths
     # Pods for testing

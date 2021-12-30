@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-#import "UITapGestureRecognizer+test.h"
+
 #import "SaveInfoVC.h"
 @interface ViewController ()
 
@@ -127,13 +127,7 @@
         make.right.offset(-20);
     }];
 }
-- (void)handleTapOnLabel:(UITapGestureRecognizer *)tapGesture {
-    BOOL didTapLink = [tapGesture didTapAttributedTextInLabel:lab inRange:targetRange];
-    BOOL isputs = [tapGesture didTapAttributedTextInLabel:lab inRange:puts];
-    
-    NSLog(@"我们的东西: %d ,乱七八糟 %d", didTapLink,isputs);
 
-}
 
 -(void)HScro{
     h=[HDHScrollPlusView new];

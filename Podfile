@@ -11,7 +11,7 @@ target 'OBJC_test' do
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'MJExtension', '~> 3.2.1'#模型转字典
   pod 'PrintBeautifulLog', '~> 1.0.0'#控制台打印字典
-  pod 'Aspects', '~> 1.4.1'#面向切面编程(埋点)
+  pod 'Aspects', '~> 1.4.1'#面向切面编程(AOP埋点)
   target 'OBJC_testTests' do
     inherit! :search_paths
     # Pods for testing

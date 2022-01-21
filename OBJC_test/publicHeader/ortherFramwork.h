@@ -24,5 +24,6 @@
 #import "HDHVerticalPMDView.h"
 
 #import "String_Dfine.h"//公共字符串
+#import "NetLogManager.h"//网络请求日志管理
 
 #endif /* ortherFramwork_h */

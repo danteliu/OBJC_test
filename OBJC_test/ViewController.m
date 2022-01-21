@@ -41,10 +41,40 @@
         make.height.mas_equalTo(40);
     }];
     
+    UIView *two=({
+        UIView *obj=View.addTo(self.view).bgColor(@"random");
+        obj.onClick(^(void){
+            [self testNetLogManager];
+        });
+        [obj mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(one.mas_bottom);
+           make.left.right.offset(0);
+            make.height.mas_equalTo(40);
+        }];
+        obj;
+    });
+    
 //    self.view.onClick(^(void){
 ////        [self showAlert];//测试弹框
 //        [self test_group];
 //    });
+}
+-(void)testNetLogManager{
+    [NetLogManager shareManager].tag=@"和多号";
+    [NetLogManager shareManager].path=@"1111111111111111111111.url";
+    [NetLogManager shareManager].header=@{@"abc":@"bldu"};
+    [NetLogManager shareManager].parameter=@{@"1p":@"bldu"};
+    [NetLogManager shareManager].returnResult=@{@"fjhvjxgo":@"这里是返回结果"};
+    NSLog(@"%@",[NetLogManager shareManager]);
+    NSLog(@"\n%@",[NetLogManager shareManager].mj_keyValues);
+    
+    [NetLogManager shareManager].tag=@"智荟港";
+    [NetLogManager shareManager].path=@"222222222222222.url";
+    [NetLogManager shareManager].header=@{@"2abc":@"bldu"};
+    [NetLogManager shareManager].parameter=@{@"21p":@"bldu"};
+    [NetLogManager shareManager].returnResult=@{@"2fjhvjxgo":@"这里是返回结果"};
+    NSLog(@"%@",[NetLogManager shareManager]);
+    NSLog(@"\n%@",[NetLogManager shareManager].mj_keyValues);
 }
 -(void)test_group {/**<  测试gcdgroup  */
     dispatch_group_t downloadGroup = dispatch_group_create();

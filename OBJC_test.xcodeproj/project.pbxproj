@@ -18,6 +18,7 @@
 		256B47CE26AFABFE007E13C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47CD26AFABFE007E13C8 /* main.m */; };
 		256B47D826AFABFF007E13C8 /* OBJC_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47D726AFABFF007E13C8 /* OBJC_testTests.m */; };
 		256B47E326AFABFF007E13C8 /* OBJC_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47E226AFABFF007E13C8 /* OBJC_testUITests.m */; };
+		259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 259EF333279A84AE00E6C95F /* NetLogManager.m */; };
 		25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */; };
 		25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */; };
 		25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F8572D2744ECDD004DB99E /* SaveInfoVC.m */; };
@@ -71,6 +72,8 @@
 		256B47E426AFABFF007E13C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		256B47F226AFAE01007E13C8 /* ortherFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ortherFramwork.h; sourceTree = "<group>"; };
 		256B47F326AFB3CA007E13C8 /* OBJC_test.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJC_test.pch; sourceTree = "<group>"; };
+		259EF332279A84AE00E6C95F /* NetLogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetLogManager.h; sourceTree = "<group>"; };
+		259EF333279A84AE00E6C95F /* NetLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetLogManager.m; sourceTree = "<group>"; };
 		25AD660526F48CE800DA671A /* HDHVerticalPMDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHVerticalPMDView.h; sourceTree = "<group>"; };
 		25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHVerticalPMDView.m; sourceTree = "<group>"; };
 		25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHScrollPlusView.m; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 			children = (
 				25CA3EC326C3C1DE006117D7 /* HDHScrollPlusView.h */,
 				25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */,
+				259EF332279A84AE00E6C95F /* NetLogManager.h */,
+				259EF333279A84AE00E6C95F /* NetLogManager.m */,
 			);
 			path = ScrollView;
 			sourceTree = "<group>";
@@ -519,6 +524,7 @@
 				25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */,
 				25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */,
 				2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */,
+				259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */,
 				25F857352744F389004DB99E /* SaveInfoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

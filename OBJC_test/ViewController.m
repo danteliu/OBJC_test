@@ -6,8 +6,8 @@
 //
 
 #import "ViewController.h"
-
 #import "SaveInfoVC.h"
+#import "OBJC_test-Swift.h"
 @interface ViewController ()
 
 @end
@@ -25,9 +25,9 @@
     [super viewDidLoad];
     [self.navigationController.navigationBar setTranslucent:NO];
     // Do any additional setup after loading the view.
-//    [self getAttr];
-//    [self HScro];
-//    [self createAttr];
+    //    [self getAttr];
+    //    [self HScro];
+    //    [self createAttr];
     UIView *one=({
         UIView *obj=View.addTo(self.view).bgColor(@"random");
         obj.onClick(^(void){
@@ -37,28 +37,44 @@
         obj;
     });
     [one mas_makeConstraints:^(MASConstraintMaker *make) {
-       make.left.top.right.offset(0);
+        make.left.top.right.offset(0);
         make.height.mas_equalTo(40);
     }];
     
     UIView *two=({
         UIView *obj=View.addTo(self.view).bgColor(@"random");
         obj.onClick(^(void){
-            [self testNetLogManager];
+            //            [self testNetLogManager];
+            [self testSwiftView];
+            
         });
         [obj mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(one.mas_bottom);
-           make.left.right.offset(0);
+            make.left.right.offset(0);
             make.height.mas_equalTo(40);
         }];
         obj;
     });
     
-//    self.view.onClick(^(void){
-////        [self showAlert];//测试弹框
-//        [self test_group];
-//    });
+    //    self.view.onClick(^(void){
+    ////        [self showAlert];//测试弹框
+    //        [self test_group];
+    //    });
 }
+-(void)testSwiftView{
+    RandomView *a=({
+        RandomView *obj=[[RandomView alloc] init];
+        obj.addTo(self.view);
+        [obj mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(180);
+            make.left.right.offset(0);
+            make.height.mas_equalTo(40);
+        }];
+        obj;
+    });
+}
+
+
 -(void)testNetLogManager{
     [NetLogManager shareManager].tag=@"和多号";
     [NetLogManager shareManager].path=@"1111111111111111111111.url";
@@ -73,8 +89,6 @@
     [NetLogManager shareManager].header=@{@"2abc":@"bldu"};
     [NetLogManager shareManager].parameter=@{@"21p":@"bldu"};
     [NetLogManager shareManager].returnResult=@{@"2fjhvjxgo":@"这里是返回结果"};
-    NSLog(@"%@",[NetLogManager shareManager]);
-    NSLog(@"\n%@",[NetLogManager shareManager].mj_keyValues);
 }
 -(void)test_group {/**<  测试gcdgroup  */
     dispatch_group_t downloadGroup = dispatch_group_create();
@@ -113,13 +127,13 @@
 }
 
 -(void)createAttr{/**<  创建富文本 */
-//    id attr=AttStr(@"点击了",AttStr(@"协议").linkForLabel);
+    //    id attr=AttStr(@"点击了",AttStr(@"协议").linkForLabel);
     lab=Label.addTo(self.view).bgColor(@"white").lines(3).onLink(^(NSString *text){
         Log(text);
     });
     lab.userInteractionEnabled=YES;
     [lab addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapOnLabel:)]];
-
+    
     NSAttributedString *plainText;
     NSAttributedString *plainText1;
     NSAttributedString *linkText;
@@ -129,15 +143,15 @@
                                                        attributes:nil];
     linkText = [[NSMutableAttributedString alloc] initWithString:@"我们的东西"
                                                       attributes:@{
-                                                          NSForegroundColorAttributeName:[UIColor blueColor]
-                                                      }];
+        NSForegroundColorAttributeName:[UIColor blueColor]
+    }];
     plainText1 = [[NSMutableAttributedString alloc] initWithString:@"普通的"
-                                                       attributes:nil];
+                                                        attributes:nil];
     
     linkText1 = [[NSMutableAttributedString alloc] initWithString:@"乱七八糟"
-                                                      attributes:@{
-                                                          NSForegroundColorAttributeName:[UIColor blueColor]
-                                                      }];
+                                                       attributes:@{
+        NSForegroundColorAttributeName:[UIColor blueColor]
+    }];
     NSMutableAttributedString *attrText = [[NSMutableAttributedString alloc] init];
     [attrText appendAttributedString:plainText];
     [attrText appendAttributedString:linkText];
@@ -145,9 +159,9 @@
     [attrText appendAttributedString:linkText1];
     
     NSString *str=attrText.string;
-
+    
     lab.attributedText=attrText;
-
+    
     // ivar -- keep track of the target range so you can compare in the callback
     targetRange = [str rangeOfString:@"我们的东西"];
     puts = [str rangeOfString:@"乱七八糟"];
@@ -176,9 +190,9 @@
 
 -(void)getAttr{
     UILabel *one=Label.addTo(self.view).lines(0).lineGap(5).bgColor(@"random")
-    .onClick(^(void){
-        Log(@"你好");
-    });
+        .onClick(^(void){
+            Log(@"你好");
+        });
     NSString *str=@"<h1>Demo iOS application built to highlight MVP (Model View Presenter) and Clean Architecture concepts</h1>";
     
     one.str([self showInHTMLString:str]);

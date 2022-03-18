@@ -19,6 +19,7 @@
 		256B47CE26AFABFE007E13C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47CD26AFABFE007E13C8 /* main.m */; };
 		256B47D826AFABFF007E13C8 /* OBJC_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47D726AFABFF007E13C8 /* OBJC_testTests.m */; };
 		256B47E326AFABFF007E13C8 /* OBJC_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47E226AFABFF007E13C8 /* OBJC_testUITests.m */; };
+		257E1DD727E47579002670DF /* DanteWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 257E1DD627E47579002670DF /* DanteWebVC.m */; };
 		259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 259EF333279A84AE00E6C95F /* NetLogManager.m */; };
 		25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */; };
 		25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */; };
@@ -75,6 +76,8 @@
 		256B47E426AFABFF007E13C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		256B47F226AFAE01007E13C8 /* ortherFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ortherFramwork.h; sourceTree = "<group>"; };
 		256B47F326AFB3CA007E13C8 /* OBJC_test.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJC_test.pch; sourceTree = "<group>"; };
+		257E1DD527E47579002670DF /* DanteWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DanteWebVC.h; sourceTree = "<group>"; };
+		257E1DD627E47579002670DF /* DanteWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DanteWebVC.m; sourceTree = "<group>"; };
 		259EF332279A84AE00E6C95F /* NetLogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetLogManager.h; sourceTree = "<group>"; };
 		259EF333279A84AE00E6C95F /* NetLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetLogManager.m; sourceTree = "<group>"; };
 		25AD660526F48CE800DA671A /* HDHVerticalPMDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHVerticalPMDView.h; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 		256B47BA26AFABFB007E13C8 /* OBJC_test */ = {
 			isa = PBXGroup;
 			children = (
+				257E1DD427E47548002670DF /* public */,
 				251D3CF227A246EB00FC1153 /* SwiftFiles */,
 				256B47F126AFADD9007E13C8 /* publicHeader */,
 				2558F66526E7096500117C3A /* NSString */,
@@ -236,6 +240,15 @@
 				256B47F326AFB3CA007E13C8 /* OBJC_test.pch */,
 			);
 			path = publicHeader;
+			sourceTree = "<group>";
+		};
+		257E1DD427E47548002670DF /* public */ = {
+			isa = PBXGroup;
+			children = (
+				257E1DD527E47579002670DF /* DanteWebVC.h */,
+				257E1DD627E47579002670DF /* DanteWebVC.m */,
+			);
+			path = public;
 			sourceTree = "<group>";
 		};
 		25AD660426F48CE800DA671A /* HDHVerticalPMDView */ = {
@@ -528,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				257E1DD727E47579002670DF /* DanteWebVC.m in Sources */,
 				256B47C326AFABFB007E13C8 /* ViewController.m in Sources */,
 				254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */,
 				256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */,

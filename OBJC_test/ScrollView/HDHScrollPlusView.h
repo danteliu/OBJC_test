@@ -10,16 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum : NSUInteger {
-    ScrollDireH=0,
-    ScrollDireV,
-} ScrollDire;
-
-@interface HDHScrollPlusView : UIView
+@interface BaseHScrollview : UIView
+@property (nonatomic, strong) UIScrollView* infoSv;/**<  承载的scrollView */
+@property (nonatomic, strong) UIView* bgView;/**<  内容视图的承载view */
 -(instancetype)initWithFrame:(CGRect)frame;
-@property(nonatomic,assign)ScrollDire Dire;
--(UIView *)layoutView;/**<  布局targetView */
--(UIScrollView *)Scrol;/**<  承载的UIScrollView */
+@end
+
+
+@interface BaseVScrollview : UIView
+@property (nonatomic, strong) UIScrollView* infoSv;/**<  承载的scrollView */
+@property (nonatomic, strong) UIView* bgView;/**<  内容视图的承载view */
+
+-(instancetype)initWithFrame:(CGRect)frame;
 @end
 
 NS_ASSUME_NONNULL_END

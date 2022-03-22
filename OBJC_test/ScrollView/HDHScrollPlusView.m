@@ -9,43 +9,89 @@
 #import "HDHScrollPlusView.h"
 #import <Masonry/Masonry.h>
 
-@implementation HDHScrollPlusView{
-    UIView *bgView;
-    UIScrollView *contentScrol;
-}
+@implementation BaseHScrollview
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initSubView];
+        self.backgroundColor=[UIColor clearColor];
+        
+        [self addSubview:self.infoSv];
+        [self.infoSv addSubview:self.bgView];
+        
+        [self.infoSv mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsZero);
+        }];
+        
+        [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.equalTo(self).offset(0);
+            make.left.right.equalTo(self.infoSv);
+        }];
     }
     return self;
 }
--(UIView *)layoutView{
-    return bgView;
-}
--(UIScrollView *)Scrol{
-    return contentScrol;
-}
--(void)initSubView{
-    contentScrol=[UIScrollView new];
-    contentScrol.addTo(self);
-    [contentScrol mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
-    }];
-    
-    bgView=View.addTo(contentScrol);
-}
--(void)layoutSubviews{
-    [bgView mas_updateConstraints:^(MASConstraintMaker *make) {
-        if (self.Dire==ScrollDireH) {
-            make.top.bottom.equalTo(self).offset(0);
-            make.left.right.offset(0);
-        }else if(self.Dire==ScrollDireV){
-            make.left.right.equalTo(self).offset(0);
-            make.top.bottom.offset(0);
-        }
-    }];
+-(UIScrollView *)infoSv {
+    if (!_infoSv) {
+        _infoSv=({
+            UIScrollView *obj=[[UIScrollView alloc] init];
+            obj.backgroundColor=UIColor.clearColor;
+            obj;
+        });
+    }
+    return _infoSv;
 }
 
+-(UIView *)bgView {
+    if (!_bgView) {
+        _bgView=({
+            UIView *obj=[[UIView alloc] init];
+            obj;
+        });
+    }
+    return _bgView;
+}
+@end
+
+
+@implementation BaseVScrollview
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor=[UIColor clearColor];
+        
+        [self addSubview:self.infoSv];
+        [self.infoSv addSubview:self.bgView];
+        
+        [self.infoSv mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsZero);
+        }];
+        
+        [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.equalTo(self.infoSv).offset(0);
+            make.left.right.equalTo(self);
+        }];
+    }
+    return self;
+}
+-(UIScrollView *)infoSv {
+    if (!_infoSv) {
+        _infoSv=({
+            UIScrollView *obj=[[UIScrollView alloc] init];
+            obj.backgroundColor=UIColor.clearColor;
+            obj;
+        });
+    }
+    return _infoSv;
+}
+
+-(UIView *)bgView {
+    if (!_bgView) {
+        _bgView=({
+            UIView *obj=[[UIView alloc] init];
+            obj;
+        });
+    }
+    return _bgView;
+}
 @end

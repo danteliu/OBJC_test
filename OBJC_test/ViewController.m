@@ -14,7 +14,7 @@
 
 @implementation ViewController
 {
-    HDHScrollPlusView *h;
+    BaseHScrollview *h;
     UILabel *lab;
     NSRange targetRange;
     NSRange puts;
@@ -174,14 +174,13 @@
 
 
 -(void)HScro{
-    h=[HDHScrollPlusView new];
+    h=[BaseHScrollview new];
     h.addTo(self.view).bgColor(@"random");
-    [h setDire:(ScrollDireH)];
     [h mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(50, 50, 100, 100));
     }];
     
-    UIView *obj=View.addTo(h.layoutView).bgColor(@"random");
+    UIView *obj=View.addTo(h.bgView).bgColor(@"random");
     [obj mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsMake(50, 50, 100, 100));
         make.width.mas_equalTo(1500);

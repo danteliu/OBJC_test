@@ -151,36 +151,39 @@
     }];
 }
 - (void)show{
-    contentView.layer.shouldRasterize = YES;
-    contentView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+    UIView *targetView=contentView;
+
+    targetView.layer.shouldRasterize = YES;
+    targetView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
   
     self.layer.shouldRasterize = YES;
     self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
-    contentView.layer.opacity = 0.5f;
-    contentView.layer.transform = CATransform3DMakeScale(1.3f, 1.3f, 1.0);
+    targetView.layer.opacity = 0.5f;
+    targetView.layer.transform = CATransform3DMakeScale(1.3f, 1.3f, 1.0);
 
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
     
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.4f];
-        contentView.layer.opacity = 1.0f;
-        contentView.layer.transform = CATransform3DMakeScale(1, 1, 1);
+        targetView.layer.opacity = 1.0f;
+        targetView.layer.transform = CATransform3DMakeScale(1, 1, 1);
     }completion:NULL];
 }
 - (void)close{
-    CATransform3D currentTransform = contentView.layer.transform;
+    UIView *targetView=contentView;
+    CATransform3D currentTransform = targetView.layer.transform;
     
-    CGFloat startRotation = [[contentView valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
+    CGFloat startRotation = [[targetView valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
     CATransform3D rotation = CATransform3DMakeRotation(-startRotation + M_PI * 270.0 / 180.0, 0.0f, 0.0f, 0.0f);
     
-    contentView.layer.transform = CATransform3DConcat(rotation, CATransform3DMakeScale(1, 1, 1));
-    contentView.layer.opacity = 1.0f;
+    targetView.layer.transform = CATransform3DConcat(rotation, CATransform3DMakeScale(1, 1, 1));
+    targetView.layer.opacity = 1.0f;
     
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionTransitionNone animations:^{
         self.backgroundColor = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f];
-        contentView.layer.transform = CATransform3DConcat(currentTransform, CATransform3DMakeScale(0.6f, 0.6f, 1.0));
-        contentView.layer.opacity = 0.0f;
+        targetView.layer.transform = CATransform3DConcat(currentTransform, CATransform3DMakeScale(0.6f, 0.6f, 1.0));
+        targetView.layer.opacity = 0.0f;
     }completion:^(BOOL finished) {
         for (UIView *v in [self subviews]) {
             [v removeFromSuperview];

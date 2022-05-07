@@ -10,6 +10,7 @@
 		251D3CF127A2447500FC1153 /* RandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251D3CF027A2447500FC1153 /* RandomView.swift */; };
 		25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25317A5428261C2A006678F7 /* RandomColorVC.m */; };
 		25317A5828261DFA006678F7 /* ManagerNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 25317A5728261DFA006678F7 /* ManagerNet.m */; };
+		25317A5C28264BDE006678F7 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25317A5A28264BDE006678F7 /* HomeVC.m */; };
 		254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A126E06608007A7F50 /* AAQYAlertView.m */; };
 		254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A526E066C2007A7F50 /* UIView+CreateObj.m */; };
 		2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2558F66726E7098D00117C3A /* NSString+Pinyin.m */; };
@@ -58,6 +59,8 @@
 		25317A5428261C2A006678F7 /* RandomColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomColorVC.m; sourceTree = "<group>"; };
 		25317A5628261DFA006678F7 /* ManagerNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerNet.h; sourceTree = "<group>"; };
 		25317A5728261DFA006678F7 /* ManagerNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerNet.m; sourceTree = "<group>"; };
+		25317A5A28264BDE006678F7 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		25317A5B28264BDE006678F7 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		254A07A026E06608007A7F50 /* AAQYAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAQYAlertView.h; sourceTree = "<group>"; };
 		254A07A126E06608007A7F50 /* AAQYAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAQYAlertView.m; sourceTree = "<group>"; };
 		254A07A426E066C2007A7F50 /* UIView+CreateObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CreateObj.h"; sourceTree = "<group>"; };
@@ -143,6 +146,15 @@
 			path = SwiftFiles;
 			sourceTree = "<group>";
 		};
+		25317A5928264BBF006678F7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				25317A5B28264BDE006678F7 /* HomeVC.h */,
+				25317A5A28264BDE006678F7 /* HomeVC.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		254A079F26E065DF007A7F50 /* AlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +216,7 @@
 				254A07A326E06688007A7F50 /* UIView */,
 				254A079F26E065DF007A7F50 /* AlertView */,
 				25CA3EC126C3C1DE006117D7 /* ScrollView */,
+				25317A5928264BBF006678F7 /* Main */,
 				256B47BB26AFABFB007E13C8 /* AppDelegate.h */,
 				256B47BC26AFABFB007E13C8 /* AppDelegate.m */,
 				256B47C126AFABFB007E13C8 /* ViewController.h */,
@@ -564,6 +577,7 @@
 				25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */,
 				25317A5828261DFA006678F7 /* ManagerNet.m in Sources */,
 				25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */,
+				25317A5C28264BDE006678F7 /* HomeVC.m in Sources */,
 				2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */,
 				259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */,
 				25F857352744F389004DB99E /* SaveInfoCell.m in Sources */,

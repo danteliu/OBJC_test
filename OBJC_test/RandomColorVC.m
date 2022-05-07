@@ -72,9 +72,9 @@
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = [self hexStringFromColor:cor];
     
-//    Alert.title(@"提示").message(@"复制成功").destructiveAction(@"确定", ^{
-//        Log(@"确定");
-//    }).show();
+    Alert.title(@"提示").message(@"复制成功").destructiveAction(@"确定", ^{
+        Log(@"确定");
+    }).show();
 }
 -(id)datas{
     if (!_datas) {

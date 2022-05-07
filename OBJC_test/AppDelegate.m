@@ -7,8 +7,10 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-
-
+#import "HBDNavigationController.h"
+#import "UIViewController+HBD.h"
+#import "HBDNavigationBar.h"
+#import "HomeVC.h"
 @interface AppDelegate ()
 
 @end
@@ -20,11 +22,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor whiteColor]];
-    ViewController *vc = [[ViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [nav.navigationController.navigationBar setTranslucent:NO];
-
-    [self.window setRootViewController:nav];
+    [self.window setRootViewController:[[HomeVC alloc] init]];
     [self.window makeKeyAndVisible];
     
     return YES;

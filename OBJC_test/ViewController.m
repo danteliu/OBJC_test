@@ -8,6 +8,10 @@
 #import "ViewController.h"
 #import "SaveInfoVC.h"
 #import "OBJC_test-Swift.h"
+#import "HBDNavigationController.h"
+#import "UIViewController+HBD.h"
+#import "HBDNavigationBar.h"
+
 @interface ViewController ()
 
 @end
@@ -23,11 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setTranslucent:NO];
-    // Do any additional setup after loading the view.
-    //    [self getAttr];
-    //    [self HScro];
-    //    [self createAttr];
+//    self.hbd_barHidden=YES;
+    self.hbd_barTintColor=Color(@"white,1");
     UIView *one=({
         UIView *obj=View.addTo(self.view).bgColor(@"random");
         obj.onClick(^(void){
@@ -37,7 +38,8 @@
         obj;
     });
     [one mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.offset(0);
+        make.top.offset(0);
+        make.left.right.offset(0);
         make.height.mas_equalTo(40);
     }];
     
@@ -45,7 +47,7 @@
         UIView *obj=View.addTo(self.view).bgColor(@"random");
         obj.onClick(^(void){
             //            [self testNetLogManager];
-            [self testSwiftView];
+            //            [self testSwiftView];
             
         });
         [obj mas_makeConstraints:^(MASConstraintMaker *make) {

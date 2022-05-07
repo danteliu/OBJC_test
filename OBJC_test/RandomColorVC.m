@@ -25,17 +25,17 @@
 //    [self getData];
 }
 -(void)getData{
-    [ManagerNet getRandomColor:({
-        NetRequestModel *obj=[[NetRequestModel alloc] init];
-        
-        obj;
-    }) success:^(NetResponseModel * _Nonnull rsp) {
-        Log(rsp.xxx);
-        self.datas=[NSMutableArray arrayWithArray:rsp.xxx];
-        [self.tab reloadData];
-    } error:^(NSError * _Nonnull error) {
-        
-    }];
+//    [ManagerNet getRandomColor:({
+//        NetRequestModel *obj=[[NetRequestModel alloc] init];
+//
+//        obj;
+//    }) success:^(NetResponseModel * _Nonnull rsp) {
+//        Log(rsp.xxx);
+//        self.datas=[NSMutableArray arrayWithArray:rsp.xxx];
+//        [self.tab reloadData];
+//    } error:^(NSError * _Nonnull error) {
+//
+//    }];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -48,9 +48,9 @@
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellid];
     if (cell==nil) {
         cell=[[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellid];
+        [cell setSelectionStyle:(UITableViewCellSelectionStyleNone)];
     }
-//    NSDictionary *res=self.datas[indexPath.row];
-    UIColor *cor=Color(@"random");
+    UIColor *cor=self.datas[indexPath.row];
     cell.backgroundColor=cor;
     cell.textLabel.str([self hexStringFromColor:cor]);
     return cell;
@@ -67,11 +67,22 @@
             lroundf(g * 255),
             lroundf(b * 255)];
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIColor *cor=self.datas[indexPath.row];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = [self hexStringFromColor:cor];
+    
+//    Alert.title(@"提示").message(@"复制成功").destructiveAction(@"确定", ^{
+//        Log(@"确定");
+//    }).show();
+}
 -(id)datas{
     if (!_datas) {
         _datas=({
             NSMutableArray *obj=[[NSMutableArray alloc] init];
-            
+            for (NSInteger i=0; i<1000; i++) {
+                [obj addObject:Color(@"random")];
+            }
             obj;
         });
     }

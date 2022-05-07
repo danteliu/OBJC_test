@@ -55,6 +55,19 @@
         }];
         obj;
     });
+    UIView *three=({
+        UIView *obj=View.addTo(self.view).bgColor(@"random");
+        obj.onClick(^(void){
+            RandomColorVC *info=[[RandomColorVC alloc] init];
+            [self.navigationController pushViewController:info animated:YES];
+        });
+        [obj mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(two.mas_bottom);
+            make.left.right.offset(0);
+            make.height.mas_equalTo(40);
+        }];
+        obj;
+    });
     
     //    self.view.onClick(^(void){
     ////        [self showAlert];//测试弹框

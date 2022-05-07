@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		251D3CF127A2447500FC1153 /* RandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251D3CF027A2447500FC1153 /* RandomView.swift */; };
+		25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25317A5428261C2A006678F7 /* RandomColorVC.m */; };
+		25317A5828261DFA006678F7 /* ManagerNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 25317A5728261DFA006678F7 /* ManagerNet.m */; };
 		254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A126E06608007A7F50 /* AAQYAlertView.m */; };
 		254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A526E066C2007A7F50 /* UIView+CreateObj.m */; };
 		2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2558F66726E7098D00117C3A /* NSString+Pinyin.m */; };
@@ -52,6 +54,10 @@
 		2498971F482A606920567723 /* Pods-OBJC_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_test/Pods-OBJC_test.debug.xcconfig"; sourceTree = "<group>"; };
 		251D3CEF27A2447400FC1153 /* OBJC_test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OBJC_test-Bridging-Header.h"; sourceTree = "<group>"; };
 		251D3CF027A2447500FC1153 /* RandomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomView.swift; sourceTree = "<group>"; };
+		25317A5328261C29006678F7 /* RandomColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomColorVC.h; sourceTree = "<group>"; };
+		25317A5428261C2A006678F7 /* RandomColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomColorVC.m; sourceTree = "<group>"; };
+		25317A5628261DFA006678F7 /* ManagerNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerNet.h; sourceTree = "<group>"; };
+		25317A5728261DFA006678F7 /* ManagerNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerNet.m; sourceTree = "<group>"; };
 		254A07A026E06608007A7F50 /* AAQYAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAQYAlertView.h; sourceTree = "<group>"; };
 		254A07A126E06608007A7F50 /* AAQYAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AAQYAlertView.m; sourceTree = "<group>"; };
 		254A07A426E066C2007A7F50 /* UIView+CreateObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CreateObj.h"; sourceTree = "<group>"; };
@@ -189,6 +195,8 @@
 		256B47BA26AFABFB007E13C8 /* OBJC_test */ = {
 			isa = PBXGroup;
 			children = (
+				25317A5628261DFA006678F7 /* ManagerNet.h */,
+				25317A5728261DFA006678F7 /* ManagerNet.m */,
 				257E1DD427E47548002670DF /* public */,
 				251D3CF227A246EB00FC1153 /* SwiftFiles */,
 				256B47F126AFADD9007E13C8 /* publicHeader */,
@@ -204,6 +212,8 @@
 				25F8572D2744ECDD004DB99E /* SaveInfoVC.m */,
 				25F857332744F389004DB99E /* SaveInfoCell.h */,
 				25F857342744F389004DB99E /* SaveInfoCell.m */,
+				25317A5328261C29006678F7 /* RandomColorVC.h */,
+				25317A5428261C2A006678F7 /* RandomColorVC.m */,
 				256B47C426AFABFC007E13C8 /* Main.storyboard */,
 				256B47C726AFABFE007E13C8 /* Assets.xcassets */,
 				256B47C926AFABFE007E13C8 /* LaunchScreen.storyboard */,
@@ -550,7 +560,9 @@
 				25F857322744F0C6004DB99E /* String_Dfine.m in Sources */,
 				251D3CF127A2447500FC1153 /* RandomView.swift in Sources */,
 				25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */,
+				25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */,
 				25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */,
+				25317A5828261DFA006678F7 /* ManagerNet.m in Sources */,
 				25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */,
 				2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */,
 				259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */,

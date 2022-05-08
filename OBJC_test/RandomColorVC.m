@@ -52,7 +52,7 @@
     }
     UIColor *cor=self.datas[indexPath.row];
     cell.backgroundColor=cor;
-    cell.textLabel.str([self hexStringFromColor:cor]);
+    cell.textLabel.str([self hexStringFromColor:cor]).color(@"white,0.7");
     return cell;
 }
 - (NSString *)hexStringFromColor:(UIColor *)color {

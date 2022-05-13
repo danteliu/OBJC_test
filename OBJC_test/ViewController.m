@@ -75,6 +75,18 @@
     ////        [self showAlert];//测试弹框
     //        [self test_group];
     //    });
+    
+    
+}
+-(void)clearWebcache{
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0) {
+        NSSet *websiteDataTypes=[WKWebsiteDataStore allWebsiteDataTypes];// All kinds of data
+        [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes
+                                                   modifiedSince:[NSDate dateWithTimeIntervalSince1970:0]
+                                               completionHandler:^{
+            
+        }];
+    }
 }
 -(void)testSwiftView{
     RandomView *a=({

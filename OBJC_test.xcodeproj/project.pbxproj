@@ -14,6 +14,7 @@
 		254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A126E06608007A7F50 /* AAQYAlertView.m */; };
 		254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 254A07A526E066C2007A7F50 /* UIView+CreateObj.m */; };
 		2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2558F66726E7098D00117C3A /* NSString+Pinyin.m */; };
+		2561BA052860103000C1AB9D /* testFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2561BA042860103000C1AB9D /* testFirst.m */; };
 		256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47BC26AFABFB007E13C8 /* AppDelegate.m */; };
 		256B47C326AFABFB007E13C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47C226AFABFB007E13C8 /* ViewController.m */; };
 		256B47C626AFABFC007E13C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 256B47C426AFABFC007E13C8 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		254A07A526E066C2007A7F50 /* UIView+CreateObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CreateObj.m"; sourceTree = "<group>"; };
 		2558F66626E7098D00117C3A /* NSString+Pinyin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Pinyin.h"; sourceTree = "<group>"; };
 		2558F66726E7098D00117C3A /* NSString+Pinyin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Pinyin.m"; sourceTree = "<group>"; };
+		2561BA042860103000C1AB9D /* testFirst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testFirst.m; sourceTree = "<group>"; };
 		256B47B826AFABFB007E13C8 /* OBJC_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OBJC_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		256B47BB26AFABFB007E13C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		256B47BC26AFABFB007E13C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		256B47D626AFABFF007E13C8 /* OBJC_testTests */ = {
 			isa = PBXGroup;
 			children = (
+				2561BA042860103000C1AB9D /* testFirst.m */,
 				256B47D726AFABFF007E13C8 /* OBJC_testTests.m */,
 				256B47D926AFABFF007E13C8 /* Info.plist */,
 			);
@@ -588,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2561BA052860103000C1AB9D /* testFirst.m in Sources */,
 				256B47D826AFABFF007E13C8 /* OBJC_testTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -805,8 +809,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G7Z7TGSP2;
 				INFOPLIST_FILE = OBJC_testTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -826,8 +831,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G7Z7TGSP2;
 				INFOPLIST_FILE = OBJC_testTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -846,6 +852,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G7Z7TGSP2;
 				INFOPLIST_FILE = OBJC_testUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -865,6 +872,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G7Z7TGSP2;
 				INFOPLIST_FILE = OBJC_testUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

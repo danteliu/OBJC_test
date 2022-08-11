@@ -14,7 +14,8 @@
 #import <MJExtension-umbrella.h>
 #import <NerdyUI/NerdyUI.h>
 #import <RBDateTime/RBDateTime.h>
-
+#import <JKCategories/JKCategories.h>
+#import <POP.h>
 #import "NSString+Pinyin.h"
 
 #import "UIView+CreateObj.h"
@@ -25,5 +26,5 @@
 
 #import "String_Dfine.h"//公共字符串
 #import "NetLogManager.h"//网络请求日志管理
-
+#import "ScanCodeVC.h"//扫码页面
 #endif /* ortherFramwork_h */

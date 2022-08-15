@@ -15,6 +15,8 @@
 #import <NerdyUI/NerdyUI.h>
 #import <RBDateTime/RBDateTime.h>
 #import <JKCategories/JKCategories.h>
+#import <SDCycleScrollView/SDCycleScrollView.h>
+
 #import <POP.h>
 #import "NSString+Pinyin.h"
 

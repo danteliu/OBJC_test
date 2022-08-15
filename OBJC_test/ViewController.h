@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "RandomColorVC.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<SDCycleScrollViewDelegate>
 
 
 @end

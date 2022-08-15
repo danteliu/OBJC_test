@@ -5,8 +5,8 @@ target 'OBJC_test' do
   use_frameworks!
   inhibit_all_warnings!
   pod 'HBDNavigationBar', '~> 1.8.4'#导航栏
-  pod 'SDCycleScrollView', '~> 1.82'
-  pod 'AFNetworking', '~> 4.0.1'
+  pod 'SDCycleScrollView', '~> 1.82'#轮播控件
+  pod 'AFNetworking', '~> 4.0.1'#网络组件
   pod 'Masonry', '~> 1.1.0'#布局
   pod 'NerdyUI', '~> 1.2.1'
   pod 'RBDateTime', '~> 0.1'#日期时间处理

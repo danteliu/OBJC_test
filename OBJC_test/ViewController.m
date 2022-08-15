@@ -72,6 +72,22 @@
         }];
         obj;
     });
+    SDCycleScrollView *cycleScrollView = ({
+        SDCycleScrollView *obj = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:Img(@"red")];
+        [obj setBannerImageViewContentMode:(UIViewContentModeScaleAspectFill)];
+        obj.imageURLStringsGroup = @[
+            @"https://images.unsplash.com/photo-1660316795448-21fdd1c466af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAwNw&ixlib=rb-1.2.1&q=80&w=1080",
+            @"https://images.unsplash.com/photo-1659862925130-816e4f8535ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAzMw&ixlib=rb-1.2.1&q=80&w=1080",
+        ];
+        obj;
+    });
+    cycleScrollView.addTo(self.view);
+    [cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(three.mas_bottom).offset(10);
+        make.height.mas_equalTo(200);
+    }];
+    
     
     //    self.view.onClick(^(void){
     ////        [self showAlert];//测试弹框

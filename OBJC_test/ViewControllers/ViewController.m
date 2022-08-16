@@ -5,12 +5,12 @@
 //  Created by liu dante on 2021/7/27.
 //
 
-#import "HBDNavigationBar.h"
-#import "HBDNavigationController.h"
+
 #import "OBJC_test-Swift.h"
 #import "SaveInfoVC.h"
-#import "UIViewController+HBD.h"
+
 #import "ViewController.h"
+#import "WQPMDViewController.h"
 
 @interface ViewController ()
 
@@ -18,11 +18,14 @@
 
 @implementation ViewController{
     BaseHScrollview *h;
+    SDCycleScrollView *cycleScrollView;
     UILabel *lab;
     NSRange targetRange;
     NSRange puts;
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [cycleScrollView adjustWhenControllerViewWillAppera];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //    self.hbd_barHidden=YES;
@@ -72,8 +75,22 @@
         }];
         obj;
     });
-    SDCycleScrollView *cycleScrollView = ({
+    cycleScrollView = ({
         SDCycleScrollView *obj = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:Img(@"red")];
+        obj.autoScrollTimeInterval=3;
+        obj.infiniteLoop = YES;
+        obj.autoScroll = YES;
+        obj.clickItemOperationBlock = ^(NSInteger currentIndex) {
+            if (currentIndex==ViewTypePMD) {
+                [self.navigationController pushViewController:({
+                    WQPMDViewController *obj=[[WQPMDViewController alloc] init];
+                    obj.hidesBottomBarWhenPushed=YES;
+                    obj;
+                })animated:YES];
+            }
+            Log(currentIndex);
+            
+        };
         [obj setBannerImageViewContentMode:(UIViewContentModeScaleAspectFill)];
         obj.imageURLStringsGroup = @[
             @"https://images.unsplash.com/photo-1660316795448-21fdd1c466af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAwNw&ixlib=rb-1.2.1&q=80&w=1080",

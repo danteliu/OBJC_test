@@ -17,6 +17,10 @@
 #import <JKCategories/JKCategories.h>
 #import <SDCycleScrollView/SDCycleScrollView.h>
 
+#import "HBDNavigationBar.h"
+#import "HBDNavigationController.h"
+#import "UIViewController+HBD.h"
+
 #import <POP.h>
 #import "NSString+Pinyin.h"
 

@@ -30,6 +30,7 @@
 		259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 259EF333279A84AE00E6C95F /* NetLogManager.m */; };
 		25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */; };
 		25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */; };
+		25E18E8028AA40BD002AB51A /* WQPMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E18E7F28AA40BD002AB51A /* WQPMDViewController.m */; };
 		25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F8572D2744ECDD004DB99E /* SaveInfoVC.m */; };
 		25F857322744F0C6004DB99E /* String_Dfine.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857312744F0C6004DB99E /* String_Dfine.m */; };
 		25F857352744F389004DB99E /* SaveInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857342744F389004DB99E /* SaveInfoCell.m */; };
@@ -103,6 +104,8 @@
 		25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHVerticalPMDView.m; sourceTree = "<group>"; };
 		25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHScrollPlusView.m; sourceTree = "<group>"; };
 		25CA3EC326C3C1DE006117D7 /* HDHScrollPlusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHScrollPlusView.h; sourceTree = "<group>"; };
+		25E18E7E28AA40BD002AB51A /* WQPMDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQPMDViewController.h; sourceTree = "<group>"; };
+		25E18E7F28AA40BD002AB51A /* WQPMDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQPMDViewController.m; sourceTree = "<group>"; };
 		25F8572C2744ECDD004DB99E /* SaveInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveInfoVC.h; sourceTree = "<group>"; };
 		25F8572D2744ECDD004DB99E /* SaveInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveInfoVC.m; sourceTree = "<group>"; };
 		25F857302744F0C6004DB99E /* String_Dfine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = String_Dfine.h; sourceTree = "<group>"; };
@@ -207,9 +210,9 @@
 				256B47BA26AFABFB007E13C8 /* OBJC_test */,
 				256B47D626AFABFF007E13C8 /* OBJC_testTests */,
 				256B47E126AFABFF007E13C8 /* OBJC_testUITests */,
-				256B47B926AFABFB007E13C8 /* Products */,
-				45FE9DAAD6FED2BF9481C561 /* Pods */,
 				941290B9E01A9471231413CB /* Frameworks */,
+				45FE9DAAD6FED2BF9481C561 /* Pods */,
+				256B47B926AFABFB007E13C8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,34 +229,21 @@
 		256B47BA26AFABFB007E13C8 /* OBJC_test */ = {
 			isa = PBXGroup;
 			children = (
-				25317A5628261DFA006678F7 /* ManagerNet.h */,
-				25317A5728261DFA006678F7 /* ManagerNet.m */,
-				257E1DD427E47548002670DF /* public */,
-				251D3CF227A246EB00FC1153 /* SwiftFiles */,
-				256B47F126AFADD9007E13C8 /* publicHeader */,
-				2558F66526E7096500117C3A /* NSString */,
-				254A07A326E06688007A7F50 /* UIView */,
-				254A079F26E065DF007A7F50 /* AlertView */,
-				253A87C528A505B80041CB0A /* Scan */,
-				25CA3EC126C3C1DE006117D7 /* ScrollView */,
-				25317A5928264BBF006678F7 /* Main */,
 				256B47BB26AFABFB007E13C8 /* AppDelegate.h */,
 				256B47BC26AFABFB007E13C8 /* AppDelegate.m */,
-				256B47C126AFABFB007E13C8 /* ViewController.h */,
-				256B47C226AFABFB007E13C8 /* ViewController.m */,
-				25F8572C2744ECDD004DB99E /* SaveInfoVC.h */,
-				25F8572D2744ECDD004DB99E /* SaveInfoVC.m */,
-				25F857332744F389004DB99E /* SaveInfoCell.h */,
-				25F857342744F389004DB99E /* SaveInfoCell.m */,
-				25317A5328261C29006678F7 /* RandomColorVC.h */,
-				25317A5428261C2A006678F7 /* RandomColorVC.m */,
-				256B47C426AFABFC007E13C8 /* Main.storyboard */,
 				256B47C726AFABFE007E13C8 /* Assets.xcassets */,
-				256B47C926AFABFE007E13C8 /* LaunchScreen.storyboard */,
-				256B47CC26AFABFE007E13C8 /* Info.plist */,
-				256B47CD26AFABFE007E13C8 /* main.m */,
 				251677902862A7350025A701 /* CalculateData.h */,
 				251677912862A7350025A701 /* CalculateData.m */,
+				256B47CC26AFABFE007E13C8 /* Info.plist */,
+				256B47C926AFABFE007E13C8 /* LaunchScreen.storyboard */,
+				256B47CD26AFABFE007E13C8 /* main.m */,
+				256B47C426AFABFC007E13C8 /* Main.storyboard */,
+				25317A5928264BBF006678F7 /* Main */,
+				2558F66526E7096500117C3A /* NSString */,
+				256B47F126AFADD9007E13C8 /* publicHeader */,
+				251D3CF227A246EB00FC1153 /* SwiftFiles */,
+				25E18E7B28AA3F50002AB51A /* ViewControllers */,
+				25E18E7C28AA3FE1002AB51A /* Views */,
 			);
 			path = OBJC_test;
 			sourceTree = "<group>";
@@ -281,21 +271,22 @@
 		256B47F126AFADD9007E13C8 /* publicHeader */ = {
 			isa = PBXGroup;
 			children = (
+				25317A5628261DFA006678F7 /* ManagerNet.h */,
+				25317A5728261DFA006678F7 /* ManagerNet.m */,
 				25F8572F2744F093004DB99E /* Define */,
-				25AD660426F48CE800DA671A /* HDHVerticalPMDView */,
 				256B47F226AFAE01007E13C8 /* ortherFramwork.h */,
 				256B47F326AFB3CA007E13C8 /* OBJC_test.pch */,
 			);
 			path = publicHeader;
 			sourceTree = "<group>";
 		};
-		257E1DD427E47548002670DF /* public */ = {
+		257E1DD427E47548002670DF /* WebModule */ = {
 			isa = PBXGroup;
 			children = (
 				257E1DD527E47579002670DF /* DanteWebVC.h */,
 				257E1DD627E47579002670DF /* DanteWebVC.m */,
 			);
-			path = public;
+			path = WebModule;
 			sourceTree = "<group>";
 		};
 		25AD660426F48CE800DA671A /* HDHVerticalPMDView */ = {
@@ -316,6 +307,44 @@
 				259EF333279A84AE00E6C95F /* NetLogManager.m */,
 			);
 			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				25E18E7D28AA406F002AB51A /* PMD */,
+				253A87C528A505B80041CB0A /* Scan */,
+				256B47C126AFABFB007E13C8 /* ViewController.h */,
+				256B47C226AFABFB007E13C8 /* ViewController.m */,
+				25F8572C2744ECDD004DB99E /* SaveInfoVC.h */,
+				25F8572D2744ECDD004DB99E /* SaveInfoVC.m */,
+				25317A5328261C29006678F7 /* RandomColorVC.h */,
+				25317A5428261C2A006678F7 /* RandomColorVC.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		25E18E7C28AA3FE1002AB51A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				257E1DD427E47548002670DF /* WebModule */,
+				25CA3EC126C3C1DE006117D7 /* ScrollView */,
+				254A07A326E06688007A7F50 /* UIView */,
+				25F857332744F389004DB99E /* SaveInfoCell.h */,
+				25F857342744F389004DB99E /* SaveInfoCell.m */,
+				254A079F26E065DF007A7F50 /* AlertView */,
+				25AD660426F48CE800DA671A /* HDHVerticalPMDView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		25E18E7D28AA406F002AB51A /* PMD */ = {
+			isa = PBXGroup;
+			children = (
+				25E18E7E28AA40BD002AB51A /* WQPMDViewController.h */,
+				25E18E7F28AA40BD002AB51A /* WQPMDViewController.m */,
+			);
+			path = PMD;
 			sourceTree = "<group>";
 		};
 		25F8572F2744F093004DB99E /* Define */ = {
@@ -417,6 +446,7 @@
 		256B47B026AFABFB007E13C8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WQ;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					256B47B726AFABFB007E13C8 = {
@@ -603,6 +633,7 @@
 				251677922862A7350025A701 /* CalculateData.m in Sources */,
 				25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */,
 				25317A5C28264BDE006678F7 /* HomeVC.m in Sources */,
+				25E18E8028AA40BD002AB51A /* WQPMDViewController.m in Sources */,
 				2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */,
 				253A87C828A505E90041CB0A /* ScanCodeVC.m in Sources */,
 				259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */,

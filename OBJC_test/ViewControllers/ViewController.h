@@ -7,7 +7,9 @@
 
 #import <UIKit/UIKit.h>
 #import "RandomColorVC.h"
-
+typedef NS_ENUM(NSInteger, ViewType) {
+    ViewTypePMD,/**<  跑马灯 */
+};
 @interface ViewController : UIViewController<SDCycleScrollViewDelegate>
 
 

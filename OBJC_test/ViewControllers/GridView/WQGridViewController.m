@@ -85,8 +85,6 @@
 }
 
 #pragma mark -
-#pragma mark const
-#pragma mark -
 #pragma mark delegate
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {/**<  每个分区的内边距（上左下右） */
     return self.padding;

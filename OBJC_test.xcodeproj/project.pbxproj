@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EECA641BD205B94A6CA00CF /* Pods_OBJC_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF34BA72DB1D3A5E4117B91 /* Pods_OBJC_test.framework */; };
 		251677922862A7350025A701 /* CalculateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 251677912862A7350025A701 /* CalculateData.m */; };
 		251677942862A7C10025A701 /* CalculateDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251677932862A7C10025A701 /* CalculateDataTest.m */; };
 		251D3CF127A2447500FC1153 /* RandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251D3CF027A2447500FC1153 /* RandomView.swift */; };
@@ -29,13 +30,15 @@
 		257E1DD727E47579002670DF /* DanteWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 257E1DD627E47579002670DF /* DanteWebVC.m */; };
 		259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 259EF333279A84AE00E6C95F /* NetLogManager.m */; };
 		25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */; };
+		25B312CE28ADD19A000A3990 /* WQView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B312CD28ADD19A000A3990 /* WQView.m */; };
 		25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */; };
 		25E18E8028AA40BD002AB51A /* WQPMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E18E7F28AA40BD002AB51A /* WQPMDViewController.m */; };
+		25E18E8428AB2822002AB51A /* WQCyclePMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E18E8328AB2822002AB51A /* WQCyclePMDViewController.m */; };
 		25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F8572D2744ECDD004DB99E /* SaveInfoVC.m */; };
 		25F857322744F0C6004DB99E /* String_Dfine.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857312744F0C6004DB99E /* String_Dfine.m */; };
 		25F857352744F389004DB99E /* SaveInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857342744F389004DB99E /* SaveInfoCell.m */; };
-		7323C8A035A3C46FC4C5F3EF /* Pods_OBJC_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4787541F7B188C8C8AA79325 /* Pods_OBJC_test.framework */; };
-		B0534568FE5EDA62061D8173 /* Pods_OBJC_test_OBJC_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FA1E887ED5831CFD426687 /* Pods_OBJC_test_OBJC_testUITests.framework */; };
+		25FA935728ACD1A900F2E484 /* WQBYCyclePMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA935628ACD1A900F2E484 /* WQBYCyclePMDViewController.m */; };
+		AD054A5B3E7D9D640C8ED858 /* Pods_OBJC_test_OBJC_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */; };
 		C55011541C6058E47D1D4800 /* Pods_OBJC_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECACE1CBBAC4D80C01436A4E /* Pods_OBJC_testTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DF34BA72DB1D3A5E4117B91 /* Pods_OBJC_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2498971F482A606920567723 /* Pods-OBJC_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_test/Pods-OBJC_test.debug.xcconfig"; sourceTree = "<group>"; };
 		251677902862A7350025A701 /* CalculateData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculateData.h; sourceTree = "<group>"; };
 		251677912862A7350025A701 /* CalculateData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculateData.m; sourceTree = "<group>"; };
@@ -102,22 +106,31 @@
 		259EF333279A84AE00E6C95F /* NetLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetLogManager.m; sourceTree = "<group>"; };
 		25AD660526F48CE800DA671A /* HDHVerticalPMDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHVerticalPMDView.h; sourceTree = "<group>"; };
 		25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHVerticalPMDView.m; sourceTree = "<group>"; };
+		25B312CC28ADD19A000A3990 /* WQView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQView.h; sourceTree = "<group>"; };
+		25B312CD28ADD19A000A3990 /* WQView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQView.m; sourceTree = "<group>"; };
 		25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHScrollPlusView.m; sourceTree = "<group>"; };
 		25CA3EC326C3C1DE006117D7 /* HDHScrollPlusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHScrollPlusView.h; sourceTree = "<group>"; };
 		25E18E7E28AA40BD002AB51A /* WQPMDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQPMDViewController.h; sourceTree = "<group>"; };
 		25E18E7F28AA40BD002AB51A /* WQPMDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQPMDViewController.m; sourceTree = "<group>"; };
+		25E18E8228AB2822002AB51A /* WQCyclePMDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCyclePMDViewController.h; sourceTree = "<group>"; };
+		25E18E8328AB2822002AB51A /* WQCyclePMDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQCyclePMDViewController.m; sourceTree = "<group>"; };
 		25F8572C2744ECDD004DB99E /* SaveInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveInfoVC.h; sourceTree = "<group>"; };
 		25F8572D2744ECDD004DB99E /* SaveInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveInfoVC.m; sourceTree = "<group>"; };
 		25F857302744F0C6004DB99E /* String_Dfine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = String_Dfine.h; sourceTree = "<group>"; };
 		25F857312744F0C6004DB99E /* String_Dfine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = String_Dfine.m; sourceTree = "<group>"; };
 		25F857332744F389004DB99E /* SaveInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveInfoCell.h; sourceTree = "<group>"; };
 		25F857342744F389004DB99E /* SaveInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveInfoCell.m; sourceTree = "<group>"; };
-		4787541F7B188C8C8AA79325 /* Pods_OBJC_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25FA935528ACD1A900F2E484 /* WQBYCyclePMDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQBYCyclePMDViewController.h; sourceTree = "<group>"; };
+		25FA935628ACD1A900F2E484 /* WQBYCyclePMDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQBYCyclePMDViewController.m; sourceTree = "<group>"; };
+		37D5E39D2766C8B4072AEF39 /* Pods-死神永不下班.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-死神永不下班.release.xcconfig"; path = "Target Support Files/Pods-死神永不下班/Pods-死神永不下班.release.xcconfig"; sourceTree = "<group>"; };
 		4DEF03574F21C33116E76C47 /* Pods-OBJC_test-OBJC_testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test-OBJC_testUITests.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_test-OBJC_testUITests/Pods-OBJC_test-OBJC_testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7AB19B46E53667510816D605 /* Pods-OBJC_test-OBJC_testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test-OBJC_testUITests/Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C1294EFF3A561637C2A7DA9 /* Pods-OBJC_testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_testTests.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_testTests/Pods-OBJC_testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC152F1EA5AE43DB0AC2ECE /* Pods-OBJC_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test/Pods-OBJC_test.release.xcconfig"; sourceTree = "<group>"; };
-		C1FA1E887ED5831CFD426687 /* Pods_OBJC_test_OBJC_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test_OBJC_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B9742A4505F03F990F574C /* Pods-死神永不下班-OBJC_testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-死神永不下班-OBJC_testUITests.release.xcconfig"; path = "Target Support Files/Pods-死神永不下班-OBJC_testUITests/Pods-死神永不下班-OBJC_testUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C25F65109014AA97D72741D1 /* Pods-死神永不下班-OBJC_testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-死神永不下班-OBJC_testUITests.debug.xcconfig"; path = "Target Support Files/Pods-死神永不下班-OBJC_testUITests/Pods-死神永不下班-OBJC_testUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D03D9D2F28E3BA4BF4E3CBB4 /* Pods-死神永不下班.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-死神永不下班.debug.xcconfig"; path = "Target Support Files/Pods-死神永不下班/Pods-死神永不下班.debug.xcconfig"; sourceTree = "<group>"; };
+		DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test_OBJC_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECACE1CBBAC4D80C01436A4E /* Pods_OBJC_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF801EB06F63B9C7FFC25C26 /* Pods-OBJC_testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_testTests.release.xcconfig"; path = "Target Support Files/Pods-OBJC_testTests/Pods-OBJC_testTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7323C8A035A3C46FC4C5F3EF /* Pods_OBJC_test.framework in Frameworks */,
+				0EECA641BD205B94A6CA00CF /* Pods_OBJC_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0534568FE5EDA62061D8173 /* Pods_OBJC_test_OBJC_testUITests.framework in Frameworks */,
+				AD054A5B3E7D9D640C8ED858 /* Pods_OBJC_test_OBJC_testUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +204,8 @@
 			children = (
 				254A07A426E066C2007A7F50 /* UIView+CreateObj.h */,
 				254A07A526E066C2007A7F50 /* UIView+CreateObj.m */,
+				25B312CC28ADD19A000A3990 /* WQView.h */,
+				25B312CD28ADD19A000A3990 /* WQView.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -312,7 +327,7 @@
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				25E18E7D28AA406F002AB51A /* PMD */,
+				25FA935328ACD16400F2E484 /* PMDTest */,
 				253A87C528A505B80041CB0A /* Scan */,
 				256B47C126AFABFB007E13C8 /* ViewController.h */,
 				256B47C226AFABFB007E13C8 /* ViewController.m */,
@@ -347,6 +362,15 @@
 			path = PMD;
 			sourceTree = "<group>";
 		};
+		25E18E8128AB27D1002AB51A /* CyclePMD */ = {
+			isa = PBXGroup;
+			children = (
+				25E18E8228AB2822002AB51A /* WQCyclePMDViewController.h */,
+				25E18E8328AB2822002AB51A /* WQCyclePMDViewController.m */,
+			);
+			path = CyclePMD;
+			sourceTree = "<group>";
+		};
 		25F8572F2744F093004DB99E /* Define */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,6 +378,25 @@
 				25F857312744F0C6004DB99E /* String_Dfine.m */,
 			);
 			path = Define;
+			sourceTree = "<group>";
+		};
+		25FA935328ACD16400F2E484 /* PMDTest */ = {
+			isa = PBXGroup;
+			children = (
+				25FA935428ACD18400F2E484 /* BYCyclePMD */,
+				25E18E8128AB27D1002AB51A /* CyclePMD */,
+				25E18E7D28AA406F002AB51A /* PMD */,
+			);
+			path = PMDTest;
+			sourceTree = "<group>";
+		};
+		25FA935428ACD18400F2E484 /* BYCyclePMD */ = {
+			isa = PBXGroup;
+			children = (
+				25FA935528ACD1A900F2E484 /* WQBYCyclePMDViewController.h */,
+				25FA935628ACD1A900F2E484 /* WQBYCyclePMDViewController.m */,
+			);
+			path = BYCyclePMD;
 			sourceTree = "<group>";
 		};
 		45FE9DAAD6FED2BF9481C561 /* Pods */ = {
@@ -365,6 +408,10 @@
 				7AB19B46E53667510816D605 /* Pods-OBJC_test-OBJC_testUITests.release.xcconfig */,
 				7C1294EFF3A561637C2A7DA9 /* Pods-OBJC_testTests.debug.xcconfig */,
 				FF801EB06F63B9C7FFC25C26 /* Pods-OBJC_testTests.release.xcconfig */,
+				D03D9D2F28E3BA4BF4E3CBB4 /* Pods-死神永不下班.debug.xcconfig */,
+				37D5E39D2766C8B4072AEF39 /* Pods-死神永不下班.release.xcconfig */,
+				C25F65109014AA97D72741D1 /* Pods-死神永不下班-OBJC_testUITests.debug.xcconfig */,
+				94B9742A4505F03F990F574C /* Pods-死神永不下班-OBJC_testUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -372,9 +419,9 @@
 		941290B9E01A9471231413CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4787541F7B188C8C8AA79325 /* Pods_OBJC_test.framework */,
-				C1FA1E887ED5831CFD426687 /* Pods_OBJC_test_OBJC_testUITests.framework */,
 				ECACE1CBBAC4D80C01436A4E /* Pods_OBJC_testTests.framework */,
+				1DF34BA72DB1D3A5E4117B91 /* Pods_OBJC_test.framework */,
+				DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -620,13 +667,16 @@
 			files = (
 				257E1DD727E47579002670DF /* DanteWebVC.m in Sources */,
 				256B47C326AFABFB007E13C8 /* ViewController.m in Sources */,
+				25E18E8428AB2822002AB51A /* WQCyclePMDViewController.m in Sources */,
 				254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */,
 				256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */,
 				256B47CE26AFABFE007E13C8 /* main.m in Sources */,
+				25B312CE28ADD19A000A3990 /* WQView.m in Sources */,
 				254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */,
 				25F857322744F0C6004DB99E /* String_Dfine.m in Sources */,
 				251D3CF127A2447500FC1153 /* RandomView.swift in Sources */,
 				25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */,
+				25FA935728ACD1A900F2E484 /* WQBYCyclePMDViewController.m in Sources */,
 				25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */,
 				25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */,
 				25317A5828261DFA006678F7 /* ManagerNet.m in Sources */,
@@ -821,6 +871,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7G7Z7TGSP2;
 				INFOPLIST_FILE = OBJC_test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -845,6 +896,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7G7Z7TGSP2;
 				INFOPLIST_FILE = OBJC_test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

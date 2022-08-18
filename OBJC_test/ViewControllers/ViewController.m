@@ -10,106 +10,93 @@
 #import "SaveInfoVC.h"
 
 #import "ViewController.h"
+#import "WQBYCyclePMDViewController.h"
+#import "WQCyclePMDViewController.h"
 #import "WQPMDViewController.h"
-
 @interface ViewController ()
 
 @end
 
 @implementation ViewController{
     BaseHScrollview *h;
-    SDCycleScrollView *cycleScrollView;
     UILabel *lab;
     NSRange targetRange;
     NSRange puts;
 }
--(void)viewWillAppear:(BOOL)animated{
-    [cycleScrollView adjustWhenControllerViewWillAppera];
+- (void)viewWillAppear:(BOOL)animated {
+    [self.cycleScrollView adjustWhenControllerViewWillAppera];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //    self.hbd_barHidden=YES;
     
     self.hbd_barTintColor = Color(@"white,1");
-    NSString *str = [@"你好" jk_encryptedWithAESUsingKey:@"zhyq_20001234567" andIV:@"0123456789abcdef".jk_base64DecodedData];
-    Log(str);
-    Log([str jk_decryptedWithAESUsingKey:@"zhyq_20001234567" andIV:@"0123456789abcdef".jk_base64DecodedData]);
-    UIView *one = ({
-        UIView *obj = View.addTo(self.view).bgColor(@"random");
-        obj.onClick(^(void) {
-            SaveInfoVC *info = [[SaveInfoVC alloc] init];
-            [self.navigationController pushViewController:info animated:YES];
-        });
-        obj;
-    });
-    [one mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.offset(0);
-        make.left.right.offset(0);
-        make.height.mas_equalTo(40);
+    self.hbd_barShadowHidden = YES;
+    
+    self.vScroll.addTo(self.view);
+    self.cycleScrollView.addTo(self.vScroll.bgView);
+    self.itemsBgView.addTo(self.vScroll.bgView);
+    
+    [self.vScroll mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
     
-    UIView *two = ({
-        UIView *obj = View.addTo(self.view).bgColor(@"random");
-        obj.onClick(^(void) {
-            //            [self testNetLogManager];
-            //            [self testSwiftView];
-            [self openScan];
-        });
-        [obj mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(one.mas_bottom);
-            make.left.right.offset(0);
-            make.height.mas_equalTo(40);
-        }];
-        obj;
-    });
-    UIView *three = ({
-        UIView *obj = View.addTo(self.view).bgColor(@"random");
-        obj.onClick(^(void) {
-            RandomColorVC *info = [[RandomColorVC alloc] init];
-            [self.navigationController pushViewController:info animated:YES];
-        });
-        [obj mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(two.mas_bottom);
-            make.left.right.offset(0);
-            make.height.mas_equalTo(40);
-        }];
-        obj;
-    });
-    cycleScrollView = ({
-        SDCycleScrollView *obj = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:Img(@"red")];
-        obj.autoScrollTimeInterval=3;
-        obj.infiniteLoop = YES;
-        obj.autoScroll = YES;
-        obj.clickItemOperationBlock = ^(NSInteger currentIndex) {
-            if (currentIndex==ViewTypePMD) {
-                [self.navigationController pushViewController:({
-                    WQPMDViewController *obj=[[WQPMDViewController alloc] init];
-                    obj.hidesBottomBarWhenPushed=YES;
-                    obj;
-                })animated:YES];
-            }
-            Log(currentIndex);
-            
-        };
-        [obj setBannerImageViewContentMode:(UIViewContentModeScaleAspectFill)];
-        obj.imageURLStringsGroup = @[
-            @"https://images.unsplash.com/photo-1660316795448-21fdd1c466af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAwNw&ixlib=rb-1.2.1&q=80&w=1080",
-            @"https://images.unsplash.com/photo-1659862925130-816e4f8535ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAzMw&ixlib=rb-1.2.1&q=80&w=1080",
-        ];
-        obj;
-    });
-    cycleScrollView.addTo(self.view);
-    [cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
-        make.top.equalTo(three.mas_bottom).offset(10);
+        make.top.offset(0);
         make.height.mas_equalTo(200);
     }];
     
+    [self.itemsBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.cycleScrollView.mas_bottom).offset(10);
+        make.left.right.offset(0);
+        make.bottom.offset(0);
+    }];
+    NSMutableArray *views = [NSMutableArray new];
     
-    //    self.view.onClick(^(void){
-    ////        [self showAlert];//测试弹框
-    //        [self test_group];
-    //    });
+    WQView *wqView1 = ({
+        WQView *obj = [[WQView alloc] init];
+        obj.textLable.str(@"保存数据");
+        obj.addTo(self.itemsBgView);
+        [views addObject:obj];
+        obj.clickView = ^{
+            SaveInfoVC *info = [[SaveInfoVC alloc] init];
+            info.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:info animated:YES];
+        };
+        obj;
+    });
+    WQView *wqView2 = ({
+        WQView *obj = [[WQView alloc] init];
+        obj.textLable.str(@"扫码");
+        obj.addTo(self.itemsBgView);
+        [views addObject:obj];
+        obj.clickView = ^{
+            //[self testNetLogManager];
+            //[self testSwiftView];
+            [self openScan];
+        };
+        obj;
+    });
+    WQView *wqView3 = ({
+        WQView *obj = [[WQView alloc] init];
+        obj.textLable.str(@"随机颜色");
+        obj.addTo(self.itemsBgView);
+        [views addObject:obj];
+        obj.clickView = ^{
+            RandomColorVC *info = [[RandomColorVC alloc] init];
+            info.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:info animated:YES];
+        };
+        obj;
+    });
+    
+    [views mas_distributeViewsAlongAxis:(MASAxisTypeVertical) withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    [views mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.height.mas_equalTo(44);
+    }];
 }
 
 - (void)openScan {/**<  打开扫码页面 */
@@ -295,6 +282,176 @@
                                                                      error:nil];
     
     return attrStr;
+}
+
+#pragma mark -
+#pragma mark delegate
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {/**<  点击轮播图 */
+    if (index == ViewTypePMD) {
+        [self.navigationController pushViewController:({
+            WQPMDViewController *obj = [[WQPMDViewController alloc] init];
+            obj.hidesBottomBarWhenPushed = YES;
+            obj;
+        })
+                                             animated:YES];
+    }
+    
+    if (index == ViewTypeCyclePMD) {
+        [self.navigationController pushViewController:({
+            WQCyclePMDViewController *obj = [[WQCyclePMDViewController alloc] init];
+            obj.hidesBottomBarWhenPushed = YES;
+            obj;
+        })
+                                             animated:YES];
+    }
+    
+    if (index == ViewTypeCycleBYPMD) {
+        [self.navigationController pushViewController:({
+            WQBYCyclePMDViewController *obj = [[WQBYCyclePMDViewController alloc] init];
+            obj.hidesBottomBarWhenPushed = YES;
+            obj;
+        })
+                                             animated:YES];
+    }
+    
+    Log(index);
+}
+
+/** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的class。 */
+- (Class)customCollectionViewCellClassForCycleScrollView:(SDCycleScrollView *)view {
+    return [WQCycleCell class];
+}
+
+/** 如果你自定义了cell样式，请在实现此代理方法为你的cell填充数据以及其它一系列设置 */
+- (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(SDCycleScrollView *)view {
+    WQCycleCell *targetCell = (WQCycleCell *)cell;
+    
+    [targetCell.image sd_setImageWithURL:Url([self cycleDatas][index]) placeholderImage:nil];
+    targetCell.textLabel.str(self.cycleTitleDatas[index]);
+}
+
+#pragma mark -
+#pragma mark 懒加载
+- (id)vScroll {
+    if (!_vScroll) {
+        _vScroll = ({
+            BaseVScrollview *obj = [[BaseVScrollview alloc] init];
+            obj.infoSv.alwaysBounceVertical = YES;
+            obj.addTo(self.view);
+            obj;
+        });
+    }
+    
+    return _vScroll;
+}
+
+- (id)itemsBgView {
+    if (!_itemsBgView) {
+        _itemsBgView = ({
+            UIView *obj = [[UIView alloc] init];
+            
+            obj;
+        });
+    }
+    
+    return _itemsBgView;
+}
+
+- (id)cycleScrollView {
+    if (!_cycleScrollView) {
+        _cycleScrollView = ({
+            SDCycleScrollView *obj = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:Img(@"red")];
+            obj.autoScrollTimeInterval = 3;
+            obj.infiniteLoop = YES;
+            obj.autoScroll = YES;
+            obj.showPageControl = NO;
+            [obj setBannerImageViewContentMode:(UIViewContentModeScaleAspectFill)];
+            obj.imageURLStringsGroup = self.cycleDatas;
+            obj;
+        });
+    }
+    
+    return _cycleScrollView;
+}
+
+- (id)cycleDatas {
+    if (!_cycleDatas) {
+        _cycleDatas = ({
+            NSMutableArray *obj = [[NSMutableArray alloc] initWithArray:@[
+                @"https://images.unsplash.com/photo-1660316795448-21fdd1c466af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAwNw&ixlib=rb-1.2.1&q=80&w=1080",
+                @"https://images.unsplash.com/photo-1659862925130-816e4f8535ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAzMw&ixlib=rb-1.2.1&q=80&w=1080",
+                @"https://images.unsplash.com/photo-1660404871825-6172f096ebfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDcyMTgyNg&ixlib=rb-1.2.1&q=80&w=1080",
+            ]];
+            obj;
+        });
+    }
+    
+    return _cycleDatas;
+}
+
+- (id)cycleTitleDatas {
+    if (!_cycleTitleDatas) {
+        _cycleTitleDatas = ({
+            NSMutableArray *obj = [[NSMutableArray alloc] initWithArray:@[
+                @"弹幕",
+                @"自定义实现渐进轮播",
+                @"参考北移实现渐进轮播",
+            ]];
+            obj;
+        });
+    }
+    
+    return _cycleTitleDatas;
+}
+
+@end
+
+@implementation WQCycleCell
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self buildUI];
+    }
+    
+    return self;
+}
+
+- (void)buildUI {
+    self.image.addTo(self);
+    self.textLabel.addTo(self);
+    
+    [self.image mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.offset(0);
+        make.height.mas_equalTo(40);
+    }];
+}
+
+#pragma mark -
+#pragma mark 懒加载
+- (id)textLabel {
+    if (!_textLabel) {
+        _textLabel = ({
+            UILabel *obj = [[UILabel alloc] init];
+            obj.bgColor(@"black,0.3").color(@"white").centerAlignment.fnt(13);
+            obj;
+        });
+    }
+    
+    return _textLabel;
+}
+
+- (id)image {
+    if (!_image) {
+        _image = ({
+            UIImageView *obj = [[UIImageView alloc] init];
+            obj.aspectFill.bgColor(UIColor.clearColor);
+            obj;
+        });
+    }
+    
+    return _image;
 }
 
 @end

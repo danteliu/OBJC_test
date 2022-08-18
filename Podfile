@@ -16,6 +16,8 @@ target 'OBJC_test' do
   pod 'Aspects', '~> 1.4.1'#面向切面编程(AOP埋点)
   pod 'JKCategories', '~> 1.9.3'#jk 分类
   pod 'pop', '~> 1.0.12'#facebook 动画库
+  pod 'WMZBanner', '~> 1.2.0'#渐进轮播
+  pod 'SDWebImage', '~> 5.12.6'#图片缓存框架
   target 'OBJC_testTests' do
     inherit! :search_paths
     # Pods for testing

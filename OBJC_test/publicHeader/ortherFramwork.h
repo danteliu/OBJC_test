@@ -16,6 +16,7 @@
 #import <RBDateTime/RBDateTime.h>
 #import <JKCategories/JKCategories.h>
 #import <SDCycleScrollView/SDCycleScrollView.h>
+#import <SDWebImage/SDWebImage.h>
 
 #import "HBDNavigationBar.h"
 #import "HBDNavigationController.h"

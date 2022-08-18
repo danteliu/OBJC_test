@@ -313,6 +313,15 @@
         })
                                              animated:YES];
     }
+    if (index == ViewTypeGrid) {
+        [self.navigationController pushViewController:({
+            WQGridViewController *obj = [[WQGridViewController alloc] init];
+            obj.hidesBottomBarWhenPushed = YES;
+            obj;
+        })
+                                             animated:YES];
+    }
+    
     
     Log(index);
 }
@@ -381,6 +390,7 @@
                 @"https://images.unsplash.com/photo-1660316795448-21fdd1c466af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAwNw&ixlib=rb-1.2.1&q=80&w=1080",
                 @"https://images.unsplash.com/photo-1659862925130-816e4f8535ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAzMw&ixlib=rb-1.2.1&q=80&w=1080",
                 @"https://images.unsplash.com/photo-1660404871825-6172f096ebfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDcyMTgyNg&ixlib=rb-1.2.1&q=80&w=1080",
+                @"https://images.unsplash.com/photo-1658660854824-147bd34cd243?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDgwOTQzNQ&ixlib=rb-1.2.1&q=80&w=1080",
             ]];
             obj;
         });
@@ -396,6 +406,7 @@
                 @"弹幕",
                 @"自定义实现渐进轮播",
                 @"参考北移实现渐进轮播",
+                @"自定义格子视图",
             ]];
             obj;
         });

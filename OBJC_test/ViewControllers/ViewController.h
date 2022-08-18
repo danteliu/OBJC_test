@@ -8,10 +8,13 @@
 #import <UIKit/UIKit.h>
 #import "RandomColorVC.h"
 #import "WQView.h"
+#import "WQGridViewController.h"
+
 typedef NS_ENUM(NSInteger, ViewType) {
     ViewTypePMD,/**<  跑马灯 */
     ViewTypeCyclePMD,/**<  循环跑马灯 */
     ViewTypeCycleBYPMD,/**<  (北移)循环跑马灯 */
+    ViewTypeGrid,/**<  格子视图 */
 };
 @interface ViewController : UIViewController<SDCycleScrollViewDelegate>
 @property (nonatomic, strong) BaseVScrollview *vScroll;/**<  <#属性注释#> */

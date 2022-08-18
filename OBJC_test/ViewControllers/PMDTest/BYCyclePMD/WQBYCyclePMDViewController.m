@@ -95,7 +95,7 @@
 
 - (void)layoutSubviews {
     self.layout.itemSize = CGSizeMake([self getViewWidth], self.bounds.size.height);
-    [self.collectionView setContentOffset:CGPointMake([self getViewWidth], 0)];
+//    [self.collectionView setContentOffset:CGPointMake([self getViewWidth], 0)];
 }
 
 #pragma mark -

@@ -163,6 +163,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2505C23028AE0CCE00215530 /* CopyRandomColor */ = {
+			isa = PBXGroup;
+			children = (
+				25317A5328261C29006678F7 /* RandomColorVC.h */,
+				25317A5428261C2A006678F7 /* RandomColorVC.m */,
+			);
+			path = CopyRandomColor;
+			sourceTree = "<group>";
+		};
+		2505C23128AE0CEB00215530 /* CopyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				25F8572C2744ECDD004DB99E /* SaveInfoVC.h */,
+				25F8572D2744ECDD004DB99E /* SaveInfoVC.m */,
+			);
+			path = CopyInfo;
+			sourceTree = "<group>";
+		};
 		251D3CF227A246EB00FC1153 /* SwiftFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,14 +345,12 @@
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2505C23128AE0CEB00215530 /* CopyInfo */,
+				2505C23028AE0CCE00215530 /* CopyRandomColor */,
 				25FA935328ACD16400F2E484 /* PMDTest */,
 				253A87C528A505B80041CB0A /* Scan */,
 				256B47C126AFABFB007E13C8 /* ViewController.h */,
 				256B47C226AFABFB007E13C8 /* ViewController.m */,
-				25F8572C2744ECDD004DB99E /* SaveInfoVC.h */,
-				25F8572D2744ECDD004DB99E /* SaveInfoVC.m */,
-				25317A5328261C29006678F7 /* RandomColorVC.h */,
-				25317A5428261C2A006678F7 /* RandomColorVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

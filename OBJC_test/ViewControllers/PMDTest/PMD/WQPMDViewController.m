@@ -60,7 +60,7 @@
     if (!_itemViews) {
         _itemViews=({
             NSMutableArray *obj=[[NSMutableArray alloc] init];
-            for (NSInteger i=0; i<3; i++) {
+            for (NSInteger i=0; i<2; i++) {
                 UIView *view=View.addTo(self.hScrollView.bgView).bgColor(@"random");
                 [obj addObject:view];
             }
@@ -85,7 +85,6 @@
             CABasicAnimation *obj=[CABasicAnimation animationWithKeyPath:@"position.x"];
             obj.delegate=self;
             obj.repeatCount=CGFLOAT_MAX;
-            obj.repeatCount=1;
             obj.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
             //动画维持结束后的状态,如果不加这两句代码，动画运行结束后会恢复最初的动画状态
             obj.removedOnCompletion = NO;

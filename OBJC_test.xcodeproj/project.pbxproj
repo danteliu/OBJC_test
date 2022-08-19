@@ -125,14 +125,10 @@
 		25F857342744F389004DB99E /* SaveInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveInfoCell.m; sourceTree = "<group>"; };
 		25FA935528ACD1A900F2E484 /* WQBYCyclePMDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQBYCyclePMDViewController.h; sourceTree = "<group>"; };
 		25FA935628ACD1A900F2E484 /* WQBYCyclePMDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQBYCyclePMDViewController.m; sourceTree = "<group>"; };
-		37D5E39D2766C8B4072AEF39 /* Pods-死神永不下班.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-死神永不下班.release.xcconfig"; path = "Target Support Files/Pods-死神永不下班/Pods-死神永不下班.release.xcconfig"; sourceTree = "<group>"; };
 		4DEF03574F21C33116E76C47 /* Pods-OBJC_test-OBJC_testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test-OBJC_testUITests.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_test-OBJC_testUITests/Pods-OBJC_test-OBJC_testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7AB19B46E53667510816D605 /* Pods-OBJC_test-OBJC_testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test-OBJC_testUITests/Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C1294EFF3A561637C2A7DA9 /* Pods-OBJC_testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_testTests.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_testTests/Pods-OBJC_testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC152F1EA5AE43DB0AC2ECE /* Pods-OBJC_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test/Pods-OBJC_test.release.xcconfig"; sourceTree = "<group>"; };
-		94B9742A4505F03F990F574C /* Pods-死神永不下班-OBJC_testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-死神永不下班-OBJC_testUITests.release.xcconfig"; path = "Target Support Files/Pods-死神永不下班-OBJC_testUITests/Pods-死神永不下班-OBJC_testUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C25F65109014AA97D72741D1 /* Pods-死神永不下班-OBJC_testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-死神永不下班-OBJC_testUITests.debug.xcconfig"; path = "Target Support Files/Pods-死神永不下班-OBJC_testUITests/Pods-死神永不下班-OBJC_testUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D03D9D2F28E3BA4BF4E3CBB4 /* Pods-死神永不下班.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-死神永不下班.debug.xcconfig"; path = "Target Support Files/Pods-死神永不下班/Pods-死神永不下班.debug.xcconfig"; sourceTree = "<group>"; };
 		DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test_OBJC_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECACE1CBBAC4D80C01436A4E /* Pods_OBJC_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF801EB06F63B9C7FFC25C26 /* Pods-OBJC_testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_testTests.release.xcconfig"; path = "Target Support Files/Pods-OBJC_testTests/Pods-OBJC_testTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -437,10 +433,6 @@
 				7AB19B46E53667510816D605 /* Pods-OBJC_test-OBJC_testUITests.release.xcconfig */,
 				7C1294EFF3A561637C2A7DA9 /* Pods-OBJC_testTests.debug.xcconfig */,
 				FF801EB06F63B9C7FFC25C26 /* Pods-OBJC_testTests.release.xcconfig */,
-				D03D9D2F28E3BA4BF4E3CBB4 /* Pods-死神永不下班.debug.xcconfig */,
-				37D5E39D2766C8B4072AEF39 /* Pods-死神永不下班.release.xcconfig */,
-				C25F65109014AA97D72741D1 /* Pods-死神永不下班-OBJC_testUITests.debug.xcconfig */,
-				94B9742A4505F03F990F574C /* Pods-死神永不下班-OBJC_testUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";

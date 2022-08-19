@@ -83,6 +83,14 @@
     
     self.layout.itemSize = CGSizeMake(w, h);
 }
+-(void)registClassName:(UICollectionView *)view{/**<  注册类名 */
+    NSArray <Class>*classArr=@[
+        [WQGridViewCell class],
+    ];
+    [classArr enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [view registerClass:obj forCellWithReuseIdentifier:NSStringFromClass(obj)];
+    }];
+}
 
 #pragma mark -
 #pragma mark delegate
@@ -138,7 +146,7 @@
             obj.delegate = self;
             obj.dataSource = self;
             obj.backgroundColor = [UIColor clearColor];
-            [obj registerClass:[WQGridViewCell class] forCellWithReuseIdentifier:@"WQGridViewCell"];
+            [self registClassName:obj];
             obj.showsHorizontalScrollIndicator = false;
             obj;
         });

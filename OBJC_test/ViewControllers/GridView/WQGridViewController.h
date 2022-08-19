@@ -30,10 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void (^ onClickItem)(id model);/**<  点击 Block */
 
+
+//继承需要实现 collectionView:cellForItemAtIndexPath: 和 registClassName: 方法
+- (void)registClassName:(UICollectionView *)view;/**<  继承需要实现:   注册类名 */
 @end
 
 @interface WQGridViewCell : UICollectionViewCell
 @property (nonatomic, strong) UILabel *textLabel; /**<  <#属性注释#> */
-
 @end
 NS_ASSUME_NONNULL_END

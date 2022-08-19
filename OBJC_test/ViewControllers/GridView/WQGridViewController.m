@@ -17,6 +17,7 @@
     [super viewDidLoad];
     self.view.bgColor(@"white");
     self.hbd_barTintColor = Color(@"white,1");
+    self.hbd_barShadowHidden = YES;
     self.title = @"格子视图";
     
     

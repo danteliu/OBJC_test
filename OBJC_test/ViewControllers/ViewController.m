@@ -11,8 +11,10 @@
 
 #import "ViewController.h"
 #import "WQBYCyclePMDViewController.h"
+#import "WQCradientPmdViewController.h"
 #import "WQCyclePMDViewController.h"
 #import "WQPMDViewController.h"
+
 @interface ViewController ()
 
 @end
@@ -287,43 +289,62 @@
 #pragma mark -
 #pragma mark delegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {/**<  点击轮播图 */
-    if (index == ViewTypePMD) {
-        [self.navigationController pushViewController:({
-            WQPMDViewController *obj = [[WQPMDViewController alloc] init];
-            obj.hidesBottomBarWhenPushed = YES;
-            obj;
-        })
-                                             animated:YES];
-    }
+    WQCycleModel *model = self.cycleDatas[index];
     
-    if (index == ViewTypeCyclePMD) {
-        [self.navigationController pushViewController:({
-            WQCyclePMDViewController *obj = [[WQCyclePMDViewController alloc] init];
-            obj.hidesBottomBarWhenPushed = YES;
-            obj;
-        })
-                                             animated:YES];
-    }
-    
-    if (index == ViewTypeCycleBYPMD) {
-        [self.navigationController pushViewController:({
-            WQBYCyclePMDViewController *obj = [[WQBYCyclePMDViewController alloc] init];
-            obj.hidesBottomBarWhenPushed = YES;
-            obj;
-        })
-                                             animated:YES];
-    }
-    if (index == ViewTypeGrid) {
-        [self.navigationController pushViewController:({
-            WQGridViewController *obj = [[WQGridViewController alloc] init];
-            obj.hidesBottomBarWhenPushed = YES;
-            obj;
-        })
-                                             animated:YES];
+    switch (model.type) {
+        case ViewTypeCradientPmd:
+            [self.navigationController pushViewController:({
+                WQCradientPmdViewController *obj = [[WQCradientPmdViewController alloc] init];
+                obj.hidesBottomBarWhenPushed = YES;
+                obj;
+            })
+                                                 animated:YES];
+            break;
+            
+        case ViewTypePMD:
+            [self.navigationController pushViewController:({
+                WQPMDViewController *obj = [[WQPMDViewController alloc] init];
+                obj.hidesBottomBarWhenPushed = YES;
+                obj;
+            })
+                                                 animated:YES];
+            break;
+            
+        case ViewTypeCyclePMD:
+            [self.navigationController pushViewController:({
+                WQCyclePMDViewController *obj = [[WQCyclePMDViewController alloc] init];
+                obj.hidesBottomBarWhenPushed = YES;
+                obj;
+            })
+                                                 animated:YES];
+            break;
+            
+        case ViewTypeCycleBYPMD:
+            [self.navigationController pushViewController:({
+                WQBYCyclePMDViewController *obj = [[WQBYCyclePMDViewController alloc] init];
+                obj.hidesBottomBarWhenPushed = YES;
+                obj;
+            })
+                                                 animated:YES];
+            break;
+            
+        case ViewTypeGrid:
+            [self.navigationController pushViewController:({
+                WQGridViewController *obj = [[WQGridViewController alloc] init];
+                obj.hidesBottomBarWhenPushed = YES;
+                obj;
+            })
+                                                 animated:YES];
+            break;
+            
+            
+        default:
+            break;
     }
     
     
     Log(index);
+    Log(model.type);
 }
 
 /** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的class。 */
@@ -334,9 +355,10 @@
 /** 如果你自定义了cell样式，请在实现此代理方法为你的cell填充数据以及其它一系列设置 */
 - (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(SDCycleScrollView *)view {
     WQCycleCell *targetCell = (WQCycleCell *)cell;
+    WQCycleModel *model = self.cycleDatas[index];
     
-    [targetCell.image sd_setImageWithURL:Url([self cycleDatas][index]) placeholderImage:nil];
-    targetCell.textLabel.str(self.cycleTitleDatas[index]);
+    [targetCell.image sd_setImageWithURL:Url(model.imgUrl) placeholderImage:nil];
+    targetCell.textLabel.str(model.name);
 }
 
 #pragma mark -
@@ -369,13 +391,19 @@
 - (id)cycleScrollView {
     if (!_cycleScrollView) {
         _cycleScrollView = ({
-            SDCycleScrollView *obj = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:Img(@"red")];
-            obj.autoScrollTimeInterval = 3;
+            SDCycleScrollView *obj = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:Img(@"red").resize(Screen.width, Screen.height)];
+            obj.autoScrollTimeInterval = 2;
             obj.infiniteLoop = YES;
             obj.autoScroll = YES;
             obj.showPageControl = NO;
             [obj setBannerImageViewContentMode:(UIViewContentModeScaleAspectFill)];
-            obj.imageURLStringsGroup = self.cycleDatas;
+            NSMutableArray *arr = [[NSMutableArray alloc] init];
+            
+            for (NSInteger i = 0; i < self.cycleDatas.count; i++) {
+                [arr addObject:@"1"];
+            }
+            
+            obj.imageURLStringsGroup = arr;
             obj;
         });
     }
@@ -386,33 +414,52 @@
 - (id)cycleDatas {
     if (!_cycleDatas) {
         _cycleDatas = ({
-            NSMutableArray *obj = [[NSMutableArray alloc] initWithArray:@[
-                @"https://images.unsplash.com/photo-1660316795448-21fdd1c466af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAwNw&ixlib=rb-1.2.1&q=80&w=1080",
-                @"https://images.unsplash.com/photo-1659862925130-816e4f8535ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAzMw&ixlib=rb-1.2.1&q=80&w=1080",
-                @"https://images.unsplash.com/photo-1660404871825-6172f096ebfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDcyMTgyNg&ixlib=rb-1.2.1&q=80&w=1080",
-                @"https://images.unsplash.com/photo-1658660854824-147bd34cd243?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDgwOTQzNQ&ixlib=rb-1.2.1&q=80&w=1080",
-            ]];
+            NSMutableArray *obj = [[NSMutableArray alloc] init];
+            
+            [obj addObject:({
+                WQCycleModel *m = [[WQCycleModel alloc] init];
+                m.name = @"弹幕";
+                m.type = ViewTypePMD;
+                m.imgUrl = @"https://images.unsplash.com/photo-1660316795448-21fdd1c466af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAwNw&ixlib=rb-1.2.1&q=80&w=1080";
+                m;
+            })];
+            
+            [obj addObject:({
+                WQCycleModel *m = [[WQCycleModel alloc] init];
+                m.name = @"渐变轮播图";
+                m.type = ViewTypeCradientPmd;
+                m.imgUrl = @"https://images.unsplash.com/photo-1660111940516-f17cd23f12a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MTQ4MzAwMg&ixlib=rb-1.2.1&q=80&w=1080";
+                m;
+            })];
+            [obj addObject:({
+                WQCycleModel *m = [[WQCycleModel alloc] init];
+                m.name = @"自定义实现渐进轮播";
+                m.type = ViewTypeCyclePMD;
+                m.imgUrl = @"https://images.unsplash.com/photo-1659862925130-816e4f8535ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDUzMTAzMw&ixlib=rb-1.2.1&q=80&w=1080";
+                m;
+            })];
+            
+            [obj addObject:({
+                WQCycleModel *m = [[WQCycleModel alloc] init];
+                m.name = @"参考北移实现渐进轮播";
+                m.type = ViewTypeCycleBYPMD;
+                m.imgUrl = @"https://images.unsplash.com/photo-1660404871825-6172f096ebfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDcyMTgyNg&ixlib=rb-1.2.1&q=80&w=1080";
+                m;
+            })];
+            
+            [obj addObject:({
+                WQCycleModel *m = [[WQCycleModel alloc] init];
+                m.name = @"自定义格子视图";
+                m.type = ViewTypeGrid;
+                m.imgUrl = @"https://images.unsplash.com/photo-1658660854824-147bd34cd243?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MDgwOTQzNQ&ixlib=rb-1.2.1&q=80&w=1080";
+                m;
+            })];
+            
             obj;
         });
     }
     
     return _cycleDatas;
-}
-
-- (id)cycleTitleDatas {
-    if (!_cycleTitleDatas) {
-        _cycleTitleDatas = ({
-            NSMutableArray *obj = [[NSMutableArray alloc] initWithArray:@[
-                @"弹幕",
-                @"自定义实现渐进轮播",
-                @"参考北移实现渐进轮播",
-                @"自定义格子视图",
-            ]];
-            obj;
-        });
-    }
-    
-    return _cycleTitleDatas;
 }
 
 @end
@@ -464,5 +511,9 @@
     
     return _image;
 }
+
+@end
+
+@implementation WQCycleModel
 
 @end

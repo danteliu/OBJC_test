@@ -17,7 +17,7 @@
     [super viewDidLoad];
     self.view.bgColor(@"white");
     self.hbd_barTintColor = Color(@"white,1");
-    self.title=@"跑马灯";
+    self.title=@"弹幕跑马灯";
     self.hScrollView.addTo(self.view);
     [self.hScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(20);

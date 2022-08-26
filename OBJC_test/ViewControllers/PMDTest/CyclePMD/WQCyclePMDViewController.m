@@ -92,6 +92,7 @@
 }
 
 - (void)buildUI {
+    // 参考 https://github.com/mengxianliang/XLCycleCollectionView
     self.collectionView.addTo(self);
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);

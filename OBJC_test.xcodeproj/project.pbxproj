@@ -34,6 +34,9 @@
 		25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */; };
 		25B312CE28ADD19A000A3990 /* WQView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B312CD28ADD19A000A3990 /* WQView.m */; };
 		25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */; };
+		25DE67AE28B86E6300B1DF6F /* WQCradientPmdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DE67AD28B86E6300B1DF6F /* WQCradientPmdViewController.m */; };
+		25DE67B128B8747600B1DF6F /* WQCradientPmdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DE67B028B8747600B1DF6F /* WQCradientPmdView.m */; };
+		25DE67B428B874DF00B1DF6F /* WQBzyiGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DE67B328B874DF00B1DF6F /* WQBzyiGradientView.m */; };
 		25E18E8028AA40BD002AB51A /* WQPMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E18E7F28AA40BD002AB51A /* WQPMDViewController.m */; };
 		25E18E8428AB2822002AB51A /* WQCyclePMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E18E8328AB2822002AB51A /* WQCyclePMDViewController.m */; };
 		25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F8572D2744ECDD004DB99E /* SaveInfoVC.m */; };
@@ -115,6 +118,12 @@
 		25B312CD28ADD19A000A3990 /* WQView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQView.m; sourceTree = "<group>"; };
 		25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHScrollPlusView.m; sourceTree = "<group>"; };
 		25CA3EC326C3C1DE006117D7 /* HDHScrollPlusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHScrollPlusView.h; sourceTree = "<group>"; };
+		25DE67AC28B86E6300B1DF6F /* WQCradientPmdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCradientPmdViewController.h; sourceTree = "<group>"; };
+		25DE67AD28B86E6300B1DF6F /* WQCradientPmdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQCradientPmdViewController.m; sourceTree = "<group>"; };
+		25DE67AF28B8747600B1DF6F /* WQCradientPmdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCradientPmdView.h; sourceTree = "<group>"; };
+		25DE67B028B8747600B1DF6F /* WQCradientPmdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQCradientPmdView.m; sourceTree = "<group>"; };
+		25DE67B228B874DF00B1DF6F /* WQBzyiGradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQBzyiGradientView.h; sourceTree = "<group>"; };
+		25DE67B328B874DF00B1DF6F /* WQBzyiGradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQBzyiGradientView.m; sourceTree = "<group>"; };
 		25E18E7E28AA40BD002AB51A /* WQPMDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQPMDViewController.h; sourceTree = "<group>"; };
 		25E18E7F28AA40BD002AB51A /* WQPMDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQPMDViewController.m; sourceTree = "<group>"; };
 		25E18E8228AB2822002AB51A /* WQCyclePMDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCyclePMDViewController.h; sourceTree = "<group>"; };
@@ -353,6 +362,19 @@
 			path = ScrollView;
 			sourceTree = "<group>";
 		};
+		25DE67AB28B86E1B00B1DF6F /* GradientPMD */ = {
+			isa = PBXGroup;
+			children = (
+				25DE67AC28B86E6300B1DF6F /* WQCradientPmdViewController.h */,
+				25DE67AD28B86E6300B1DF6F /* WQCradientPmdViewController.m */,
+				25DE67AF28B8747600B1DF6F /* WQCradientPmdView.h */,
+				25DE67B028B8747600B1DF6F /* WQCradientPmdView.m */,
+				25DE67B228B874DF00B1DF6F /* WQBzyiGradientView.h */,
+				25DE67B328B874DF00B1DF6F /* WQBzyiGradientView.m */,
+			);
+			path = GradientPMD;
+			sourceTree = "<group>";
+		};
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +433,7 @@
 		25FA935328ACD16400F2E484 /* PMDTest */ = {
 			isa = PBXGroup;
 			children = (
+				25DE67AB28B86E1B00B1DF6F /* GradientPMD */,
 				25FA935428ACD18400F2E484 /* BYCyclePMD */,
 				25E18E8128AB27D1002AB51A /* CyclePMD */,
 				25E18E7D28AA406F002AB51A /* PMD */,
@@ -690,6 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25DE67AE28B86E6300B1DF6F /* WQCradientPmdViewController.m in Sources */,
 				257E1DD727E47579002670DF /* DanteWebVC.m in Sources */,
 				256B47C326AFABFB007E13C8 /* ViewController.m in Sources */,
 				25E18E8428AB2822002AB51A /* WQCyclePMDViewController.m in Sources */,
@@ -713,7 +737,9 @@
 				2558F66826E7098D00117C3A /* NSString+Pinyin.m in Sources */,
 				253A87C828A505E90041CB0A /* ScanCodeVC.m in Sources */,
 				259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */,
+				25DE67B128B8747600B1DF6F /* WQCradientPmdView.m in Sources */,
 				25F857352744F389004DB99E /* SaveInfoCell.m in Sources */,
+				25DE67B428B874DF00B1DF6F /* WQBzyiGradientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

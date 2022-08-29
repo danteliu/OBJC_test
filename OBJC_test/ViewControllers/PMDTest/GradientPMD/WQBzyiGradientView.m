@@ -149,10 +149,13 @@
 }
 
 - (void)changePageManager:(NSInteger)currentPage direction:(ScrollDirection)direction {/**<  设置前后页面 */
+    if (currentPage + 1 >= tags.count) {
+        return;
+    }
     self.pageManager.pageCurrent = currentPage;
     self.pageManager.pageBefore = currentPage - 1;
     self.pageManager.pageLast = currentPage + 1;
-    
+
     if (direction == ScrollDirectionRight) {
         self.pageManager.colorCurrent = Str(tags[currentPage - 1]);
         self.pageManager.colorBefore = Str(tags[currentPage - 2]);
@@ -295,11 +298,11 @@
 
 - (NSDictionary *)dd {
     return @{
-        @"1": @"red",
-        @"2": @"yellow",
-        @"3": @"blue",
-        @"4": @"green",
-        @"5": @"purple",
+        @"1": @"#002ea6",
+        @"2": @"#ffe78f",
+        @"3": @"#d7000f",
+        @"4": @"#ff770f",
+        @"5": @"#91b822",
     };
 }
 

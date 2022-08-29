@@ -79,6 +79,7 @@
 }
 
 - (void)changeGradientLayerColor:(UIColor *)hexColor {/**<  改变渐变图层颜色 */
+    //删除隐式动画
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
 
@@ -93,11 +94,11 @@
 
 - (NSDictionary *)dd {
     return @{
-        @"0": @"red",
-        @"1": @"yellow",
-        @"2": @"blue",
-        @"3": @"green",
-        @"4": @"purple",
+        @"0": @"#002ea6",
+        @"1": @"#ffe78f",
+        @"2": @"#d7000f",
+        @"3": @"#ff770f",
+        @"4": @"#91b822",
     };
 }
 

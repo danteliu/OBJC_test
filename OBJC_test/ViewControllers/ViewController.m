@@ -394,7 +394,7 @@
             SDCycleScrollView *obj = [SDCycleScrollView cycleScrollViewWithFrame:CGRectZero delegate:self placeholderImage:Img(@"red").resize(Screen.width, Screen.height)];
             obj.autoScrollTimeInterval = 2;
             obj.infiniteLoop = YES;
-            obj.autoScroll = YES;
+            obj.autoScroll = NO;
             obj.showPageControl = NO;
             [obj setBannerImageViewContentMode:(UIViewContentModeScaleAspectFill)];
             NSMutableArray *arr = [[NSMutableArray alloc] init];

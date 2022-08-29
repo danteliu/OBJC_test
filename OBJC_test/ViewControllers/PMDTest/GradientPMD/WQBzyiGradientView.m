@@ -9,6 +9,9 @@
 
 @interface WQBzyiGradientView ()
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, assign) NSInteger lastContentOffset;/**<  记录用于判断方向 */
+@property (nonatomic, assign) CGFloat recordWidth;/**<  记录用于判断方向 */
+@property (nonatomic, strong) PageManager *pageManager; /**<  <#属性注释#> */
 @end
 
 @implementation WQBzyiGradientView{
@@ -21,7 +24,7 @@
         centerCellX = 0;
         [self buildUI];
     }
-
+    
     return self;
 }
 
@@ -29,15 +32,17 @@
     [self stopTime];
     self.titles = datas;
     [tags removeAllObjects];
-
+    
     if (self.titles.count >= [self solutenNumbers]) {
         for (int i = 0; i < [self groupCount]; i++) {
             for (int j = 0; j < self.titles.count; j++) {
                 [tags addObject:[NSNumber numberWithInt:j]];
             }
         }
-
+        
         [self.collectionView reloadData];
+        [self changePageManager:[self groupCount] / 2 direction:ScrollDirectionLeft];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             // 定位到中间那组
             NSIndexPath *tempIndexPath = [NSIndexPath indexPathForItem:[self groupCount] / 2 * self.titles.count inSection:0];
@@ -49,7 +54,7 @@
         for (int j = 0; j < self.titles.count; j++) {
             [tags addObject:[NSNumber numberWithInt:j]];
         }
-
+        
         [self.collectionView reloadData];
     }
 }
@@ -63,18 +68,19 @@
 }
 
 - (void)layoutSubviews {
-    self.layout.itemSize = CGSizeMake([self getViewWidth], self.bounds.size.height);
-//    [self.collectionView setContentOffset:CGPointMake([self getViewWidth], 0)];
+    if (self.bounds.size.width == 0) {
+        return;
+    }
+    
+    self.recordWidth = self.bounds.size.width;
+    
+    self.layout.itemSize = CGSizeMake(self.bounds.size.width, self.bounds.size.height);
 }
 
 #pragma mark -
 #pragma mark cons 重写继承这些方法
-- (CGFloat)getViewWidth {/**<  宽度 */
-    return Screen.width;
-}
-
 - (NSInteger)groupCount {/**<  返回重复的组数 */
-    return 20;
+    return 50;
 }
 
 - (NSInteger)solutenNumbers {/**<  隔离数 */
@@ -92,7 +98,7 @@
     WQBzyiGradientViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     NSNumber *index = tags[indexPath.item];
     NSInteger selectIndex = [index intValue];
-
+    
     cell.title = self.titles[selectIndex];
     return cell;
 }
@@ -101,13 +107,61 @@
     Log(indexPath.item);
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {/**<  开始拖动 关闭定时器 */
+    [self stopTime];
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {/**<  手动拖拽结束 */
     [self cycleScroll];
-    self.timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:2];//延时2秒开始执行定时器
+    
+    [self startTime];
+    //    self.timer.fireDate = [NSDate dateWithTimeIntervalSinceNow:2];//延时2秒开始执行定时器
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {/**<  自动轮播结束 */
     [self cycleScroll];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat scrollX = scrollView.contentOffset.x;
+    ScrollDirection direction = ScrollDirectionRight;
+    
+    if (self.lastContentOffset > scrollX) {
+        direction = ScrollDirectionRight;
+    } else if (self.lastContentOffset < scrollX) {
+        direction = ScrollDirectionLeft;
+    }
+    
+    [self changePageManager:ceilf(scrollX / self.recordWidth) direction:direction];//向上取整
+    
+    
+    NSInteger radio = ((NSInteger)scrollX) % ((NSInteger)self.recordWidth);
+    CGFloat percent = radio / self.recordWidth;
+    percent = percent == 0 ? 1 : percent;
+    self.pageManager.scale = percent;
+    self.pageManager.direction = direction;
+    
+    if (self.scaleBlock && percent != 1) {
+        self.scaleBlock(self.pageManager);
+    }
+    
+    self.lastContentOffset = scrollX;
+}
+
+- (void)changePageManager:(NSInteger)currentPage direction:(ScrollDirection)direction {/**<  设置前后页面 */
+    self.pageManager.pageCurrent = currentPage;
+    self.pageManager.pageBefore = currentPage - 1;
+    self.pageManager.pageLast = currentPage + 1;
+    
+    if (direction == ScrollDirectionRight) {
+        self.pageManager.colorCurrent = Str(tags[currentPage - 1]);
+        self.pageManager.colorBefore = Str(tags[currentPage - 2]);
+        self.pageManager.colorLast = Str(tags[currentPage]);
+    } else if (direction == ScrollDirectionLeft) {
+        self.pageManager.colorCurrent = Str(tags[currentPage ]);
+        self.pageManager.colorBefore = Str(tags[currentPage - 1]);
+        self.pageManager.colorLast = Str(tags[currentPage + 1]);
+    }
 }
 
 - (void)cycleScroll {/**<  滚动计算位置 */
@@ -115,16 +169,16 @@
     CGPoint pointInView = [self convertPoint:CGPointMake(0, 0) toView:self.collectionView];
     NSIndexPath *indexPathNow = [self.collectionView indexPathForItemAtPoint:pointInView];
     NSInteger centerIndex = ([self groupCount] - 2) * self.titles.count;
-
-    NSLog(@"dddd indexPathNow.item:%ld", (long)indexPathNow.item);
-
+    
+    //    [self changePageManager:indexPathNow.item];
+    
     if (indexPathNow.item >= centerIndex + self.titles.count) {
         offsetX = centerCellX;
         [self.collectionView setContentOffset:CGPointMake(offsetX, 0) animated:NO];
     } else {
-//        CGFloat offset = 0.25;
-//        CGFloat offsetX = self.collectionView.contentOffset.x + offset;
-//        [self.collectionView setContentOffset:CGPointMake(offsetX, 0) animated:NO];
+        //        CGFloat offset = 0.25;
+        //        CGFloat offsetX = self.collectionView.contentOffset.x + offset;
+        //        [self.collectionView setContentOffset:CGPointMake(offsetX, 0) animated:NO];
     }
 }
 
@@ -133,7 +187,7 @@
 
 - (void)startTime {/**<  开启定时器 */
     [self stopTime];
-
+    
     self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(showNext) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
@@ -146,12 +200,8 @@
 }
 
 - (void)showNext {/**<  自动显示下一个 */
-    if (self.collectionView.isDragging) {/**<  手指拖拽是禁止自动轮播 */
-        return;
-    }
-
-//    [self cycleScroll];
     CGFloat targetX = self.collectionView.contentOffset.x + self.collectionView.bounds.size.width;
+    
     [self.collectionView setContentOffset:CGPointMake(targetX, 0) animated:true];
 }
 
@@ -161,7 +211,7 @@
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {/**<  关闭定时器 */
     [super willMoveToSuperview:newSuperview];
-
+    
     if (!newSuperview && self.timer) {
         [self stopTime];
     }
@@ -178,7 +228,7 @@
             obj;
         });
     }
-
+    
     return _layout;
 }
 
@@ -195,8 +245,20 @@
             obj;
         });
     }
-
+    
     return _collectionView;
+}
+
+- (id)pageManager {
+    if (!_pageManager) {
+        _pageManager = ({
+            PageManager *obj = [[PageManager alloc] init];
+            
+            obj;
+        });
+    }
+    
+    return _pageManager;
 }
 
 @end
@@ -214,7 +276,7 @@
     if (self = [super initWithFrame:frame]) {
         [self buildUI];
     }
-
+    
     return self;
 }
 
@@ -228,6 +290,7 @@
 - (void)setTitle:(NSString *)title {
     self.textLabel.text = title;
     self.bgColor([self dd][title]);
+    //    self.bgColor(@"random");
 }
 
 - (NSDictionary *)dd {
@@ -238,6 +301,25 @@
         @"4": @"green",
         @"5": @"purple",
     };
+}
+
+@end
+@implementation PageManager
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.pageBefore = 0;
+        self.pageCurrent = 0;
+        self.pageLast = 0;
+        
+        self.colorBefore = @"";
+        self.colorCurrent = @"";
+        self.colorLast = @"";
+    }
+    
+    return self;
 }
 
 @end

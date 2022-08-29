@@ -8,6 +8,8 @@
 #import "WQCradientPmdViewController.h"
 #import "WQCradientPmdView.h"
 #import "WQBzyiGradientView.h"
+#import "WQBzyiGPMDView.h"
+
 @interface WQCradientPmdViewController ()
 
 @end
@@ -36,24 +38,17 @@
 //        make.height.mas_equalTo(200);
 //    }];
     
-    WQBzyiGradientView *cc = ({
-        WQBzyiGradientView *obj = [[WQBzyiGradientView alloc] init];
+    WQBzyiGPMDView *cc = ({
+        WQBzyiGPMDView *obj = [[WQBzyiGPMDView alloc] init];
         obj.addTo(self.view);
         obj;
     });
     
     [cc mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(20);
+        make.top.equalTo(self.view.mas_top).offset(0);
         make.left.right.offset(0); //紧贴上部
-        make.height.mas_equalTo(200);
+        make.height.mas_equalTo(260);
     }];
-    [cc loadData:[NSMutableArray arrayWithArray:@[
-        @"1",
-        @"2",
-        @"3",
-        @"4",
-        @"5",
-    ]]];
     
 }
 

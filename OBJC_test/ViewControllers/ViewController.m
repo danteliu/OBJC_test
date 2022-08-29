@@ -16,7 +16,7 @@
 #import "WQPMDViewController.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) NSMutableArray <WQView *> *viewsItem;/**<  cell的数组 */
 @end
 
 @implementation ViewController{
@@ -55,47 +55,13 @@
         make.left.right.offset(0);
         make.bottom.offset(0);
     }];
-    NSMutableArray *views = [NSMutableArray new];
     
-    WQView *wqView1 = ({
-        WQView *obj = [[WQView alloc] init];
-        obj.textLable.str(@"保存数据");
+    [self.viewsItem enumerateObjectsUsingBlock:^(WQView *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
         obj.addTo(self.itemsBgView);
-        [views addObject:obj];
-        obj.clickView = ^{
-            SaveInfoVC *info = [[SaveInfoVC alloc] init];
-            info.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:info animated:YES];
-        };
-        obj;
-    });
-    WQView *wqView2 = ({
-        WQView *obj = [[WQView alloc] init];
-        obj.textLable.str(@"扫码");
-        obj.addTo(self.itemsBgView);
-        [views addObject:obj];
-        obj.clickView = ^{
-            //[self testNetLogManager];
-            //[self testSwiftView];
-            [self openScan];
-        };
-        obj;
-    });
-    WQView *wqView3 = ({
-        WQView *obj = [[WQView alloc] init];
-        obj.textLable.str(@"随机颜色");
-        obj.addTo(self.itemsBgView);
-        [views addObject:obj];
-        obj.clickView = ^{
-            RandomColorVC *info = [[RandomColorVC alloc] init];
-            info.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:info animated:YES];
-        };
-        obj;
-    });
+    }];
     
-    [views mas_distributeViewsAlongAxis:(MASAxisTypeVertical) withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
-    [views mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.viewsItem mas_distributeViewsAlongAxis:(MASAxisTypeVertical) withFixedSpacing:0.4 leadSpacing:0 tailSpacing:0];
+    [self.viewsItem mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
         make.height.mas_equalTo(44);
     }];
@@ -380,7 +346,7 @@
     if (!_itemsBgView) {
         _itemsBgView = ({
             UIView *obj = [[UIView alloc] init];
-            
+            obj.bgColor(@"black");
             obj;
         });
     }
@@ -460,6 +426,64 @@
     }
     
     return _cycleDatas;
+}
+
+- (id)viewsItem {
+    if (!_viewsItem) {
+        _viewsItem = ({
+            NSMutableArray *obj = [[NSMutableArray alloc] init];
+            
+            [obj addObject:({
+                WQView *view = [[WQView alloc] init];
+                
+                view.addModel(@{
+                    @"name": @"保存数据",
+                    @"imgBgUrl": @"https://images.unsplash.com/photo-1661155528331-d03a2a82c22b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MTc2MTY4MQ&ixlib=rb-1.2.1&q=80&w=1080",
+                });
+                
+                view.clickView = ^{
+                    SaveInfoVC *info = [[SaveInfoVC alloc] init];
+                    info.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:info
+                                                         animated:YES];
+                };
+                view;
+            })];
+            
+            [obj addObject:({
+                WQView *view = [[WQView alloc] init];
+                view.addModel(@{
+                    @"name": @"扫码",
+                    @"imgBgUrl": @"https://images.unsplash.com/photo-1659785814117-a9b958b06d81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MTc2MTY5NA&ixlib=rb-1.2.1&q=80&w=1080",
+                });
+                view.clickView = ^{
+                    //[self testNetLogManager];
+                    //[self testSwiftView];
+                    [self openScan];
+                };
+                view;
+            })];
+            
+            [obj addObject:({
+                WQView *view = [[WQView alloc] init];
+                view.addModel(@{
+                    @"name": @"随机颜色",
+                    @"imgBgUrl": @"https://images.unsplash.com/photo-1660089869502-3b4322a46e0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MTc2MTcxMg&ixlib=rb-1.2.1&q=80&w=1080",
+                });
+                view.clickView = ^{
+                    RandomColorVC *info = [[RandomColorVC alloc] init];
+                    info.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:info
+                                                         animated:YES];
+                };
+                view;
+            })];
+            
+            obj;
+        });
+    }
+    
+    return _viewsItem;
 }
 
 @end

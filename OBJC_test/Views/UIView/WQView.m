@@ -8,19 +8,31 @@
 #import "WQView.h"
 
 @implementation WQView
+-(void (^)(NSDictionary * _Nonnull res))addModel{
+    return ^(NSDictionary * _Nonnull res) {
+        WQModel *m=[WQModel mj_objectWithKeyValues:res];
+        self.textLable.str(m.name);
+        [self.imageBg sd_setImageWithURL:Url(m.imgBgUrl) placeholderImage:Img(@"white")];
+    };
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.bgColor(@"random").onClick(^(void){
+        self.onClick(^(void){
             if (self.clickView) {
                 self.clickView();
             }
         });
+        self.imageBg.addTo(self);
         self.textLable.addTo(self);
+        [self.imageBg mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsZero);
+        }];
         [self.textLable mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.centerY.offset(0);//居中
+//            make.centerX.centerY.offset(0);//居中
+            make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
     }
     return self;
@@ -31,11 +43,25 @@
     if (!_textLable) {
         _textLable=({
             UILabel *obj=[[UILabel alloc] init];
-            obj.fnt([UIFont boldSystemFontOfSize:14]).color(@"white");
+            obj.fnt([UIFont boldSystemFontOfSize:14]).centerAlignment.color(@"white");
             obj;
         });
     }
     return _textLable;
 }
+-(id)imageBg{
+    if (!_imageBg) {
+        _imageBg=({
+            
+            UIImageView *obj=[[UIImageView alloc] init];
+            obj.aspectFill.clip.img(@"random");
+            obj;
+        });
+    }
+    return _imageBg;
+}
+@end
+
+@implementation WQModel
 
 @end

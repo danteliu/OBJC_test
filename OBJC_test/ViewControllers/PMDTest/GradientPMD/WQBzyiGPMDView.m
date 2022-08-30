@@ -9,8 +9,7 @@
 
 @implementation WQBzyiGPMDView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
     if (self) {
@@ -26,17 +25,9 @@
             make.bottom.offset(0);
             make.height.mas_equalTo(200);
         }];
-        [self.cc loadData:[NSMutableArray arrayWithArray:@[
-            @"1",
-            @"2",
-            @"3",
-            @"4",
-            @"5",
-        ]]];
+        [self.cc loadData:[NSMutableArray arrayWithArray:self.datas]];
         [self changeGradientLayerColor:Color([self dd][@"0"])];//设置第一个颜色
         __weak __typeof__(self) weakSelf = self;
-        
-        
         //        __typeof__(self) strongSelf = weakSelf;
         self.cc.scaleBlock = ^(PageManager *_Nonnull pageM) {
          
@@ -102,8 +93,7 @@
     };
 }
 
-- (NSMutableArray *)changeUIColorToRGB:(UIColor *)color
-{
+- (NSMutableArray *)changeUIColorToRGB:(UIColor *)color {
     NSMutableArray *RGBStrValueArr = [[NSMutableArray alloc] init];
     NSString *RGBStr = @"";
     
@@ -179,7 +169,8 @@
     
     return _gradientLayer;
 }
-
+#pragma mark -
+#pragma mark 懒加载
 - (id)cc {
     if (!_cc) {
         _cc = ({
@@ -191,5 +182,18 @@
     
     return _cc;
 }
-
+-(id)datas{
+    if (!_datas) {
+        _datas=({
+            NSMutableArray *obj=[[NSMutableArray alloc] init];
+            [obj addObject:@"1"];
+            [obj addObject:@"2"];
+            [obj addObject:@"3"];
+            [obj addObject:@"4"];
+            [obj addObject:@"5"];
+            obj;
+        });
+    }
+    return _datas;
+}
 @end

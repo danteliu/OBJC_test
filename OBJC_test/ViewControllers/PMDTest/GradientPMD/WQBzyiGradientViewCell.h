@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WQBzyiGradientViewCell : UICollectionViewCell
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly, copy) void (^addModel)(id res);/**<  添加数据 */
 @end
 
 NS_ASSUME_NONNULL_END

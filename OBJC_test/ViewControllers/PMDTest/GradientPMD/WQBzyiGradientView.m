@@ -94,9 +94,7 @@
     static NSString *cellId = @"WQBzyiGradientViewCell";
     WQBzyiGradientViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     NSNumber *index = self.tags[indexPath.item];
-    NSInteger selectIndex = [index intValue];
-    
-    cell.title = self.dataSource[selectIndex];
+    cell.addModel(self.dataSource[[index intValue]]);
     return cell;
 }
 

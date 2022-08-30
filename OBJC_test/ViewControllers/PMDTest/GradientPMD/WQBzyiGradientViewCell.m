@@ -15,6 +15,11 @@
 @end
 
 @implementation WQBzyiGradientViewCell
+- (void (^)(id _Nonnull res))addModel {
+    return ^(id _Nonnull res) {
+        self.textLabel.str(res).bgColor([self dd][res]);
+    };
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -25,15 +30,13 @@
 }
 
 - (void)buildUI {
-    self.textLabel = [[UILabel alloc] initWithFrame:self.bounds];
-    self.textLabel.textAlignment = NSTextAlignmentCenter;
-    self.textLabel.font = [UIFont fontWithName:@"AmericanTypewriter" size:50];
-    [self addSubview:self.textLabel];
+    self.textLabel.addTo(self);
+    [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
 }
 
 - (void)setTitle:(NSString *)title {
-    self.textLabel.text = title;
-    self.bgColor([self dd][title]);
     //    self.bgColor(@"random");
 }
 
@@ -45,6 +48,19 @@
         @"4": @"#ff770f",
         @"5": @"#91b822",
     };
+}
+
+- (id)textLabel {
+    if (!_textLabel) {
+        _textLabel = ({
+            UILabel *obj = [[UILabel alloc] init];
+            obj.textAlignment = NSTextAlignmentCenter;
+            obj.font = [UIFont fontWithName:@"AmericanTypewriter" size:50];
+            obj;
+        });
+    }
+    
+    return _textLabel;
 }
 
 @end

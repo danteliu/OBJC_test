@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithFrame:(CGRect)frame;
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;/**<  渐变图层 */
 @property (nonatomic, strong) WQBzyiGradientView * cc;/**<  <#属性注释#> */
+@property (nonatomic, strong) NSMutableArray * datas;/**<  <#属性注释#> */
 @end
 
 NS_ASSUME_NONNULL_END

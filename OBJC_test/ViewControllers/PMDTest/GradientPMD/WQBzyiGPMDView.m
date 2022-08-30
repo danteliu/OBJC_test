@@ -79,7 +79,7 @@
 }
 
 - (void)changeGradientLayerColor:(UIColor *)hexColor {/**<  改变渐变图层颜色 */
-    //删除隐式动画
+//    //删除隐式动画
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
 
@@ -170,7 +170,7 @@
                 (__bridge id)UIColor.whiteColor.CGColor,
                 (__bridge id)UIColor.whiteColor.CGColor,
             ];
-            obj.locations = @[@0.0, @0.5];// 颜色分割点
+            obj.locations = @[@0.0, @1];// 颜色分割点
             obj.startPoint = CGPointMake(0, 0);// 开始点
             obj.endPoint = CGPointMake(0, 1);  // 结束点
             obj;

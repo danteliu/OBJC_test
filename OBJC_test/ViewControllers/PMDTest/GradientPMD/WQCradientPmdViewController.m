@@ -6,7 +6,6 @@
 //
 
 #import "WQCradientPmdViewController.h"
-#import "WQCradientPmdView.h"
 #import "WQBzyiGradientView.h"
 #import "WQBzyiGPMDView.h"
 

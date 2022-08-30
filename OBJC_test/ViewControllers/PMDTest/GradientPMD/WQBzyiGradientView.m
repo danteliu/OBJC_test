@@ -104,6 +104,8 @@
     Log(indexPath.item);
 }
 
+#pragma mark -
+#pragma mark scrollView deletate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {/**<  开始拖动 关闭定时器 */
     [self stopTime];
 }
@@ -284,20 +286,19 @@
 @end
 
 @implementation PageManager
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
-    
+
     if (self) {
         self.pageBefore = 0;
         self.pageCurrent = 0;
         self.pageLast = 0;
-        
+
         self.colorBefore = @"";
         self.colorCurrent = @"";
         self.colorLast = @"";
     }
-    
+
     return self;
 }
 

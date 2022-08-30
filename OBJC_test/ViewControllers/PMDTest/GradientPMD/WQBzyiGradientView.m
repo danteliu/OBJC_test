@@ -269,15 +269,18 @@
     
     return _tags;
 }
--(id)dataSource{
+
+- (id)dataSource {
     if (!_dataSource) {
-        _dataSource=({
-            NSMutableArray *obj=[[NSMutableArray alloc] init];
+        _dataSource = ({
+            NSMutableArray *obj = [[NSMutableArray alloc] init];
             obj;
         });
     }
+    
     return _dataSource;
 }
+
 @end
 
 @implementation PageManager

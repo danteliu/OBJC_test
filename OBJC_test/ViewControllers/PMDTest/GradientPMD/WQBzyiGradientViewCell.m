@@ -36,10 +36,6 @@
     }];
 }
 
-- (void)setTitle:(NSString *)title {
-    //    self.bgColor(@"random");
-}
-
 - (NSDictionary *)dd {
     return @{
         @"1": @"#002ea6",
@@ -50,6 +46,8 @@
     };
 }
 
+#pragma mark -
+#pragma mark 懒加载
 - (id)textLabel {
     if (!_textLabel) {
         _textLabel = ({

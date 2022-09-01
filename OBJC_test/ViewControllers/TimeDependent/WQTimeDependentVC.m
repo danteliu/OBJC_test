@@ -10,9 +10,14 @@
 @interface WQTimeDependentVC ()
 @property (nonatomic, strong) BaseVScrollview *vScroll;/**<  <#属性注释#> */
 @property (nonatomic, strong) UIView *viewItemsBg; /**<  <#属性注释#> */
+@property (nonatomic, strong) UILabel *labelTimeShow; /**<  时间显示器 */
 @property (nonatomic, strong) NSMutableArray <UIView *> *viewItems;/**<  <#属性注释#> */
 
 @property (nonatomic, strong) UIDatePicker *datePicker;/**<  时间选择器 */
+@property (nonatomic, strong) NSTimer *timer; /**<  <#属性注释#> */
+@property (nonatomic, assign) ActiveStatus statu;/**<  活动状态 */
+
+
 @end
 
 @implementation WQTimeDependentVC
@@ -23,6 +28,8 @@
     self.hbd_barTintColor = Color(@"white,1");
     self.hbd_barShadowHidden = YES;
     self.title = @"时间相关";
+    
+    self.statu = ActiveStatusEnd;
     
     self.vScroll.addTo(self.view);
     [self.vScroll mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -89,22 +96,63 @@
     
     NSComparisonResult result = [dateBefore compare:dateLast];//开始时间和结束时间对比
     
+    
     if (result == NSOrderedDescending) {
-        Log(@"开始时间大于结束时间");
+        self.statu = ActiveStatusEnd;
     } else if (result == NSOrderedAscending) {
         NSComparisonResult result = [dateBefore compare:dateCur];//开始时间和现在时间对比
         
         if (result == NSOrderedDescending) {
-            Log(@"活动已开始");
-            [self pleaseInsertStarTimeo:cur.rightName.text andInsertEndTime:last.rightName.text];
+            self.statu = ActiveStatusStart;
         } else if (result == NSOrderedAscending) {
-            Log(@"活动未开始");
-            [self pleaseInsertStarTimeo:before.rightName.text andInsertEndTime:cur.rightName.text];
+            self.statu = ActiveStatusStartNo;
         } else {
-            Log(@"活动开始");
+            self.statu = ActiveStatusStart;
         }
     } else {
-        Log(@"异常:开始时间等于结束时间");
+        self.statu = ActiveStatusEnd;
+    }
+    
+    switch (self.statu) {
+        case ActiveStatusEnd:
+            Log(@"活动已结束");
+            [self stopTime];
+            break;
+            
+        case ActiveStatusStart:
+            [self startTime];
+            break;
+            
+        case ActiveStatusStartNo:
+            [self startTime];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)startTime {/**<  开启定时器 */
+    [self stopTime];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showNext) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)stopTime {/**<  关闭定时器 */
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
+- (void)showNext {/**<  开启倒计时 */
+    WQTimeDependentCell *before = [self.viewItemsBg viewWithTag:12];
+    WQTimeDependentCell *last = [self.viewItemsBg viewWithTag:14];
+    if (self.statu==ActiveStatusStart) {
+        [self pleaseInsertStarTimeo:[[RBDateTime now] localizedStringWithFormat:@"YYYY-MM-dd HH:mm:ss"] andInsertEndTime:last.rightName.text];
+    }else if((self.statu==ActiveStatusStartNo)){
+        [self pleaseInsertStarTimeo:before.rightName.text andInsertEndTime:[[RBDateTime now] localizedStringWithFormat:@"YYYY-MM-dd HH:mm:ss"]];
     }
 }
 
@@ -118,6 +166,8 @@
     NSCalendarUnit type = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     NSDateComponents *cmps = [calendar components:type fromDate:date1 toDate:date2 options:0];// 3.利用日历对象比较两个时间的差值
     NSLog(@"两个时间相差%ld年%ld月%ld日%ld小时%ld分钟%ld秒", cmps.year, cmps.month, cmps.day, cmps.hour, cmps.minute, cmps.second);// 4.输出结果
+    
+    self.labelTimeShow.str(@"相差%02ld %02ld:%02ld:%02ld",cmps.day, cmps.hour, cmps.minute, cmps.second);
 }
 
 #pragma mark -
@@ -180,6 +230,7 @@
                 });
                 obj;
             })];
+            [obj addObject:self.labelTimeShow];
             obj;
         });
     }
@@ -197,7 +248,17 @@
     
     return _viewItemsBg;
 }
+-(id)labelTimeShow{
+    if (!_labelTimeShow) {
+        _labelTimeShow=({
+            UILabel *obj=[[UILabel alloc] init];
+            obj.centerAlignment.bgColor(@"random").str(@"");
 
+            obj;
+        });
+    }
+    return _labelTimeShow;
+}
 - (id)vScroll {
     if (!_vScroll) {
         _vScroll = ({

@@ -13,6 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+typedef NS_ENUM(NSInteger,ActiveStatus) {
+    ActiveStatusStartNo,/**<  活动未开始 */
+    ActiveStatusStart,/**<  活动开始 */
+    ActiveStatusEnd,/**<  活动结束 */
+};
 @interface WQTimeDependentCell : UIView
 -(instancetype)initWithFrame:(CGRect)frame;
 @property (nonatomic, strong) UILabel * leftName;/**<  <#属性注释#> */

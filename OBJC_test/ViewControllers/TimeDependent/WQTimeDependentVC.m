@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) UIDatePicker *datePicker;/**<  时间选择器 */
 @property (nonatomic, strong) NSTimer *timer; /**<  <#属性注释#> */
-@property (nonatomic, assign) ActiveStatus statu;/**<  活动状态 */
+@property (nonatomic, assign) KBJCMCCTimeState statu;/**<  活动状态 */
 
 
 @end
@@ -29,7 +29,7 @@
     self.hbd_barShadowHidden = YES;
     self.title = @"时间相关";
     
-    self.statu = ActiveStatusEnd;
+    self.statu = KBJCMCCTimeState_End;
     
     self.vScroll.addTo(self.view);
     [self.vScroll mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -66,8 +66,13 @@
 }
 
 - (void)checkTime {/**<  时间检查 */
+    [self checkTimddddt];
+    [self startTime];
+}
+
+- (void)checkTimddddt {
     WQTimeDependentCell *before = [self.viewItemsBg viewWithTag:12];
-    WQTimeDependentCell *cur = [self.viewItemsBg viewWithTag:13];
+    //    WQTimeDependentCell *cur = [self.viewItemsBg viewWithTag:13];
     WQTimeDependentCell *last = [self.viewItemsBg viewWithTag:14];
     
     //    Log(before.rightName.text);
@@ -75,7 +80,6 @@
     //    Log(last.rightName.text);
     
     NSDate *dateBefore = [RBDateTime dateTimeByParsingString:before.rightName.text withFormat:@"YYYY-MM-dd HH:mm:ss"].NSDate;
-    NSDate *dateCur = [RBDateTime dateTimeByParsingString:cur.rightName.text withFormat:@"YYYY-MM-dd HH:mm:ss"].NSDate;
     NSDate *dateLast = [RBDateTime dateTimeByParsingString:last.rightName.text withFormat:@"YYYY-MM-dd HH:mm:ss"].NSDate;
     
     //    Log(dateBefore);
@@ -94,41 +98,56 @@
      */
     
     
-    NSComparisonResult result = [dateBefore compare:dateLast];//开始时间和结束时间对比
+    NSDate *startDate = dateBefore;
+    NSTimeInterval startTimeInterval = [startDate timeIntervalSince1970];
     
+    NSDate *endDate = dateLast;
+    NSTimeInterval endTimeInterval = [endDate timeIntervalSince1970];
     
-    if (result == NSOrderedDescending) {
-        self.statu = ActiveStatusEnd;
-    } else if (result == NSOrderedAscending) {
-        NSComparisonResult result = [dateBefore compare:dateCur];//开始时间和现在时间对比
+    NSTimeInterval nowTimeInterval = [[NSDate date] timeIntervalSince1970];
+    
+    if (startTimeInterval > 0 && endTimeInterval > 0) {
+        /**开始时间和结束时间都有返回值*/
         
-        if (result == NSOrderedDescending) {
-            self.statu = ActiveStatusStart;
-        } else if (result == NSOrderedAscending) {
-            self.statu = ActiveStatusStartNo;
+        if (endTimeInterval > startTimeInterval) {
+            /**正常情况 结束时间要 大于 开始时间*/
+            
+            if (nowTimeInterval > startTimeInterval) {
+                self.statu = KBJCMCCTimeState_Begin;/// 活动进行中
+            } else if (nowTimeInterval >= endTimeInterval) {
+                self.statu = KBJCMCCTimeState_End;/// 活动结束
+            } else {
+                self.statu = KBJCMCCTimeState_Prepare;/// 活动未开始
+            }
         } else {
-            self.statu = ActiveStatusStart;
+            /**非正常情况（例配置错时间）*/
+            
+            if (startTimeInterval > nowTimeInterval) {
+                self.statu = KBJCMCCTimeState_Prepare;/// 活动未开始
+            } else {
+                if (nowTimeInterval < endTimeInterval) {
+                    self.statu = KBJCMCCTimeState_Begin;
+                }
+            }
+            
+            self.statu = KBJCMCCTimeState_End;
+        }
+    } else if (startTimeInterval > 0 && endTimeInterval <= 0) {
+        /**开始时间有返回值，结束时间没有返回值*/
+        if (nowTimeInterval < startTimeInterval) {
+            self.statu = KBJCMCCTimeState_Prepare;/**现在时间小于开始时间  即未开始 准备开始*/
+        } else {
+            self.statu = KBJCMCCTimeState_End;
+        }
+    } else if (startTimeInterval <= 0 && endTimeInterval > 0) {
+        /**开始时间有返回值，结束时间没有返回值*/
+        if (nowTimeInterval < endTimeInterval) {
+            self.statu = KBJCMCCTimeState_Begin;/**现在时间小于结束时间  已经开始 未结束*/
+        } else {
+            self.statu = KBJCMCCTimeState_End;
         }
     } else {
-        self.statu = ActiveStatusEnd;
-    }
-    
-    switch (self.statu) {
-        case ActiveStatusEnd:
-            Log(@"活动已结束");
-            [self stopTime];
-            break;
-            
-        case ActiveStatusStart:
-            [self startTime];
-            break;
-            
-        case ActiveStatusStartNo:
-            [self startTime];
-            break;
-            
-        default:
-            break;
+        self.statu = KBJCMCCTimeState_End;/**开始时间和结束时间没有返回值*/
     }
 }
 
@@ -149,25 +168,56 @@
 - (void)showNext {/**<  开启倒计时 */
     WQTimeDependentCell *before = [self.viewItemsBg viewWithTag:12];
     WQTimeDependentCell *last = [self.viewItemsBg viewWithTag:14];
-    if (self.statu==ActiveStatusStart) {
-        [self pleaseInsertStarTimeo:[[RBDateTime now] localizedStringWithFormat:@"YYYY-MM-dd HH:mm:ss"] andInsertEndTime:last.rightName.text];
-    }else if((self.statu==ActiveStatusStartNo)){
-        [self pleaseInsertStarTimeo:before.rightName.text andInsertEndTime:[[RBDateTime now] localizedStringWithFormat:@"YYYY-MM-dd HH:mm:ss"]];
+    
+    [self checkTimddddt];
+    NSTimeInterval nowTimeInterval = [[NSDate date] timeIntervalSince1970];
+    NSTimeInterval countDownTimeInterval = 0;
+    
+    if (self.statu == KBJCMCCTimeState_Begin) {
+        /**
+         已经开始了 计算结束时间与现在时间
+         */
+        NSDate *endDate = [RBDateTime dateTimeByParsingString:last.rightName.text withFormat:@"YYYY-MM-dd HH:mm:ss"].NSDate;
+        NSTimeInterval endTimeInterval = [endDate timeIntervalSince1970];
+        countDownTimeInterval = endTimeInterval - nowTimeInterval;
     }
-}
-
-- (void)pleaseInsertStarTimeo:(NSString *)time1 andInsertEndTime:(NSString *)time2 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];// 1.将时间转换为date
     
-    formatter.dateFormat = @"YYYY-MM-dd HH:mm:ss";
-    NSDate *date1 = [formatter dateFromString:time1];
-    NSDate *date2 = [formatter dateFromString:time2];
-    NSCalendar *calendar = [NSCalendar currentCalendar];// 2.创建日历
-    NSCalendarUnit type = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-    NSDateComponents *cmps = [calendar components:type fromDate:date1 toDate:date2 options:0];// 3.利用日历对象比较两个时间的差值
-    NSLog(@"两个时间相差%ld年%ld月%ld日%ld小时%ld分钟%ld秒", cmps.year, cmps.month, cmps.day, cmps.hour, cmps.minute, cmps.second);// 4.输出结果
+    if (self.statu == KBJCMCCTimeState_Prepare) {
+        /**
+         准备开始（未开始） 计算开始时间与现在时间
+         */
+        NSDate *startDate = [RBDateTime dateTimeByParsingString:before.rightName.text withFormat:@"YYYY-MM-dd HH:mm:ss"].NSDate;
+        NSTimeInterval startTimeInterval = [startDate timeIntervalSince1970];
+        NSTimeInterval nowTimeInterval = [[NSDate date] timeIntervalSince1970];
+        countDownTimeInterval = startTimeInterval - nowTimeInterval;
+    }
     
-    self.labelTimeShow.str(@"相差%02ld %02ld:%02ld:%02ld",cmps.day, cmps.hour, cmps.minute, cmps.second);
+    NSInteger timeOut = countDownTimeInterval;
+    
+    if (timeOut <= 0) {
+        //        /**倒计时结束*/
+        if (self.statu == KBJCMCCTimeState_Begin || self.statu == KBJCMCCTimeState_End) {
+            self.labelTimeShow.str(@"已结束");
+            [self stopTime];
+        }
+    } else {
+        NSInteger days = (NSInteger)(timeOut / (3600 * 24));
+        NSInteger hours = (NSInteger)((timeOut - days * 24 * 3600) / 3600);
+        NSInteger minute = (NSInteger)(timeOut - days * 24 * 3600 - hours * 3600) / 60;
+        NSInteger second = timeOut - days * 24 * 3600 - hours * 3600 - minute * 60;
+        //        hours = hours + days*24;
+        
+        //        self.rightDesLb.text = [self rightDesTextWithTimeState:[self getActivityState]];
+        NSString *timeStr = @"";
+        
+        if (days == 0) {
+            timeStr = [NSString stringWithFormat:@"%02ld时%02ld分%02ld秒", hours, minute, second];
+        } else {
+            timeStr = [NSString stringWithFormat:@"%ld天%02ld时%02ld分%02ld秒", days, hours, minute, second];
+        }
+        
+        self.labelTimeShow.str(timeStr);
+    }
 }
 
 #pragma mark -
@@ -248,17 +298,20 @@
     
     return _viewItemsBg;
 }
--(id)labelTimeShow{
-    if (!_labelTimeShow) {
-        _labelTimeShow=({
-            UILabel *obj=[[UILabel alloc] init];
-            obj.centerAlignment.bgColor(@"random").str(@"");
 
+- (id)labelTimeShow {
+    if (!_labelTimeShow) {
+        _labelTimeShow = ({
+            UILabel *obj = [[UILabel alloc] init];
+            obj.centerAlignment.bgColor(@"random").str(@"");
+            
             obj;
         });
     }
+    
     return _labelTimeShow;
 }
+
 - (id)vScroll {
     if (!_vScroll) {
         _vScroll = ({

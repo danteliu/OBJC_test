@@ -13,10 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-typedef NS_ENUM(NSInteger,ActiveStatus) {
-    ActiveStatusStartNo,/**<  活动未开始 */
-    ActiveStatusStart,/**<  活动开始 */
-    ActiveStatusEnd,/**<  活动结束 */
+typedef NS_ENUM(NSInteger, KBJCMCCTimeState){
+    KBJCMCCTimeState_Prepare       = 0 , //活动准备开始
+    KBJCMCCTimeState_Begin         = 1 , //活动已开始
+    KBJCMCCTimeState_End           = 2 , //活动已结束
 };
 @interface WQTimeDependentCell : UIView
 -(instancetype)initWithFrame:(CGRect)frame;

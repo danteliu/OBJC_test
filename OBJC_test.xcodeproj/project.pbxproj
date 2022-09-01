@@ -32,6 +32,7 @@
 		257E1DD727E47579002670DF /* DanteWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 257E1DD627E47579002670DF /* DanteWebVC.m */; };
 		259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 259EF333279A84AE00E6C95F /* NetLogManager.m */; };
 		25A2E94928BE075A0029B71B /* WQBzyiGradientViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A2E94828BE075A0029B71B /* WQBzyiGradientViewCell.m */; };
+		25A2E95628C0A5120029B71B /* WQTimeDependentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A2E95528C0A5120029B71B /* WQTimeDependentVC.m */; };
 		25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */; };
 		25B312CE28ADD19A000A3990 /* WQView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B312CD28ADD19A000A3990 /* WQView.m */; };
 		25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */; };
@@ -115,6 +116,8 @@
 		259EF333279A84AE00E6C95F /* NetLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetLogManager.m; sourceTree = "<group>"; };
 		25A2E94728BE075A0029B71B /* WQBzyiGradientViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQBzyiGradientViewCell.h; sourceTree = "<group>"; };
 		25A2E94828BE075A0029B71B /* WQBzyiGradientViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQBzyiGradientViewCell.m; sourceTree = "<group>"; };
+		25A2E95428C0A5120029B71B /* WQTimeDependentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQTimeDependentVC.h; sourceTree = "<group>"; };
+		25A2E95528C0A5120029B71B /* WQTimeDependentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQTimeDependentVC.m; sourceTree = "<group>"; };
 		25AD660526F48CE800DA671A /* HDHVerticalPMDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHVerticalPMDView.h; sourceTree = "<group>"; };
 		25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHVerticalPMDView.m; sourceTree = "<group>"; };
 		25B312CC28ADD19A000A3990 /* WQView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQView.h; sourceTree = "<group>"; };
@@ -345,6 +348,15 @@
 			path = WebModule;
 			sourceTree = "<group>";
 		};
+		25A2E95328C0A4A60029B71B /* TimeDependent */ = {
+			isa = PBXGroup;
+			children = (
+				25A2E95428C0A5120029B71B /* WQTimeDependentVC.h */,
+				25A2E95528C0A5120029B71B /* WQTimeDependentVC.m */,
+			);
+			path = TimeDependent;
+			sourceTree = "<group>";
+		};
 		25AD660426F48CE800DA671A /* HDHVerticalPMDView */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +395,7 @@
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				25A2E95328C0A4A60029B71B /* TimeDependent */,
 				2505C23228AE0EC700215530 /* GridView */,
 				2505C23128AE0CEB00215530 /* CopyInfo */,
 				2505C23028AE0CCE00215530 /* CopyRandomColor */,
@@ -725,6 +738,7 @@
 				254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */,
 				256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */,
 				256B47CE26AFABFE007E13C8 /* main.m in Sources */,
+				25A2E95628C0A5120029B71B /* WQTimeDependentVC.m in Sources */,
 				25B312CE28ADD19A000A3990 /* WQView.m in Sources */,
 				254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */,
 				25F857322744F0C6004DB99E /* String_Dfine.m in Sources */,

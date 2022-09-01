@@ -14,6 +14,8 @@
 #import "WQCradientPmdViewController.h"
 #import "WQCyclePMDViewController.h"
 #import "WQPMDViewController.h"
+#import "WQTimeDependentVC.h"
+
 
 @interface ViewController ()
 @property (nonatomic, strong) NSMutableArray <WQView *> *viewsItem;/**<  cell的数组 */
@@ -258,6 +260,15 @@
     WQCycleModel *model = self.cycleDatas[index];
     
     switch (model.type) {
+        case ViewTypeTimeDependent:
+            [self.navigationController pushViewController:({
+                WQTimeDependentVC *obj = [[WQTimeDependentVC alloc] init];
+                obj.hidesBottomBarWhenPushed = YES;
+                obj;
+            })
+                                                 animated:YES];
+            break;
+            
         case ViewTypeCradientPmd:
             [self.navigationController pushViewController:({
                 WQCradientPmdViewController *obj = [[WQCradientPmdViewController alloc] init];
@@ -381,6 +392,14 @@
     if (!_cycleDatas) {
         _cycleDatas = ({
             NSMutableArray *obj = [[NSMutableArray alloc] init];
+            
+            [obj addObject:({
+                WQCycleModel *m = [[WQCycleModel alloc] init];
+                m.name = @"时间相关";
+                m.type = ViewTypeTimeDependent;
+                m.imgUrl = @"https://images.unsplash.com/photo-1659985799606-61175dea9e39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MjAyMTIxNQ&ixlib=rb-1.2.1&q=80&w=1080";
+                m;
+            })];
             
             [obj addObject:({
                 WQCycleModel *m = [[WQCycleModel alloc] init];

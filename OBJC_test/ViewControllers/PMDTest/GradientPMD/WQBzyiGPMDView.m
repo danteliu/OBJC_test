@@ -30,7 +30,7 @@
         __weak __typeof__(self) weakSelf = self;
         //        __typeof__(self) strongSelf = weakSelf;
         self.cc.scaleBlock = ^(PageManager *_Nonnull pageM) {
-         
+            [SDCycleScrollView new];
             UIColor *colorCur = Color([weakSelf dd][pageM.colorCurrent]);
             UIColor *colorLast = Color([weakSelf dd][pageM.colorLast]);
             UIColor *colorBefore = Color([weakSelf dd][pageM.colorBefore]);

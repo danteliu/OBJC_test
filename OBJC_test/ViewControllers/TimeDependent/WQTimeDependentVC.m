@@ -69,6 +69,9 @@
     [self checkTimddddt];
     [self startTime];
 }
+-(void)dealloc{
+    [self stopTime];
+}
 
 - (void)checkTimddddt {
     WQTimeDependentCell *before = [self.viewItemsBg viewWithTag:12];

@@ -25,9 +25,8 @@
 -(void)setupUI{
     self.labelLeft.addTo(self);
     [self.labelLeft mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.offset(0);
-        make.height.mas_equalTo(60);
-        make.right.equalTo(self.mas_centerX);
+        make.top.left.right.bottom.offset(0);
+        make.height.mas_equalTo(44);
     }];
 }
 #pragma mark -

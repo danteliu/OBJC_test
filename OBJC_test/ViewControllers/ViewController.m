@@ -10,11 +10,14 @@
 #import "SaveInfoVC.h"
 
 #import "ViewController.h"
+#import "WQAutoLayoutVC.h"
 #import "WQBYCyclePMDViewController.h"
 #import "WQCradientPmdViewController.h"
 #import "WQCyclePMDViewController.h"
 #import "WQPMDViewController.h"
 #import "WQTimeDependentVC.h"
+
+
 
 
 @interface ViewController ()
@@ -314,6 +317,15 @@
                                                  animated:YES];
             break;
             
+        case ViewTypeTimeAutoLayout:
+            [self.navigationController pushViewController:({
+                WQAutoLayoutVC *obj = [[WQAutoLayoutVC alloc] init];
+                obj.hidesBottomBarWhenPushed = YES;
+                obj;
+            })
+                                                 animated:YES];
+            break;
+            
             
         default:
             break;
@@ -392,7 +404,13 @@
     if (!_cycleDatas) {
         _cycleDatas = ({
             NSMutableArray *obj = [[NSMutableArray alloc] init];
-            
+            [obj addObject:({
+                WQCycleModel *m = [[WQCycleModel alloc] init];
+                m.name = @"自动布局";
+                m.type = ViewTypeTimeAutoLayout;
+                m.imgUrl = @"https://images.unsplash.com/photo-1661417456384-af20a862790d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MjM4ODY4Nw&ixlib=rb-1.2.1&q=80&w=1080";
+                m;
+            })];
             [obj addObject:({
                 WQCycleModel *m = [[WQCycleModel alloc] init];
                 m.name = @"时间相关";

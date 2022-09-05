@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, ViewType) {
     ViewTypeGrid,/**<  格子视图 */
     ViewTypeCradientPmd,/**<  渐变轮播图 */
     ViewTypeTimeDependent,/**<  时间相关 */
+    ViewTypeTimeAutoLayout,/**<  自动布局 */
 };
 
 @class WQCycleModel;

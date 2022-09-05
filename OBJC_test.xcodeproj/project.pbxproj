@@ -40,6 +40,9 @@
 		25DE67B428B874DF00B1DF6F /* WQBzyiGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DE67B328B874DF00B1DF6F /* WQBzyiGradientView.m */; };
 		25E18E8028AA40BD002AB51A /* WQPMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E18E7F28AA40BD002AB51A /* WQPMDViewController.m */; };
 		25E18E8428AB2822002AB51A /* WQCyclePMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E18E8328AB2822002AB51A /* WQCyclePMDViewController.m */; };
+		25EEB41428C640A900057D7D /* WQAutoLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEB41328C640A900057D7D /* WQAutoLayoutVC.m */; };
+		25EEB41828C6434E00057D7D /* WQLeftAndRightLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEB41728C6434E00057D7D /* WQLeftAndRightLabelView.m */; };
+		25EEB41B28C6485100057D7D /* WQStyle0001View.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEB41A28C6485100057D7D /* WQStyle0001View.m */; };
 		25F036CA28BB589B00363733 /* WQBzyiGPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F036C928BB589B00363733 /* WQBzyiGPMDView.m */; };
 		25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F8572D2744ECDD004DB99E /* SaveInfoVC.m */; };
 		25F857322744F0C6004DB99E /* String_Dfine.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857312744F0C6004DB99E /* String_Dfine.m */; };
@@ -132,6 +135,13 @@
 		25E18E7F28AA40BD002AB51A /* WQPMDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQPMDViewController.m; sourceTree = "<group>"; };
 		25E18E8228AB2822002AB51A /* WQCyclePMDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCyclePMDViewController.h; sourceTree = "<group>"; };
 		25E18E8328AB2822002AB51A /* WQCyclePMDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQCyclePMDViewController.m; sourceTree = "<group>"; };
+		25EEB41228C640A900057D7D /* WQAutoLayoutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQAutoLayoutVC.h; sourceTree = "<group>"; };
+		25EEB41328C640A900057D7D /* WQAutoLayoutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQAutoLayoutVC.m; sourceTree = "<group>"; };
+		25EEB41628C6434E00057D7D /* WQLeftAndRightLabelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQLeftAndRightLabelView.h; sourceTree = "<group>"; };
+		25EEB41728C6434E00057D7D /* WQLeftAndRightLabelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQLeftAndRightLabelView.m; sourceTree = "<group>"; };
+		25EEB41928C6485100057D7D /* WQStyle0001View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQStyle0001View.h; sourceTree = "<group>"; };
+		25EEB41A28C6485100057D7D /* WQStyle0001View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQStyle0001View.m; sourceTree = "<group>"; };
+		25EEB41C28C6489800057D7D /* LayoutViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayoutViews.h; sourceTree = "<group>"; };
 		25F036C828BB589B00363733 /* WQBzyiGPMDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQBzyiGPMDView.h; sourceTree = "<group>"; };
 		25F036C928BB589B00363733 /* WQBzyiGPMDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQBzyiGPMDView.m; sourceTree = "<group>"; };
 		25F8572C2744ECDD004DB99E /* SaveInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveInfoVC.h; sourceTree = "<group>"; };
@@ -395,6 +405,7 @@
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				25EEB41128C6404A00057D7D /* AutoLayout */,
 				25A2E95328C0A4A60029B71B /* TimeDependent */,
 				2505C23228AE0EC700215530 /* GridView */,
 				2505C23128AE0CEB00215530 /* CopyInfo */,
@@ -437,6 +448,28 @@
 				25E18E8328AB2822002AB51A /* WQCyclePMDViewController.m */,
 			);
 			path = CyclePMD;
+			sourceTree = "<group>";
+		};
+		25EEB41128C6404A00057D7D /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				25EEB41528C6430200057D7D /* layoutViews */,
+				25EEB41228C640A900057D7D /* WQAutoLayoutVC.h */,
+				25EEB41328C640A900057D7D /* WQAutoLayoutVC.m */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
+		25EEB41528C6430200057D7D /* layoutViews */ = {
+			isa = PBXGroup;
+			children = (
+				25EEB41C28C6489800057D7D /* LayoutViews.h */,
+				25EEB41628C6434E00057D7D /* WQLeftAndRightLabelView.h */,
+				25EEB41728C6434E00057D7D /* WQLeftAndRightLabelView.m */,
+				25EEB41928C6485100057D7D /* WQStyle0001View.h */,
+				25EEB41A28C6485100057D7D /* WQStyle0001View.m */,
+			);
+			path = layoutViews;
 			sourceTree = "<group>";
 		};
 		25F8572F2744F093004DB99E /* Define */ = {
@@ -732,18 +765,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				25DE67AE28B86E6300B1DF6F /* WQCradientPmdViewController.m in Sources */,
+				25EEB41B28C6485100057D7D /* WQStyle0001View.m in Sources */,
 				257E1DD727E47579002670DF /* DanteWebVC.m in Sources */,
 				256B47C326AFABFB007E13C8 /* ViewController.m in Sources */,
 				25E18E8428AB2822002AB51A /* WQCyclePMDViewController.m in Sources */,
 				254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */,
 				256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */,
 				256B47CE26AFABFE007E13C8 /* main.m in Sources */,
+				25EEB41428C640A900057D7D /* WQAutoLayoutVC.m in Sources */,
 				25A2E95628C0A5120029B71B /* WQTimeDependentVC.m in Sources */,
 				25B312CE28ADD19A000A3990 /* WQView.m in Sources */,
 				254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */,
 				25F857322744F0C6004DB99E /* String_Dfine.m in Sources */,
 				251D3CF127A2447500FC1153 /* RandomView.swift in Sources */,
 				25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */,
+				25EEB41828C6434E00057D7D /* WQLeftAndRightLabelView.m in Sources */,
 				25F036CA28BB589B00363733 /* WQBzyiGPMDView.m in Sources */,
 				25FA935728ACD1A900F2E484 /* WQBYCyclePMDViewController.m in Sources */,
 				25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */,

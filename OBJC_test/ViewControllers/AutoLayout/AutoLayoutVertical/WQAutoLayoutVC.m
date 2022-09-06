@@ -21,7 +21,7 @@
     self.view.bgColor(@"white");
     self.hbd_barTintColor = Color(@"white,1");
     self.hbd_barShadowHidden = YES;
-    self.title = @"自动布局视图";
+    self.title = @"自动竖布局视图";
     [self setupUI];
     
 }

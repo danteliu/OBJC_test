@@ -16,6 +16,7 @@
 #import "WQCyclePMDViewController.h"
 #import "WQPMDViewController.h"
 #import "WQTimeDependentVC.h"
+#import "WQAutoLayoutHorizontalVC.h"
 
 
 
@@ -317,7 +318,7 @@
                                                  animated:YES];
             break;
             
-        case ViewTypeTimeAutoLayout:
+        case ViewTypeTimeAutoLayoutVertical:
             [self.navigationController pushViewController:({
                 WQAutoLayoutVC *obj = [[WQAutoLayoutVC alloc] init];
                 obj.hidesBottomBarWhenPushed = YES;
@@ -325,7 +326,15 @@
             })
                                                  animated:YES];
             break;
-            
+        case ViewTypeTimeAutoLayoutHorizontal:
+            [self.navigationController pushViewController:({
+                WQAutoLayoutHorizontalVC *obj = [[WQAutoLayoutHorizontalVC alloc] init];
+                obj.hidesBottomBarWhenPushed = YES;
+                obj;
+            })
+                                                 animated:YES];
+            break;
+
             
         default:
             break;
@@ -404,10 +413,19 @@
     if (!_cycleDatas) {
         _cycleDatas = ({
             NSMutableArray *obj = [[NSMutableArray alloc] init];
+//            WQAutoLayoutHorizontalVC
             [obj addObject:({
                 WQCycleModel *m = [[WQCycleModel alloc] init];
-                m.name = @"自动布局";
-                m.type = ViewTypeTimeAutoLayout;
+                m.name = @"自动横布局";
+                m.type = ViewTypeTimeAutoLayoutHorizontal;
+                m.imgUrl = @"https://images.unsplash.com/photo-1661417456384-af20a862790d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MjM4ODY4Nw&ixlib=rb-1.2.1&q=80&w=1080";
+                m;
+            })];
+
+            [obj addObject:({
+                WQCycleModel *m = [[WQCycleModel alloc] init];
+                m.name = @"自动竖布局";
+                m.type = ViewTypeTimeAutoLayoutVertical;
                 m.imgUrl = @"https://images.unsplash.com/photo-1661417456384-af20a862790d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MjM4ODY4Nw&ixlib=rb-1.2.1&q=80&w=1080";
                 m;
             })];

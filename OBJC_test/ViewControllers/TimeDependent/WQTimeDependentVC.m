@@ -15,8 +15,6 @@
 
 @property (nonatomic, strong) UIDatePicker *datePicker;/**<  时间选择器 */
 @property (nonatomic, strong) NSTimer *timer; /**<  <#属性注释#> */
-@property (nonatomic, assign) KBJCMCCTimeState statu;/**<  活动状态 */
-
 
 @end
 
@@ -29,7 +27,6 @@
     self.hbd_barShadowHidden = YES;
     self.title = @"时间相关";
     
-    self.statu = KBJCMCCTimeState_End;
     
     self.vScroll.addTo(self.view);
     [self.vScroll mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,37 +66,17 @@
     [self checkTimddddt];
     [self startTime];
 }
--(void)dealloc{
+
+- (void)dealloc {
     [self stopTime];
 }
 
-- (void)checkTimddddt {
+- (KBJCMCCTimeState)checkTimddddt {
     WQTimeDependentCell *before = [self.viewItemsBg viewWithTag:12];
-    //    WQTimeDependentCell *cur = [self.viewItemsBg viewWithTag:13];
     WQTimeDependentCell *last = [self.viewItemsBg viewWithTag:14];
-    
-    //    Log(before.rightName.text);
-    //    Log(cur.rightName.text);
-    //    Log(last.rightName.text);
     
     NSDate *dateBefore = [RBDateTime dateTimeByParsingString:before.rightName.text withFormat:@"YYYY-MM-dd HH:mm:ss"].NSDate;
     NSDate *dateLast = [RBDateTime dateTimeByParsingString:last.rightName.text withFormat:@"YYYY-MM-dd HH:mm:ss"].NSDate;
-    
-    //    Log(dateBefore);
-    //    Log(dateCur);
-    //    Log(dateLast);
-    
-    /**<
-     NSComparisonResult result = [dateBefore compare:dateLast];
-     if (result == NSOrderedDescending) {
-     NSLog(@"Date1 大于 Date2");
-     } else if (result == NSOrderedAscending) {
-     NSLog(@"Date1 小于 Date2");
-     } else {
-     NSLog(@"Date1 Date2 相等");
-     }
-     */
-    
     
     NSDate *startDate = dateBefore;
     NSTimeInterval startTimeInterval = [startDate timeIntervalSince1970];
@@ -116,42 +93,44 @@
             /**正常情况 结束时间要 大于 开始时间*/
             
             if (nowTimeInterval > startTimeInterval) {
-                self.statu = KBJCMCCTimeState_Begin;/// 活动进行中
+                return KBJCMCCTimeState_Begin;/// 活动进行中
             } else if (nowTimeInterval >= endTimeInterval) {
-                self.statu = KBJCMCCTimeState_End;/// 活动结束
+                return KBJCMCCTimeState_End; /// 活动结束
             } else {
-                self.statu = KBJCMCCTimeState_Prepare;/// 活动未开始
+                return KBJCMCCTimeState_Prepare; /// 活动未开始
             }
         } else {
             /**非正常情况（例配置错时间）*/
             
             if (startTimeInterval > nowTimeInterval) {
-                self.statu = KBJCMCCTimeState_Prepare;/// 活动未开始
+                return KBJCMCCTimeState_Prepare; /// 活动未开始
             } else {
                 if (nowTimeInterval < endTimeInterval) {
-                    self.statu = KBJCMCCTimeState_Begin;
+                    return KBJCMCCTimeState_Begin;
                 }
             }
             
-            self.statu = KBJCMCCTimeState_End;
+            return KBJCMCCTimeState_End;
         }
     } else if (startTimeInterval > 0 && endTimeInterval <= 0) {
         /**开始时间有返回值，结束时间没有返回值*/
         if (nowTimeInterval < startTimeInterval) {
-            self.statu = KBJCMCCTimeState_Prepare;/**现在时间小于开始时间  即未开始 准备开始*/
+            return KBJCMCCTimeState_Prepare;/**现在时间小于开始时间  即未开始 准备开始*/
         } else {
-            self.statu = KBJCMCCTimeState_End;
+            return KBJCMCCTimeState_End;
         }
     } else if (startTimeInterval <= 0 && endTimeInterval > 0) {
         /**开始时间有返回值，结束时间没有返回值*/
         if (nowTimeInterval < endTimeInterval) {
-            self.statu = KBJCMCCTimeState_Begin;/**现在时间小于结束时间  已经开始 未结束*/
+            return KBJCMCCTimeState_Begin;/**现在时间小于结束时间  已经开始 未结束*/
         } else {
-            self.statu = KBJCMCCTimeState_End;
+            return KBJCMCCTimeState_End;
         }
     } else {
-        self.statu = KBJCMCCTimeState_End;/**开始时间和结束时间没有返回值*/
+        return KBJCMCCTimeState_End;/**开始时间和结束时间没有返回值*/
     }
+    
+    return KBJCMCCTimeState_End;
 }
 
 - (void)startTime {/**<  开启定时器 */
@@ -168,6 +147,7 @@
     }
 }
 
+
 - (void)showNext {/**<  开启倒计时 */
     WQTimeDependentCell *before = [self.viewItemsBg viewWithTag:12];
     WQTimeDependentCell *last = [self.viewItemsBg viewWithTag:14];
@@ -176,7 +156,7 @@
     NSTimeInterval nowTimeInterval = [[NSDate date] timeIntervalSince1970];
     NSTimeInterval countDownTimeInterval = 0;
     
-    if (self.statu == KBJCMCCTimeState_Begin) {
+    if ([self checkTimddddt] == KBJCMCCTimeState_Begin) {
         /**
          已经开始了 计算结束时间与现在时间
          */
@@ -185,7 +165,7 @@
         countDownTimeInterval = endTimeInterval - nowTimeInterval;
     }
     
-    if (self.statu == KBJCMCCTimeState_Prepare) {
+    if ([self checkTimddddt] == KBJCMCCTimeState_Prepare) {
         /**
          准备开始（未开始） 计算开始时间与现在时间
          */
@@ -199,7 +179,8 @@
     
     if (timeOut <= 0) {
         //        /**倒计时结束*/
-        if (self.statu == KBJCMCCTimeState_Begin || self.statu == KBJCMCCTimeState_End) {
+        
+        if ([self checkTimddddt] == KBJCMCCTimeState_Begin || [self checkTimddddt] == KBJCMCCTimeState_End) {
             self.labelTimeShow.str(@"已结束");
             [self stopTime];
         }

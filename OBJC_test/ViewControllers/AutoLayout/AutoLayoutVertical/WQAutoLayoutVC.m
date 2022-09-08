@@ -70,60 +70,21 @@
             NSMutableArray *obj=[[NSMutableArray alloc] init];
             [obj addObject:({
                 WQLeftAndRightLabelView *m=[[WQLeftAndRightLabelView alloc] init];
-                m.labelLeft.str("1");
-                m;
-            })];
-            [obj addObject:({
-                WQLeftAndRightLabelView *m=[[WQLeftAndRightLabelView alloc] init];
-                m.labelLeft.str("2");
-                m;
-            })];
-            [obj addObject:({
-                WQLeftAndRightLabelView *m=[[WQLeftAndRightLabelView alloc] init];
-                m.labelLeft.str("3");
-                m;
-            })];
-            [obj addObject:({
-                WQLeftAndRightLabelView *m=[[WQLeftAndRightLabelView alloc] init];
-                m.labelLeft.str("4");
-                m;
-            })];
-            [obj addObject:({
-                WQLeftAndRightLabelView *m=[[WQLeftAndRightLabelView alloc] init];
-                m.labelLeft.str("5");
-                m;
-            })];
-            [obj addObject:({
-                WQStyle0001View *m=[[WQStyle0001View alloc] init];
-                m.labelLeft.str("6");
-                m;
-            })];
-            [obj addObject:({
-                WQLeftAndRightLabelView *m=[[WQLeftAndRightLabelView alloc] init];
-                m.labelLeft.str("7");
-                m;
-            })];
-            [obj addObject:({
-                WQLeftAndRightLabelView *m=[[WQLeftAndRightLabelView alloc] init];
-                m.labelLeft.str("8");
-                m;
-            })];
-            [obj addObject:({
-                WQStyle0001View *m=[[WQStyle0001View alloc] init];
-                m.labelLeft.str("9");
-                m;
-            })];
-            [obj addObject:({
-                WQStyle0001View *m=[[WQStyle0001View alloc] init];
-                m.labelLeft.str("10");
-                m;
-            })];
-            [obj addObject:({
-                WQLeftAndRightLabelView *m=[[WQLeftAndRightLabelView alloc] init];
-                m.labelLeft.str("11");
-                m;
-            })];
 
+                m;
+            })];
+         
+            [obj addObject:({
+                WQStyle0001View *m=[[WQStyle0001View alloc] init];
+                
+                m;
+            })];
+          
+            [obj addObject:({
+                WQStyle0001View *m=[[WQStyle0001View alloc] init];
+                
+                m;
+            })];
             obj;
         });
     }

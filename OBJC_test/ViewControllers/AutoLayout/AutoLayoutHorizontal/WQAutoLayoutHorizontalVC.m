@@ -34,7 +34,9 @@
     [self.viewItemsBg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
-    
+    CGFloat price=9.9+19.9+7.8+45.9+14.9+19.9+39.8+7.8+79;
+    NSString *priceStr=Str(@"%.2f",price);
+    Log(priceStr);
     [self viewRalationshipLayout];
 }
 
@@ -52,6 +54,7 @@
         } else if (idx == self.viewDatas.count - 1) {//最后一个
             [obj mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(oldView.mas_right).offset(0);
+                make.right.offset(0);
                 make.top.bottom.offset(0);
             }];
         } else {

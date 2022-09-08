@@ -45,6 +45,7 @@
 		25EEB41B28C6485100057D7D /* WQStyle0001View.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEB41A28C6485100057D7D /* WQStyle0001View.m */; };
 		25EEB42428C7926B00057D7D /* WQAutoLayoutHorizontalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEB42328C7926B00057D7D /* WQAutoLayoutHorizontalVC.m */; };
 		25EEB42728C794FD00057D7D /* WQHorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEB42628C794FD00057D7D /* WQHorizontalView.m */; };
+		25EEB42B28C79A3600057D7D /* WQHorizontalStyle001View.m in Sources */ = {isa = PBXBuildFile; fileRef = 25EEB42A28C79A3600057D7D /* WQHorizontalStyle001View.m */; };
 		25F036CA28BB589B00363733 /* WQBzyiGPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F036C928BB589B00363733 /* WQBzyiGPMDView.m */; };
 		25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F8572D2744ECDD004DB99E /* SaveInfoVC.m */; };
 		25F857322744F0C6004DB99E /* String_Dfine.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857312744F0C6004DB99E /* String_Dfine.m */; };
@@ -149,6 +150,8 @@
 		25EEB42528C794FD00057D7D /* WQHorizontalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQHorizontalView.h; sourceTree = "<group>"; };
 		25EEB42628C794FD00057D7D /* WQHorizontalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQHorizontalView.m; sourceTree = "<group>"; };
 		25EEB42828C7954000057D7D /* WQHorizontalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQHorizontalHeader.h; sourceTree = "<group>"; };
+		25EEB42928C79A3600057D7D /* WQHorizontalStyle001View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQHorizontalStyle001View.h; sourceTree = "<group>"; };
+		25EEB42A28C79A3600057D7D /* WQHorizontalStyle001View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQHorizontalStyle001View.m; sourceTree = "<group>"; };
 		25F036C828BB589B00363733 /* WQBzyiGPMDView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQBzyiGPMDView.h; sourceTree = "<group>"; };
 		25F036C928BB589B00363733 /* WQBzyiGPMDView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQBzyiGPMDView.m; sourceTree = "<group>"; };
 		25F8572C2744ECDD004DB99E /* SaveInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SaveInfoVC.h; sourceTree = "<group>"; };
@@ -504,6 +507,8 @@
 				25EEB42828C7954000057D7D /* WQHorizontalHeader.h */,
 				25EEB42528C794FD00057D7D /* WQHorizontalView.h */,
 				25EEB42628C794FD00057D7D /* WQHorizontalView.m */,
+				25EEB42928C79A3600057D7D /* WQHorizontalStyle001View.h */,
+				25EEB42A28C79A3600057D7D /* WQHorizontalStyle001View.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -819,6 +824,7 @@
 				25F036CA28BB589B00363733 /* WQBzyiGPMDView.m in Sources */,
 				25FA935728ACD1A900F2E484 /* WQBYCyclePMDViewController.m in Sources */,
 				25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */,
+				25EEB42B28C79A3600057D7D /* WQHorizontalStyle001View.m in Sources */,
 				25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */,
 				2505C23528AE138E00215530 /* WQGridViewController.m in Sources */,
 				25317A5828261DFA006678F7 /* ManagerNet.m in Sources */,

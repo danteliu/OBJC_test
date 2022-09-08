@@ -426,7 +426,7 @@
                 WQCycleModel *m = [[WQCycleModel alloc] init];
                 m.name = @"自动竖布局";
                 m.type = ViewTypeTimeAutoLayoutVertical;
-                m.imgUrl = @"https://images.unsplash.com/photo-1661417456384-af20a862790d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MjM4ODY4Nw&ixlib=rb-1.2.1&q=80&w=1080";
+                m.imgUrl = @"https://images.unsplash.com/photo-1661937303423-f251f4b80c8f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MjYyMTkwMg&ixlib=rb-1.2.1&q=80&w=1080";
                 m;
             })];
             [obj addObject:({

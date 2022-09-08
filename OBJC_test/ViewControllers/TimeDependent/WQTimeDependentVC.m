@@ -287,8 +287,19 @@
     if (!_labelTimeShow) {
         _labelTimeShow = ({
             UILabel *obj = [[UILabel alloc] init];
-            obj.centerAlignment.bgColor(@"random").str(@"");
+            obj.centerAlignment.bgColor(@"random").str(@"点击计算时间");
+            obj.onClick(^(void){
+                RBDateTime *dateStart=[RBDateTime now];
+                Log([dateStart localizedStringWithFormat:@"yyyy-MM-dd HH:mm:ss"]);
             
+//                [dateStart subtractDuration:[RBDuration durationWithDays:1 hours:0 minutes:3 seconds:0 milliseconds:0]];
+//                Log([dateStart localizedStringWithFormat:@"yyyy-MM-dd HH:mm:ss"]);
+
+                
+                [dateStart addYears:0 months:0 days:1 hours:0 minutes:3 seconds:0 milliseconds:0];//距离现在1天多3分钟
+//                [dateStart addYears:0 months:0 days:0 hours:0 minutes:4 seconds:25 milliseconds:0];
+                Log([dateStart localizedStringWithFormat:@"yyyy-MM-dd HH:mm:ss"]);
+            });
             obj;
         });
     }

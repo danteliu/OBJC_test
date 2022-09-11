@@ -34,9 +34,7 @@
     [self.viewItemsBg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
-    
     [self viewRalationshipLayout];
-    
 }
 -(void)viewRalationshipLayout{
     __block UIView *oldView=self.viewDatas.firstObject;

@@ -19,8 +19,8 @@
     self.hbd_barTintColor = Color(@"white,1");
     self.hbd_barShadowHidden = YES;
     self.title = @"格子视图";
-    
-    
+
+
     self.grid.addTo(self.view);
     [self.grid mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(10);
@@ -44,7 +44,7 @@
             obj;
         });
     }
-    
+
     return _grid;
 }
 
@@ -54,22 +54,22 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    
+
     if (self) {
         self.bgColor(@"random");
-        
+
         self.rowMargin = 10;
         self.columnMargin = 10;
         self.rowShow = 3;
         self.columnShow = 6;
         self.padding = UIEdgeInsetsMake(0, 0, 0, 0);
-        
+
         self.collectionView.addTo(self);
         [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
     }
-    
+
     return self;
 }
 
@@ -78,23 +78,43 @@
     CGFloat leftRightMargin = self.padding.left + self.padding.right;
     //前后边距
     CGFloat topBottomMargin = self.padding.top + self.padding.bottom;
-    
+
     CGFloat w = (self.w - self.columnMargin * (self.columnShow - 1) - leftRightMargin) / self.columnShow;
     CGFloat h = (self.h - self.rowMargin * (self.rowShow - 1) - topBottomMargin) / self.rowShow;
-    
+
     self.layout.itemSize = CGSizeMake(w, h);
 }
--(void)registClassName:(UICollectionView *)view{/**<  注册类名 */
-    NSArray <Class>*classArr=@[
+
+- (void)registClassName:(UICollectionView *)view {/**<  注册类名 */
+    NSArray <Class> *classArr = @[
         [WQGridViewCell class],
     ];
-    [classArr enumerateObjectsUsingBlock:^(Class  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [view registerClass:obj forCellWithReuseIdentifier:NSStringFromClass(obj)];
+
+    [classArr enumerateObjectsUsingBlock:^(Class _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        [view            registerClass:obj
+            forCellWithReuseIdentifier:NSStringFromClass(obj)];
     }];
 }
 
 #pragma mark -
-#pragma mark delegate
+#pragma mark UICollectionView delegate & dataSouce
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {/**<  分区数 */
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {/**<  返回个数 */
+    return self.datas.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {/**<  cell实现 */
+    static NSString *cellId = @"WQGridViewCell";
+    WQGridViewCell *cell = (WQGridViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
+
+    cell.bgColor(@"random");
+    cell.textLabel.str(self.datas[indexPath.row]);
+    return cell;
+}
+
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {/**<  每个分区的内边距（上左下右） */
     return self.padding;
 }
@@ -107,23 +127,7 @@
     return self.columnMargin;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {/**<  返回个数 */
-    return self.datas.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {/**<  cell实现 */
-    static NSString *cellId = @"WQGridViewCell";
-    WQGridViewCell *cell = (WQGridViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    
-    cell.bgColor(@"random");
-    cell.textLabel.str(self.datas[indexPath.row]);
-    return cell;
-}
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {/**<  点击方法 */
-    if (self.onClickItem) {
-        self.onClickItem(self.datas[indexPath.row]);
-    }
 }
 
 #pragma mark -
@@ -132,11 +136,11 @@
     if (!_layout) {
         _layout = ({
             UICollectionViewFlowLayout *obj = [[UICollectionViewFlowLayout alloc] init];
-            obj.scrollDirection = UICollectionViewScrollDirectionVertical;
+            obj.scrollDirection = UICollectionViewScrollDirectionVertical;//方向
             obj;
         });
     }
-    
+
     return _layout;
 }
 
@@ -147,12 +151,18 @@
             obj.delegate = self;
             obj.dataSource = self;
             obj.backgroundColor = [UIColor clearColor];
-            [self registClassName:obj];
+            NSArray <Class> *classArr = @[
+                [WQGridViewCell class],
+            ];
+            [classArr enumerateObjectsUsingBlock:^(Class _Nonnull class, NSUInteger idx, BOOL *_Nonnull stop) {
+                [obj             registerClass:class
+                    forCellWithReuseIdentifier:NSStringFromClass(class)];
+            }];
             obj.showsHorizontalScrollIndicator = false;
             obj;
         });
     }
-    
+
     return _collectionView;
 }
 
@@ -160,15 +170,15 @@
     if (!_datas) {
         _datas = ({
             NSMutableArray *obj = [[NSMutableArray alloc] init];
-            
+
             for (NSInteger i = 0; i < 100; i++) {
                 [obj addObject:Str(i + 1)];
             }
-            
+
             obj;
         });
     }
-    
+
     return _datas;
 }
 
@@ -179,7 +189,7 @@
     if (self = [super initWithFrame:frame]) {
         [self buildUI];
     }
-    
+
     return self;
 }
 
@@ -202,7 +212,7 @@
             obj;
         });
     }
-    
+
     return _textLabel;
 }
 

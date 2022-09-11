@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EECA641BD205B94A6CA00CF /* Pods_OBJC_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF34BA72DB1D3A5E4117B91 /* Pods_OBJC_test.framework */; };
+		2505C16728CE556C001B8296 /* WQCodeSipptesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2505C16628CE556C001B8296 /* WQCodeSipptesViewController.m */; };
 		2505C23528AE138E00215530 /* WQGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2505C23428AE138E00215530 /* WQGridViewController.m */; };
 		251677922862A7350025A701 /* CalculateData.m in Sources */ = {isa = PBXBuildFile; fileRef = 251677912862A7350025A701 /* CalculateData.m */; };
 		251677942862A7C10025A701 /* CalculateDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251677932862A7C10025A701 /* CalculateDataTest.m */; };
@@ -75,6 +76,8 @@
 /* Begin PBXFileReference section */
 		1DF34BA72DB1D3A5E4117B91 /* Pods_OBJC_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2498971F482A606920567723 /* Pods-OBJC_test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_test/Pods-OBJC_test.debug.xcconfig"; sourceTree = "<group>"; };
+		2505C16528CE556C001B8296 /* WQCodeSipptesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCodeSipptesViewController.h; sourceTree = "<group>"; };
+		2505C16628CE556C001B8296 /* WQCodeSipptesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQCodeSipptesViewController.m; sourceTree = "<group>"; };
 		2505C23328AE138E00215530 /* WQGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQGridViewController.h; sourceTree = "<group>"; };
 		2505C23428AE138E00215530 /* WQGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQGridViewController.m; sourceTree = "<group>"; };
 		251677902862A7350025A701 /* CalculateData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculateData.h; sourceTree = "<group>"; };
@@ -199,6 +202,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2505C16428CE5536001B8296 /* CodeSnippetsTest */ = {
+			isa = PBXGroup;
+			children = (
+				2505C16528CE556C001B8296 /* WQCodeSipptesViewController.h */,
+				2505C16628CE556C001B8296 /* WQCodeSipptesViewController.m */,
+			);
+			path = CodeSnippetsTest;
+			sourceTree = "<group>";
+		};
 		2505C23028AE0CCE00215530 /* CopyRandomColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +427,7 @@
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2505C16428CE5536001B8296 /* CodeSnippetsTest */,
 				25EEB41F28C791E900057D7D /* AutoLayout */,
 				25A2E95328C0A4A60029B71B /* TimeDependent */,
 				2505C23228AE0EC700215530 /* GridView */,
@@ -839,6 +852,7 @@
 				253A87C828A505E90041CB0A /* ScanCodeVC.m in Sources */,
 				259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */,
 				25F857352744F389004DB99E /* SaveInfoCell.m in Sources */,
+				2505C16728CE556C001B8296 /* WQCodeSipptesViewController.m in Sources */,
 				25DE67B428B874DF00B1DF6F /* WQBzyiGradientView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

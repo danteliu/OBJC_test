@@ -162,7 +162,6 @@
 
 - (void)startTime {/**<  开启定时器 */
     NSTimer *tempTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(showNext) userInfo:nil repeats:YES];
-
     timer = tempTimer;
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }

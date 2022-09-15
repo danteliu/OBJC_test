@@ -80,7 +80,7 @@
           
             [obj addObject:({
                 WQStyle0001View *m=[[WQStyle0001View alloc] init];
-                
+                m.labelLeft.str(@"缩放动画");
                 m;
             })];
             obj;

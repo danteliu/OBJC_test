@@ -17,6 +17,7 @@
 #import "WQPMDViewController.h"
 #import "WQTimeDependentVC.h"
 #import "WQAutoLayoutHorizontalVC.h"
+#import "WQCodeSipptesViewController.h"
 
 
 
@@ -334,6 +335,14 @@
             })
                                                  animated:YES];
             break;
+        case ViewTypeCodeSnippets:
+            [self.navigationController pushViewController:({
+                WQCodeSipptesViewController *obj = [[WQCodeSipptesViewController alloc] init];
+                obj.hidesBottomBarWhenPushed = YES;
+                obj;
+            })
+                                                 animated:YES];
+            break;
 
             
         default:
@@ -413,7 +422,15 @@
     if (!_cycleDatas) {
         _cycleDatas = ({
             NSMutableArray *obj = [[NSMutableArray alloc] init];
-//            WQAutoLayoutHorizontalVC
+            [obj addObject:({
+                WQCycleModel *m = [[WQCycleModel alloc] init];
+                m.name = @"代码段";
+                m.type = ViewTypeCodeSnippets;
+                m.imgUrl = @"https://images.unsplash.com/photo-1663124164789-92ad4f9b7dcd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MzMzNTQ4Mw&ixlib=rb-1.2.1&q=80&w=1080";
+                m;
+            })];
+
+
             [obj addObject:({
                 WQCycleModel *m = [[WQCycleModel alloc] init];
                 m.name = @"自动横布局";

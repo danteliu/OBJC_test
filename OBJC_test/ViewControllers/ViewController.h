@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, ViewType) {
     ViewTypeTimeDependent,/**<  时间相关 */
     ViewTypeTimeAutoLayoutVertical,/**<  自动竖布局 */
     ViewTypeTimeAutoLayoutHorizontal,/**<  自动横布局 */
+    ViewTypeCodeSnippets,/**<  添加代码段 */
 };
 
 @class WQCycleModel;

@@ -9,6 +9,7 @@
 
 @interface WQCodeSipptesViewController ()
 @property (nonatomic, strong) UIView *viewLine; /**<  <#属性注释#> */
+@property (nonatomic, strong) NSMutableArray <UIView *> *arrayViews;/**<  <#属性注释#> */
 @end
 
 @implementation WQCodeSipptesViewController
@@ -32,6 +33,59 @@
     self.hbd_barShadowHidden = YES;
     self.title = @"Code Snippet";
     self.viewLine.addTo(self.view);
+
+    [self.arrayViews enumerateObjectsUsingBlock:^(UIView *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {/**<  横向等宽布局 */
+        [self.view addSubview:obj];
+
+        UIView *oldView = idx == 0 ? self.arrayViews.firstObject : self.arrayViews[idx - 1];
+
+        if (idx == 0) {
+            [obj mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.left.bottom.offset(0);
+            }];
+        } else if (idx == self.arrayViews.count - 1) {
+            [obj mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.right.bottom.offset(0);
+                make.width.equalTo(oldView.mas_width);
+
+                make.left.equalTo(oldView.mas_right).offset(0);
+            }];
+        } else {
+            [obj mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.bottom.offset(0);
+                make.width.equalTo(oldView.mas_width);
+                make.left.equalTo(oldView.mas_right).offset(0);
+            }];
+            oldView = obj;
+        }
+    }];
+}
+
+- (id)arrayViews {
+    if (!_arrayViews) {
+        _arrayViews = ({
+            NSMutableArray *obj = [[NSMutableArray alloc] init];
+            [obj addObject:({
+                UIView *v = [[UIView alloc] init];
+                v.bgColor(@"random");
+                v;
+            })];
+            [obj addObject:({
+                UIView *v = [[UIView alloc] init];
+                v.bgColor(@"red");
+                v;
+            })];
+            [obj addObject:({
+                UIView *v = [[UIView alloc] init];
+                v.bgColor(@"random");
+                v;
+            })];
+
+            obj;
+        });
+    }
+
+    return _arrayViews;
 }
 
 - (UIView *)viewLine {

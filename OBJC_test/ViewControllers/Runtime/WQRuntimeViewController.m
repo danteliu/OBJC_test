@@ -6,7 +6,7 @@
 //
 
 #import "WQRuntimeViewController.h"
-#import "WQTeacher.h""
+#import "WQTeacher.h"
 
 @interface WQRuntimeViewController ()
 @property (nonatomic, strong) BaseVScrollview *scrollViewMain; /**<  <#属性注释#> */

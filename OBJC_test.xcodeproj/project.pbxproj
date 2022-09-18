@@ -30,12 +30,15 @@
 		256B47CE26AFABFE007E13C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47CD26AFABFE007E13C8 /* main.m */; };
 		256B47D826AFABFF007E13C8 /* OBJC_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47D726AFABFF007E13C8 /* OBJC_testTests.m */; };
 		256B47E326AFABFF007E13C8 /* OBJC_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B47E226AFABFF007E13C8 /* OBJC_testUITests.m */; };
+		257C2EA428D6FCB000F5E407 /* WQTeacherType.m in Sources */ = {isa = PBXBuildFile; fileRef = 257C2EA328D6FCB000F5E407 /* WQTeacherType.m */; };
 		257E1DD727E47579002670DF /* DanteWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 257E1DD627E47579002670DF /* DanteWebVC.m */; };
 		259EF334279A84AE00E6C95F /* NetLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 259EF333279A84AE00E6C95F /* NetLogManager.m */; };
 		25A2E94928BE075A0029B71B /* WQBzyiGradientViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A2E94828BE075A0029B71B /* WQBzyiGradientViewCell.m */; };
 		25A2E95628C0A5120029B71B /* WQTimeDependentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A2E95528C0A5120029B71B /* WQTimeDependentVC.m */; };
 		25AD660726F48CE800DA671A /* HDHVerticalPMDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */; };
 		25B312CE28ADD19A000A3990 /* WQView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B312CD28ADD19A000A3990 /* WQView.m */; };
+		25B7DC9428D4D97D00D102C5 /* WQRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DC9328D4D97D00D102C5 /* WQRuntimeViewController.m */; };
+		25B7DC9728D4DA9900D102C5 /* WQTeacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 25B7DC9628D4DA9900D102C5 /* WQTeacher.m */; };
 		25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */; };
 		25DE67AE28B86E6300B1DF6F /* WQCradientPmdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DE67AD28B86E6300B1DF6F /* WQCradientPmdViewController.m */; };
 		25DE67B428B874DF00B1DF6F /* WQBzyiGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25DE67B328B874DF00B1DF6F /* WQBzyiGradientView.m */; };
@@ -119,6 +122,8 @@
 		256B47E426AFABFF007E13C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		256B47F226AFAE01007E13C8 /* ortherFramwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ortherFramwork.h; sourceTree = "<group>"; };
 		256B47F326AFB3CA007E13C8 /* OBJC_test.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJC_test.pch; sourceTree = "<group>"; };
+		257C2EA228D6FCAF00F5E407 /* WQTeacherType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQTeacherType.h; sourceTree = "<group>"; };
+		257C2EA328D6FCB000F5E407 /* WQTeacherType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQTeacherType.m; sourceTree = "<group>"; };
 		257E1DD527E47579002670DF /* DanteWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DanteWebVC.h; sourceTree = "<group>"; };
 		257E1DD627E47579002670DF /* DanteWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DanteWebVC.m; sourceTree = "<group>"; };
 		259EF332279A84AE00E6C95F /* NetLogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetLogManager.h; sourceTree = "<group>"; };
@@ -131,6 +136,10 @@
 		25AD660626F48CE800DA671A /* HDHVerticalPMDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHVerticalPMDView.m; sourceTree = "<group>"; };
 		25B312CC28ADD19A000A3990 /* WQView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQView.h; sourceTree = "<group>"; };
 		25B312CD28ADD19A000A3990 /* WQView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQView.m; sourceTree = "<group>"; };
+		25B7DC9228D4D97D00D102C5 /* WQRuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQRuntimeViewController.h; sourceTree = "<group>"; };
+		25B7DC9328D4D97D00D102C5 /* WQRuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQRuntimeViewController.m; sourceTree = "<group>"; };
+		25B7DC9528D4DA9900D102C5 /* WQTeacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQTeacher.h; sourceTree = "<group>"; };
+		25B7DC9628D4DA9900D102C5 /* WQTeacher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQTeacher.m; sourceTree = "<group>"; };
 		25CA3EC226C3C1DE006117D7 /* HDHScrollPlusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDHScrollPlusView.m; sourceTree = "<group>"; };
 		25CA3EC326C3C1DE006117D7 /* HDHScrollPlusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDHScrollPlusView.h; sourceTree = "<group>"; };
 		25DE67AC28B86E6300B1DF6F /* WQCradientPmdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCradientPmdViewController.h; sourceTree = "<group>"; };
@@ -398,6 +407,19 @@
 			path = HDHVerticalPMDView;
 			sourceTree = "<group>";
 		};
+		25B7DC9128D4D95700D102C5 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				25B7DC9228D4D97D00D102C5 /* WQRuntimeViewController.h */,
+				25B7DC9328D4D97D00D102C5 /* WQRuntimeViewController.m */,
+				25B7DC9528D4DA9900D102C5 /* WQTeacher.h */,
+				25B7DC9628D4DA9900D102C5 /* WQTeacher.m */,
+				257C2EA228D6FCAF00F5E407 /* WQTeacherType.h */,
+				257C2EA328D6FCB000F5E407 /* WQTeacherType.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
 		25CA3EC126C3C1DE006117D7 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +449,7 @@
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				25B7DC9128D4D95700D102C5 /* Runtime */,
 				2505C16428CE5536001B8296 /* CodeSnippetsTest */,
 				25EEB41F28C791E900057D7D /* AutoLayout */,
 				25A2E95328C0A4A60029B71B /* TimeDependent */,
@@ -819,6 +842,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25DE67AE28B86E6300B1DF6F /* WQCradientPmdViewController.m in Sources */,
+				257C2EA428D6FCB000F5E407 /* WQTeacherType.m in Sources */,
 				25EEB41B28C6485100057D7D /* WQStyle0001View.m in Sources */,
 				257E1DD727E47579002670DF /* DanteWebVC.m in Sources */,
 				256B47C326AFABFB007E13C8 /* ViewController.m in Sources */,
@@ -828,12 +852,14 @@
 				256B47CE26AFABFE007E13C8 /* main.m in Sources */,
 				25EEB41428C640A900057D7D /* WQAutoLayoutVC.m in Sources */,
 				25A2E95628C0A5120029B71B /* WQTimeDependentVC.m in Sources */,
+				25B7DC9728D4DA9900D102C5 /* WQTeacher.m in Sources */,
 				25B312CE28ADD19A000A3990 /* WQView.m in Sources */,
 				254A07A626E066C2007A7F50 /* UIView+CreateObj.m in Sources */,
 				25F857322744F0C6004DB99E /* String_Dfine.m in Sources */,
 				251D3CF127A2447500FC1153 /* RandomView.swift in Sources */,
 				25CA3EC426C3C1DE006117D7 /* HDHScrollPlusView.m in Sources */,
 				25EEB41828C6434E00057D7D /* WQLeftAndRightLabelView.m in Sources */,
+				25B7DC9428D4D97D00D102C5 /* WQRuntimeViewController.m in Sources */,
 				25F036CA28BB589B00363733 /* WQBzyiGPMDView.m in Sources */,
 				25FA935728ACD1A900F2E484 /* WQBYCyclePMDViewController.m in Sources */,
 				25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */,

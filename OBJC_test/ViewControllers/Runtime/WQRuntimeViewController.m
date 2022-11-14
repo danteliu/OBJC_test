@@ -13,7 +13,9 @@
 @property (nonatomic, strong) UILabel *labelSave; /**<  <#属性注释#> */
 @property (nonatomic, strong) UILabel *labelGet; /**<  <#属性注释#> */
 @property (nonatomic, strong) UILabel *labelOpenScheme;/**<  <#属性注释#> */
+@property (nonatomic, strong) UILabel *labelTestChainModel;/**<  <#属性注释#> */
 @property (nonatomic, strong) NSMutableArray <UIView *> *arrayLables; /**<  <#属性注释#> */
+@property (nonatomic, strong) ChainTestView *testView;
 @end
 
 @implementation WQRuntimeViewController
@@ -140,6 +142,30 @@
 
     return _labelOpenScheme;
 }
+- (id)labelTestChainModel {
+    if (!_labelTestChainModel) {
+        _labelTestChainModel = ({
+            UILabel *obj = [[UILabel alloc] init];
+            obj.str(@"检查引用问题").color(@"white").centerAlignment.bgColor(@"random");
+            obj.userInteractionEnabled=YES;
+            [obj addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkSele)]];
+//            obj.onClick(^(void) {
+//                [self checkSele];
+//            });
+            obj;
+        });
+    }
+
+    return _labelTestChainModel;
+}
+- (void)checkSele {/**<  <#注释#> */
+    self.testView=[[ChainTestView alloc] init];
+    Log(@"释放前:");
+    Log(_testView.stringTest);
+    self.testView.addModel(@{@"1":@"我的东西"});
+    self.testView=nil;
+}
+
 
 - (void)openBeijingCmcc {/**<  <#注释#> */
 //    NSURL *url = [NSURL URLWithString:@"weixin://"];
@@ -162,11 +188,51 @@
             [obj addObject:self.labelSave];
             [obj addObject:self.labelGet];
             [obj addObject:self.labelOpenScheme];
+            [obj addObject:self.labelTestChainModel];
             obj;
         });
     }
 
     return _arrayLables;
 }
+- (void)dealloc{
+    NSLog(@"%s", __func__);
+}
+
+@end
+
+@implementation ChainTestView
+
+
+- (void (^)(NSDictionary * _Nonnull res))addModel{
+//    __weak typeof(self) weakSelf = self;
+
+    return ^(NSDictionary * _Nonnull res){
+
+        self.stringTest.str(res);
+        Log(@"调用addModel后:");
+        Log(self.stringTest);
+    };
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        self.stringTest.str(@"初始化字符串");
+    }
+    return self;
+}
+- (id)stringTest{
+    if (!_stringTest) {
+        _stringTest=[[UILabel alloc] init];
+    }
+    return _stringTest;
+}
+
+- (void)dealloc {
+    Log(@"释放后:");
+    Log(_stringTest);
+}
+
+
 
 @end

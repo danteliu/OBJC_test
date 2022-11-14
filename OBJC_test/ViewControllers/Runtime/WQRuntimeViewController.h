@@ -13,4 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface ChainTestView : UIView
+@property (nonatomic, strong) UILabel * stringTest;/**<  <#属性注释#> */
+@property (nonatomic, readonly, copy) void (^addModel)(NSDictionary *res);/**<  <#参数说明#> */
+- (instancetype)init;
+@end
+
 NS_ASSUME_NONNULL_END

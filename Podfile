@@ -1,5 +1,16 @@
-platform :ios, '9.0'
-source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+inhibit_all_warnings! # 强制忽略警告信息
+
+# 添加一个额外的约束条件来限制所有库的版本
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+    end
+  end
+end
+
+# source 'https://github.com/CocoaPods/Specs.git'
 target 'OBJC_test' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!

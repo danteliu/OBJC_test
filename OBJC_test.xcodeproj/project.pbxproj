@@ -55,6 +55,10 @@
 		25F857322744F0C6004DB99E /* String_Dfine.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857312744F0C6004DB99E /* String_Dfine.m */; };
 		25F857352744F389004DB99E /* SaveInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857342744F389004DB99E /* SaveInfoCell.m */; };
 		25FA935728ACD1A900F2E484 /* WQBYCyclePMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA935628ACD1A900F2E484 /* WQBYCyclePMDViewController.m */; };
+		9CE7EB0D2A79E48900F017B0 /* PublicWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0C2A79E48900F017B0 /* PublicWebViewController.m */; };
+		9CE7EB102A7A032000F017B0 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0E2A7A032000F017B0 /* test.html */; };
+		9CE7EB112A7A032000F017B0 /* jsBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0F2A7A032000F017B0 /* jsBridge.js */; };
+		9CE7EB132A7A288600F017B0 /* ios_webbox_js.js in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB122A7A288600F017B0 /* ios_webbox_js.js */; };
 		AD054A5B3E7D9D640C8ED858 /* Pods_OBJC_test_OBJC_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */; };
 		C55011541C6058E47D1D4800 /* Pods_OBJC_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECACE1CBBAC4D80C01436A4E /* Pods_OBJC_testTests.framework */; };
 /* End PBXBuildFile section */
@@ -178,6 +182,11 @@
 		7AB19B46E53667510816D605 /* Pods-OBJC_test-OBJC_testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test-OBJC_testUITests/Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C1294EFF3A561637C2A7DA9 /* Pods-OBJC_testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_testTests.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_testTests/Pods-OBJC_testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC152F1EA5AE43DB0AC2ECE /* Pods-OBJC_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test/Pods-OBJC_test.release.xcconfig"; sourceTree = "<group>"; };
+		9CE7EB0B2A79E48900F017B0 /* PublicWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicWebViewController.h; sourceTree = "<group>"; };
+		9CE7EB0C2A79E48900F017B0 /* PublicWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicWebViewController.m; sourceTree = "<group>"; };
+		9CE7EB0E2A7A032000F017B0 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		9CE7EB0F2A7A032000F017B0 /* jsBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsBridge.js; sourceTree = "<group>"; };
+		9CE7EB122A7A288600F017B0 /* ios_webbox_js.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ios_webbox_js.js; sourceTree = "<group>"; };
 		DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test_OBJC_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECACE1CBBAC4D80C01436A4E /* Pods_OBJC_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF801EB06F63B9C7FFC25C26 /* Pods-OBJC_testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_testTests.release.xcconfig"; path = "Target Support Files/Pods-OBJC_testTests/Pods-OBJC_testTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,6 +337,7 @@
 		256B47BA26AFABFB007E13C8 /* OBJC_test */ = {
 			isa = PBXGroup;
 			children = (
+				9CE7EB0A2A79E3F600F017B0 /* MainController */,
 				2547A80C28AF8D770042EAF5 /* README.md */,
 				256B47BB26AFABFB007E13C8 /* AppDelegate.h */,
 				256B47BC26AFABFB007E13C8 /* AppDelegate.m */,
@@ -601,6 +611,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9CE7EB0A2A79E3F600F017B0 /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				9CE7EB122A7A288600F017B0 /* ios_webbox_js.js */,
+				9CE7EB0F2A7A032000F017B0 /* jsBridge.js */,
+				9CE7EB0E2A7A032000F017B0 /* test.html */,
+				9CE7EB0B2A79E48900F017B0 /* PublicWebViewController.h */,
+				9CE7EB0C2A79E48900F017B0 /* PublicWebViewController.m */,
+			);
+			path = MainController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -713,7 +735,10 @@
 				256B47CB26AFABFE007E13C8 /* LaunchScreen.storyboard in Resources */,
 				256B47C826AFABFE007E13C8 /* Assets.xcassets in Resources */,
 				2547A80D28AF8D780042EAF5 /* README.md in Resources */,
+				9CE7EB102A7A032000F017B0 /* test.html in Resources */,
+				9CE7EB112A7A032000F017B0 /* jsBridge.js in Resources */,
 				256B47C626AFABFC007E13C8 /* Main.storyboard in Resources */,
+				9CE7EB132A7A288600F017B0 /* ios_webbox_js.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,6 +866,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE7EB0D2A79E48900F017B0 /* PublicWebViewController.m in Sources */,
 				25DE67AE28B86E6300B1DF6F /* WQCradientPmdViewController.m in Sources */,
 				257C2EA428D6FCB000F5E407 /* WQTeacherType.m in Sources */,
 				25EEB41B28C6485100057D7D /* WQStyle0001View.m in Sources */,

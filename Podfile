@@ -29,7 +29,8 @@ target 'OBJC_test' do
   pod 'pop', '~> 1.0.12'#facebook 动画库
   pod 'WMZBanner', '~> 1.2.0'#渐进轮播
   pod 'SDWebImage', '~> 5.12.6'#图片缓存框架
-  pod 'WebViewJavascriptBridge', '~> 6.0'#webview桥接框架
+#  pod 'WebViewJavascriptBridge', '~> 6.0'#webview桥接框架
+  pod 'WebViewJavascriptBridge(WK)', '~> 6.1.0'
 
   target 'OBJC_testTests' do
     inherit! :search_paths

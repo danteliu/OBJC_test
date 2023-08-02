@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试文件</title>
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jsBridge.js"></script>
+    <script>
+        // 定义全局函数
+        function testclick() {
+            // alert("点击了我");
+            // this.isAndroid ?
+            //     window.hcy.closeWebViewPopupWindow() :
+            //     window.WebViewJavascriptBridge && u.a.callHandler("hcy_closeWebViewPopupWindow", e => {
+            //         console.log("*********callHandlerCallback*********:", e)
+            //     });
+            Bridge.callHandler("hcy_closeWebViewPopupWindow", e => {
+                console.log("*********callHandlerCallback*********:", e)
+            });
+            // alert("this.isAndroid: " + this.isAndroid);
+            // alert("window.WebViewJavascriptBridge: " + window.WebViewJavascriptBridge);
+            // alert("u.a: " + u.a);
+
+            $(".show_text").text("2222");
+        }
+        // 在页面加载完成后执行代码
+        $(document).ready(function () {
+            $(".mybtn").click(function () {
+                testclick();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- <button type="button" class="mybtn" onclick="testclick()">点击我</button> -->
+    <button type="button" class="mybtn">点击我</button>
+    <p class="show_text">点击显示的内容</p>
+</body>
+
+</html>

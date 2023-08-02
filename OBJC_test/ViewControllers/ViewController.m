@@ -526,6 +526,24 @@
                 WQView *view = [[WQView alloc] init];
                 
                 view.addModel(@{
+                    @"name": @"测试桥接库",
+                    @"imgBgUrl": @"https://images.unsplash.com/photo-1661155528331-d03a2a82c22b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MTc2MTY4MQ&ixlib=rb-1.2.1&q=80&w=1080",
+                });
+                
+                view.clickView = ^{
+                    PublicWebViewController *info = [[PublicWebViewController alloc] init];
+                    info.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:info
+                                                         animated:YES];
+                };
+                view;
+            })];
+
+            
+            [obj addObject:({
+                WQView *view = [[WQView alloc] init];
+                
+                view.addModel(@{
                     @"name": @"保存数据",
                     @"imgBgUrl": @"https://images.unsplash.com/photo-1661155528331-d03a2a82c22b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MTc2MTY4MQ&ixlib=rb-1.2.1&q=80&w=1080",
                 });

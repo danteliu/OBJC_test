@@ -9,6 +9,7 @@
 #import "RandomColorVC.h"
 #import "WQGridViewController.h"
 #import "WQView.h"
+#import "PublicWebViewController.h"
 
 typedef NS_ENUM(NSInteger, ViewType) {
     ViewTypePMD,/**<  跑马灯弹幕 */

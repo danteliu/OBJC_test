@@ -35,4 +35,6 @@
 #import "String_Dfine.h"//公共字符串
 #import "NetLogManager.h"//网络请求日志管理
 #import "ScanCodeVC.h"//扫码页面
+#import "WQSaveViewController.h"
+
 #endif /* ortherFramwork_h */

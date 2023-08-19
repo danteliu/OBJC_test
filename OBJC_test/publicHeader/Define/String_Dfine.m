@@ -8,5 +8,5 @@
 #import "String_Dfine.h"
 
 @implementation String_Dfine
-NSString * const infoKey=@"infoKey";
+NSString *const infoKey = @"infoKey";
 @end

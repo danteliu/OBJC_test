@@ -55,6 +55,7 @@
 		25F857322744F0C6004DB99E /* String_Dfine.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857312744F0C6004DB99E /* String_Dfine.m */; };
 		25F857352744F389004DB99E /* SaveInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857342744F389004DB99E /* SaveInfoCell.m */; };
 		25FA935728ACD1A900F2E484 /* WQBYCyclePMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA935628ACD1A900F2E484 /* WQBYCyclePMDViewController.m */; };
+		9C7DE5932A8E8F5C000E5AAA /* WQSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DE5922A8E8F5C000E5AAA /* WQSaveViewController.m */; };
 		9CE7EB0D2A79E48900F017B0 /* PublicWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0C2A79E48900F017B0 /* PublicWebViewController.m */; };
 		9CE7EB102A7A032000F017B0 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0E2A7A032000F017B0 /* test.html */; };
 		9CE7EB112A7A032000F017B0 /* jsBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0F2A7A032000F017B0 /* jsBridge.js */; };
@@ -182,6 +183,8 @@
 		7AB19B46E53667510816D605 /* Pods-OBJC_test-OBJC_testUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test-OBJC_testUITests/Pods-OBJC_test-OBJC_testUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C1294EFF3A561637C2A7DA9 /* Pods-OBJC_testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_testTests.debug.xcconfig"; path = "Target Support Files/Pods-OBJC_testTests/Pods-OBJC_testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FC152F1EA5AE43DB0AC2ECE /* Pods-OBJC_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test/Pods-OBJC_test.release.xcconfig"; sourceTree = "<group>"; };
+		9C7DE5912A8E8F5C000E5AAA /* WQSaveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQSaveViewController.h; sourceTree = "<group>"; };
+		9C7DE5922A8E8F5C000E5AAA /* WQSaveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQSaveViewController.m; sourceTree = "<group>"; };
 		9CE7EB0B2A79E48900F017B0 /* PublicWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicWebViewController.h; sourceTree = "<group>"; };
 		9CE7EB0C2A79E48900F017B0 /* PublicWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicWebViewController.m; sourceTree = "<group>"; };
 		9CE7EB0E2A7A032000F017B0 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
@@ -337,7 +340,6 @@
 		256B47BA26AFABFB007E13C8 /* OBJC_test */ = {
 			isa = PBXGroup;
 			children = (
-				9CE7EB0A2A79E3F600F017B0 /* MainController */,
 				2547A80C28AF8D770042EAF5 /* README.md */,
 				256B47BB26AFABFB007E13C8 /* AppDelegate.h */,
 				256B47BC26AFABFB007E13C8 /* AppDelegate.m */,
@@ -459,6 +461,8 @@
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9C7DE5902A8E8F31000E5AAA /* SaveViewController */,
+				9CE7EB0A2A79E3F600F017B0 /* MainController */,
 				25B7DC9128D4D95700D102C5 /* Runtime */,
 				2505C16428CE5536001B8296 /* CodeSnippetsTest */,
 				25EEB41F28C791E900057D7D /* AutoLayout */,
@@ -609,6 +613,15 @@
 				DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C7DE5902A8E8F31000E5AAA /* SaveViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9C7DE5912A8E8F5C000E5AAA /* WQSaveViewController.h */,
+				9C7DE5922A8E8F5C000E5AAA /* WQSaveViewController.m */,
+			);
+			path = SaveViewController;
 			sourceTree = "<group>";
 		};
 		9CE7EB0A2A79E3F600F017B0 /* MainController */ = {
@@ -888,6 +901,7 @@
 				25B7DC9428D4D97D00D102C5 /* WQRuntimeViewController.m in Sources */,
 				25F036CA28BB589B00363733 /* WQBzyiGPMDView.m in Sources */,
 				25FA935728ACD1A900F2E484 /* WQBYCyclePMDViewController.m in Sources */,
+				9C7DE5932A8E8F5C000E5AAA /* WQSaveViewController.m in Sources */,
 				25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */,
 				25EEB42B28C79A3600057D7D /* WQHorizontalStyle001View.m in Sources */,
 				25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */,

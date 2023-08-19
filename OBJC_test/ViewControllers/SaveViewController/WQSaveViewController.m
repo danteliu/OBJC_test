@@ -9,6 +9,7 @@
 #import "WQSaveViewController.h"
 
 @interface WQSaveViewController ()
+@property (nonatomic, strong) BaseVScrollview *scrollViewMain;/**<  <#属性注释#> */
 
 @end
 
@@ -29,6 +30,18 @@
 - (void)initData {/**<  初始化数据 */
 }
 
+- (id)scrollViewMain {
+    if (!_scrollViewMain) {
+        _scrollViewMain = ({
+            BaseVScrollview *obj = [[BaseVScrollview alloc] init];
+            obj.infoSv.alwaysBounceVertical = YES;
+            obj;
+        });
+    }
+    
+    return _scrollViewMain;
+}
+
 - (void)initView {/**<  初始化视图 */
     self.view.bgColor(@"white");
     
@@ -36,21 +49,21 @@
         ({
             WQQQSavePicModel *m = [WQQQSavePicModel new];
             m.weekday = @"星期一";
-            m.des = @"打卡今天，超越昨天";
+            m.des = @"健康、爱和使命，以此为序，其他的都不重要";
             m.url = @"https://images.unsplash.com/photo-1691866068948-fd8869ef4094?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80";
             m;
         }),
         ({
             WQQQSavePicModel *m = [WQQQSavePicModel new];
             m.weekday = @"星期二";
-            m.des = @"梦想不打烊，打卡努力的足迹";
+            m.des = @"阅读不是为了自我提升，而是出于好奇心和兴趣";
             m.url = @"https://images.unsplash.com/photo-1686256282146-46dd71827a36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80";
             m;
         }),
         ({
             WQQQSavePicModel *m = [WQQQSavePicModel new];
             m.weekday = @"星期三";
-            m.des = @"每一次打卡，都是向梦想更近一步";
+            m.des = @"忙碌的思绪会加速主观时间的流逝";
             m.url = @"https://images.unsplash.com/photo-1688643188950-dcc91eea00de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80";
             m;
         }),
@@ -64,7 +77,7 @@
         ({
             WQQQSavePicModel *m = [WQQQSavePicModel new];
             m.weekday = @"星期五";
-            m.des = @"每一次打卡都是向成功迈进的脚步";
+            m.des = @"问题越古老，答案存世的时间越长";
             m.url = @"https://images.unsplash.com/photo-1675725399060-b638b1c15b50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80";
             m;
         }),
@@ -84,15 +97,19 @@
         }),
     ];
     
-    CGFloat whPcent = 112.0 / 558.0;// 设置宽高比为 558:112
+    [self.view addSubview:self.scrollViewMain];
     
+    [self.scrollViewMain mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    
+    CGFloat whPcent = 112.0 / 558.0;// 设置宽高比为 558:112
     
     WQQQSavePicture *day_one = ({
         WQQQSavePicture *obj = [[WQQQSavePicture alloc] init];
-        obj.addTo(self.view);
+        obj.addTo(self.scrollViewMain.bgView);
         NSInteger setIndex = 0;
         [obj setSaveSettingsForDict:setDicts[setIndex]];
-        
         obj;
     });
     
@@ -100,11 +117,12 @@
         //        make.width.equalTo(@160);         // 可以根据需要设置宽度
         make.left.right.offset(0);
         make.height.equalTo(day_one.mas_width).multipliedBy(whPcent);
-        make.top.equalTo(self.view.mas_top).offset(5);
+        make.top.offset(5);
+        //        make.bottom.offset(-100);
     }];
     WQQQSavePicture *day_two = ({
         WQQQSavePicture *obj = [[WQQQSavePicture alloc] init];
-        obj.addTo(self.view);
+        obj.addTo(self.scrollViewMain.bgView);
         NSInteger setIndex = 1;
         [obj setSaveSettingsForDict:setDicts[setIndex]];
         obj;
@@ -119,7 +137,7 @@
     
     WQQQSavePicture *day_thr = ({
         WQQQSavePicture *obj = [[WQQQSavePicture alloc] init];
-        obj.addTo(self.view);
+        obj.addTo(self.scrollViewMain.bgView);
         NSInteger setIndex = 2;
         [obj setSaveSettingsForDict:setDicts[setIndex]];
         obj;
@@ -134,7 +152,7 @@
     
     WQQQSavePicture *day_four = ({
         WQQQSavePicture *obj = [[WQQQSavePicture alloc] init];
-        obj.addTo(self.view);
+        obj.addTo(self.scrollViewMain.bgView);
         NSInteger setIndex = 3;
         [obj setSaveSettingsForDict:setDicts[setIndex]];
         obj;
@@ -149,7 +167,7 @@
     
     WQQQSavePicture *day_five = ({
         WQQQSavePicture *obj = [[WQQQSavePicture alloc] init];
-        obj.addTo(self.view);
+        obj.addTo(self.scrollViewMain.bgView);
         NSInteger setIndex = 4;
         [obj setSaveSettingsForDict:setDicts[setIndex]];
         obj;
@@ -164,7 +182,7 @@
     
     WQQQSavePicture *day_six = ({
         WQQQSavePicture *obj = [[WQQQSavePicture alloc] init];
-        obj.addTo(self.view);
+        obj.addTo(self.scrollViewMain.bgView);
         NSInteger setIndex = 5;
         [obj setSaveSettingsForDict:setDicts[setIndex]];
         obj;
@@ -179,7 +197,7 @@
     
     WQQQSavePicture *day_seven = ({
         WQQQSavePicture *obj = [[WQQQSavePicture alloc] init];
-        obj.addTo(self.view);
+        obj.addTo(self.scrollViewMain.bgView);
         NSInteger setIndex = 6;
         [obj setSaveSettingsForDict:setDicts[setIndex]];
         obj;
@@ -190,7 +208,10 @@
         make.left.right.offset(0);
         make.height.equalTo(day_six.mas_width).multipliedBy(whPcent);
         make.top.equalTo(day_six.mas_bottom).offset(5);
+        make.bottom.offset(-5);
     }];
+    
+    self.scrollViewMain.bgView.bgColor(@"random");
 }
 
 @end

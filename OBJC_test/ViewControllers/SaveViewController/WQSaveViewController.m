@@ -95,6 +95,13 @@
             m.url = @"https://images.unsplash.com/photo-1687120327990-058e7a62d525?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80";
             m;
         }),
+        ({
+            WQQQSavePicModel *m = [WQQQSavePicModel new];
+            m.weekday = @"终于等到你";
+            m.des = @"欢迎加入万门工会~";
+            m.url = @"https://images.unsplash.com/photo-1660799950423-15baac67ddf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2532&q=80";
+            m;
+        }),
     ];
     
     [self.view addSubview:self.scrollViewMain];
@@ -208,6 +215,22 @@
         make.left.right.offset(0);
         make.height.equalTo(day_six.mas_width).multipliedBy(whPcent);
         make.top.equalTo(day_six.mas_bottom).offset(5);
+//        make.bottom.offset(-5);
+    }];
+    
+    WQQQSavePicture *day_eight = ({
+        WQQQSavePicture *obj = [[WQQQSavePicture alloc] init];
+        obj.addTo(self.scrollViewMain.bgView);
+        NSInteger setIndex = 7;
+        [obj setSaveSettingsForDict:setDicts[setIndex]];
+        obj;
+    });
+    
+    [day_eight mas_makeConstraints:^(MASConstraintMaker *make) {
+        //        make.width.equalTo(@160);         // 可以根据需要设置宽度
+        make.left.right.offset(0);
+        make.height.equalTo(day_seven.mas_width).multipliedBy(whPcent);
+        make.top.equalTo(day_seven.mas_bottom).offset(5);
         make.bottom.offset(-5);
     }];
     

@@ -24,7 +24,7 @@
 
 #import <POP.h>
 #import "NSString+Pinyin.h"
-#import <WebViewJavascriptBridge.h>
+#import <WebViewJavascriptBridge(WK)-umbrella.h>
 
 #import "UIView+CreateObj.h"
 

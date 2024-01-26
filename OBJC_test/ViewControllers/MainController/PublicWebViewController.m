@@ -9,7 +9,7 @@
 
 @interface PublicWebViewController ()<WKUIDelegate, WKScriptMessageHandler>
 @property (nonatomic, strong) WKWebView *webView;
-@property (nonatomic, strong) WebViewJavascriptBridge *bridge;
+@property (nonatomic, strong) WKWebViewJavascriptBridge *bridge;
 @end
 
 @implementation PublicWebViewController
@@ -25,11 +25,10 @@
     return _webView;
 }
 
-- (WebViewJavascriptBridge *)bridge {
+- (WKWebViewJavascriptBridge *)bridge {
     if (!_bridge) {
-        [WebViewJavascriptBridge enableLogging];// 开启日志 方便调试
-        [WebViewJavascriptBridge setLogMaxLength:1000];
-        _bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
+        [WKWebViewJavascriptBridge enableLogging];// 开启日志 方便调试
+        _bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView];
         [_bridge setWebViewDelegate:self];//设置代理
     }
 
@@ -47,7 +46,7 @@
     [self seting_new_userContentController];//配合WKScriptMessageHandler使用
 
     [self load_url];
-//    [self create_bridge];
+    [self create_bridge];
 }
 
 /// 设置新的 userContentController

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -190,6 +190,8 @@
 		9CE7EB0E2A7A032000F017B0 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		9CE7EB0F2A7A032000F017B0 /* jsBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsBridge.js; sourceTree = "<group>"; };
 		9CE7EB122A7A288600F017B0 /* ios_webbox_js.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ios_webbox_js.js; sourceTree = "<group>"; };
+		9CF2E99E2B90281A00A502B0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9CF2E99F2B90281A00A502B0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test_OBJC_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECACE1CBBAC4D80C01436A4E /* Pods_OBJC_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF801EB06F63B9C7FFC25C26 /* Pods-OBJC_testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_testTests.release.xcconfig"; path = "Target Support Files/Pods-OBJC_testTests/Pods-OBJC_testTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -722,11 +724,12 @@
 			};
 			buildConfigurationList = 256B47B326AFABFB007E13C8 /* Build configuration list for PBXProject "OBJC_test" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = "zh-Hans";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 256B47AF26AFABFB007E13C8;
 			productRefGroup = 256B47B926AFABFB007E13C8 /* Products */;
@@ -961,6 +964,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				256B47C526AFABFC007E13C8 /* Base */,
+				9CF2E99F2B90281A00A502B0 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -969,6 +973,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				256B47CA26AFABFE007E13C8 /* Base */,
+				9CF2E99E2B90281A00A502B0 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -980,6 +985,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1041,6 +1047,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

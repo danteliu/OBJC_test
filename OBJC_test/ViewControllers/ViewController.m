@@ -22,8 +22,10 @@
 
 
 
-@interface ViewController ()
+@interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic, strong) NSMutableArray <WQView *> *viewsItem;/**<  cell的数组 */
+@property (nonatomic, strong) UIImagePickerController *imagePicker;///< 图片选择器
+
 @end
 
 @implementation ViewController{
@@ -603,12 +605,55 @@
                 view;
             })];
             
+            [obj addObject:({
+                WQView *view = [[WQView alloc] init];
+                view.addModel(@{
+                    @"name": @"获取照片",
+                    @"imgBgUrl": @"https://images.unsplash.com/photo-1660089869502-3b4322a46e0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MTc2MTcxMg&ixlib=rb-1.2.1&q=80&w=1080",
+                });
+                view.clickView = ^{
+                    [self showImagePickerWithEditing:YES];
+                };
+                view;
+            })];
             obj;
         });
     }
     
     return _viewsItem;
 }
+
+- (void)showImagePickerWithEditing:(BOOL)allowsEditing {
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.delegate = self;// 设置代理
+    self.imagePicker.allowsEditing = allowsEditing; // 设置是否允许编辑
+    
+    // 检查设备是否支持相机，如果支持则使用相机，否则使用照片库
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    } else {
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    }
+    
+    // 在视图控制器中弹出图片选择器
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
+}
+
+// UIImagePickerControllerDelegate 代理方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> *)info {
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage]; // 编辑后的图片
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage]; // 原始图片
+    DDLog(@"进入了这里");
+    // 在此处处理选择的图片
+    [picker dismissViewControllerAnimated:YES completion:nil];
+
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    DDLog(@"销毁");
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end
 

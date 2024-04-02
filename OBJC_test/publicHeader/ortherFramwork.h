@@ -36,5 +36,6 @@
 #import "NetLogManager.h"//网络请求日志管理
 #import "ScanCodeVC.h"//扫码页面
 #import "WQSaveViewController.h"
+#import "WQAdjustCellScaleVC.h"
 
 #endif /* ortherFramwork_h */

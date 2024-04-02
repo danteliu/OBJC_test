@@ -56,6 +56,9 @@
 		25F857352744F389004DB99E /* SaveInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F857342744F389004DB99E /* SaveInfoCell.m */; };
 		25FA935728ACD1A900F2E484 /* WQBYCyclePMDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FA935628ACD1A900F2E484 /* WQBYCyclePMDViewController.m */; };
 		9C7DE5932A8E8F5C000E5AAA /* WQSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DE5922A8E8F5C000E5AAA /* WQSaveViewController.m */; };
+		9CAE9DE42BBA44CB00832458 /* WQAdjustCellScaleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9DE32BBA44CB00832458 /* WQAdjustCellScaleVC.m */; };
+		9CAE9DE72BBA469100832458 /* WQAdjustCellScaleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9DE62BBA469100832458 /* WQAdjustCellScaleLayout.m */; };
+		9CAE9DEA2BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9DE92BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m */; };
 		9CE7EB0D2A79E48900F017B0 /* PublicWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0C2A79E48900F017B0 /* PublicWebViewController.m */; };
 		9CE7EB102A7A032000F017B0 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0E2A7A032000F017B0 /* test.html */; };
 		9CE7EB112A7A032000F017B0 /* jsBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0F2A7A032000F017B0 /* jsBridge.js */; };
@@ -185,6 +188,12 @@
 		7FC152F1EA5AE43DB0AC2ECE /* Pods-OBJC_test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OBJC_test.release.xcconfig"; path = "Target Support Files/Pods-OBJC_test/Pods-OBJC_test.release.xcconfig"; sourceTree = "<group>"; };
 		9C7DE5912A8E8F5C000E5AAA /* WQSaveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQSaveViewController.h; sourceTree = "<group>"; };
 		9C7DE5922A8E8F5C000E5AAA /* WQSaveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQSaveViewController.m; sourceTree = "<group>"; };
+		9CAE9DE22BBA44CB00832458 /* WQAdjustCellScaleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQAdjustCellScaleVC.h; sourceTree = "<group>"; };
+		9CAE9DE32BBA44CB00832458 /* WQAdjustCellScaleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQAdjustCellScaleVC.m; sourceTree = "<group>"; };
+		9CAE9DE52BBA469100832458 /* WQAdjustCellScaleLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQAdjustCellScaleLayout.h; sourceTree = "<group>"; };
+		9CAE9DE62BBA469100832458 /* WQAdjustCellScaleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQAdjustCellScaleLayout.m; sourceTree = "<group>"; };
+		9CAE9DE82BBA8C8F00832458 /* WQAdjustCellScaleOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQAdjustCellScaleOneCell.h; sourceTree = "<group>"; };
+		9CAE9DE92BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQAdjustCellScaleOneCell.m; sourceTree = "<group>"; };
 		9CE7EB0B2A79E48900F017B0 /* PublicWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicWebViewController.h; sourceTree = "<group>"; };
 		9CE7EB0C2A79E48900F017B0 /* PublicWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicWebViewController.m; sourceTree = "<group>"; };
 		9CE7EB0E2A7A032000F017B0 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
@@ -463,6 +472,7 @@
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9CAE9DE12BBA44A700832458 /* adjustCellScale */,
 				9C7DE5902A8E8F31000E5AAA /* SaveViewController */,
 				9CE7EB0A2A79E3F600F017B0 /* MainController */,
 				25B7DC9128D4D95700D102C5 /* Runtime */,
@@ -624,6 +634,19 @@
 				9C7DE5922A8E8F5C000E5AAA /* WQSaveViewController.m */,
 			);
 			path = SaveViewController;
+			sourceTree = "<group>";
+		};
+		9CAE9DE12BBA44A700832458 /* adjustCellScale */ = {
+			isa = PBXGroup;
+			children = (
+				9CAE9DE52BBA469100832458 /* WQAdjustCellScaleLayout.h */,
+				9CAE9DE62BBA469100832458 /* WQAdjustCellScaleLayout.m */,
+				9CAE9DE82BBA8C8F00832458 /* WQAdjustCellScaleOneCell.h */,
+				9CAE9DE92BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m */,
+				9CAE9DE22BBA44CB00832458 /* WQAdjustCellScaleVC.h */,
+				9CAE9DE32BBA44CB00832458 /* WQAdjustCellScaleVC.m */,
+			);
+			path = adjustCellScale;
 			sourceTree = "<group>";
 		};
 		9CE7EB0A2A79E3F600F017B0 /* MainController */ = {
@@ -884,6 +907,8 @@
 			files = (
 				9CE7EB0D2A79E48900F017B0 /* PublicWebViewController.m in Sources */,
 				25DE67AE28B86E6300B1DF6F /* WQCradientPmdViewController.m in Sources */,
+				9CAE9DEA2BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m in Sources */,
+				9CAE9DE72BBA469100832458 /* WQAdjustCellScaleLayout.m in Sources */,
 				257C2EA428D6FCB000F5E407 /* WQTeacherType.m in Sources */,
 				25EEB41B28C6485100057D7D /* WQStyle0001View.m in Sources */,
 				257E1DD727E47579002670DF /* DanteWebVC.m in Sources */,
@@ -908,6 +933,7 @@
 				25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */,
 				25EEB42B28C79A3600057D7D /* WQHorizontalStyle001View.m in Sources */,
 				25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */,
+				9CAE9DE42BBA44CB00832458 /* WQAdjustCellScaleVC.m in Sources */,
 				2505C23528AE138E00215530 /* WQGridViewController.m in Sources */,
 				25317A5828261DFA006678F7 /* ManagerNet.m in Sources */,
 				25EEB42428C7926B00057D7D /* WQAutoLayoutHorizontalVC.m in Sources */,

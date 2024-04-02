@@ -261,6 +261,11 @@
     return attrStr;
 }
 
+- (void)adjustCellScale {
+    WQAdjustCellScaleVC *adCell = [[WQAdjustCellScaleVC alloc] init];
+    adCell.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:adCell animated:YES];
+}
 #pragma mark -
 #pragma mark delegate
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {/**<  点击轮播图 */
@@ -616,12 +621,27 @@
                 };
                 view;
             })];
+            
+            [obj addObject:({
+                WQView *view = [[WQView alloc] init];
+                view.addModel(@{
+                    @"name": @"动态设置cell的缩放比例",
+                    @"imgBgUrl": @"https://images.unsplash.com/photo-1660089869502-3b4322a46e0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2MTc2MTcxMg&ixlib=rb-1.2.1&q=80&w=1080",
+                });
+                view.clickView = ^{
+                    [self adjustCellScale];
+                };
+                view;
+            })];
             obj;
         });
     }
     
     return _viewsItem;
 }
+/// 动态cell缩放比例
+
+
 
 - (void)showImagePickerWithEditing:(BOOL)allowsEditing {
     self.imagePicker = [[UIImagePickerController alloc] init];

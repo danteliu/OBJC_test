@@ -157,6 +157,25 @@
     }
 }
 
+///// 轮播滚动
+//- (void)resetScrollPositionIfNeeded {
+//    CGFloat currentOffsetX = self.collectionView.contentOffset.x;
+//    CGFloat itemWidth = self.layout.itemSize.width;
+//    NSInteger itemCount = [self.collectionView numberOfItemsInSection:0];
+//    NSInteger totalItems = self.titles.count;
+//
+//    CGFloat firstItemOffsetX = 0;
+//    CGFloat lastItemOffsetX = (itemCount - 1) * itemWidth;
+//    CGFloat centerOffsetX = (itemCount / 2 / totalItems) * totalItems * itemWidth;
+//
+//    if (currentOffsetX <= firstItemOffsetX) {
+//        // 滚动到最左边时重置到中心位置前一个项目
+//        self.collectionView.contentOffset = CGPointMake(centerOffsetX, 0);
+//    } else if (currentOffsetX >= lastItemOffsetX) {
+//        // 滚动到最右边时重置到中心位置前一个项目
+//        self.collectionView.contentOffset = CGPointMake(centerOffsetX - itemWidth, 0);
+//    }
+//}
 #pragma mark -
 #pragma mark 定时器操作
 

@@ -59,6 +59,10 @@
 		9CAE9DE42BBA44CB00832458 /* WQAdjustCellScaleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9DE32BBA44CB00832458 /* WQAdjustCellScaleVC.m */; };
 		9CAE9DE72BBA469100832458 /* WQAdjustCellScaleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9DE62BBA469100832458 /* WQAdjustCellScaleLayout.m */; };
 		9CAE9DEA2BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9DE92BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m */; };
+		9CDDE4952C7EFA86006E41C9 /* WQSetUIVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDE4942C7EFA86006E41C9 /* WQSetUIVM.m */; };
+		9CDDE4982C7F086E006E41C9 /* WQCycleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDE4972C7F086E006E41C9 /* WQCycleModel.m */; };
+		9CDDE49D2C7F0A29006E41C9 /* WQCycleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDE49C2C7F0A29006E41C9 /* WQCycleCell.m */; };
+		9CDDE4A02C7F10DF006E41C9 /* WQTestVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDE49F2C7F10DF006E41C9 /* WQTestVM.m */; };
 		9CE7EB0D2A79E48900F017B0 /* PublicWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0C2A79E48900F017B0 /* PublicWebViewController.m */; };
 		9CE7EB102A7A032000F017B0 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0E2A7A032000F017B0 /* test.html */; };
 		9CE7EB112A7A032000F017B0 /* jsBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0F2A7A032000F017B0 /* jsBridge.js */; };
@@ -194,6 +198,14 @@
 		9CAE9DE62BBA469100832458 /* WQAdjustCellScaleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQAdjustCellScaleLayout.m; sourceTree = "<group>"; };
 		9CAE9DE82BBA8C8F00832458 /* WQAdjustCellScaleOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQAdjustCellScaleOneCell.h; sourceTree = "<group>"; };
 		9CAE9DE92BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQAdjustCellScaleOneCell.m; sourceTree = "<group>"; };
+		9CDDE4932C7EFA86006E41C9 /* WQSetUIVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQSetUIVM.h; sourceTree = "<group>"; };
+		9CDDE4942C7EFA86006E41C9 /* WQSetUIVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQSetUIVM.m; sourceTree = "<group>"; };
+		9CDDE4962C7F086E006E41C9 /* WQCycleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCycleModel.h; sourceTree = "<group>"; };
+		9CDDE4972C7F086E006E41C9 /* WQCycleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQCycleModel.m; sourceTree = "<group>"; };
+		9CDDE49B2C7F0A29006E41C9 /* WQCycleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCycleCell.h; sourceTree = "<group>"; };
+		9CDDE49C2C7F0A29006E41C9 /* WQCycleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQCycleCell.m; sourceTree = "<group>"; };
+		9CDDE49E2C7F10DF006E41C9 /* WQTestVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQTestVM.h; sourceTree = "<group>"; };
+		9CDDE49F2C7F10DF006E41C9 /* WQTestVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQTestVM.m; sourceTree = "<group>"; };
 		9CE7EB0B2A79E48900F017B0 /* PublicWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicWebViewController.h; sourceTree = "<group>"; };
 		9CE7EB0C2A79E48900F017B0 /* PublicWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicWebViewController.m; sourceTree = "<group>"; };
 		9CE7EB0E2A7A032000F017B0 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
@@ -472,6 +484,9 @@
 		25E18E7B28AA3F50002AB51A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9CDDE49A2C7F09FD006E41C9 /* view */,
+				9CDDE4992C7F08A9006E41C9 /* Model */,
+				9CDDE4922C7EFA28006E41C9 /* VM */,
 				9CAE9DE12BBA44A700832458 /* adjustCellScale */,
 				9C7DE5902A8E8F31000E5AAA /* SaveViewController */,
 				9CE7EB0A2A79E3F600F017B0 /* MainController */,
@@ -647,6 +662,35 @@
 				9CAE9DE32BBA44CB00832458 /* WQAdjustCellScaleVC.m */,
 			);
 			path = adjustCellScale;
+			sourceTree = "<group>";
+		};
+		9CDDE4922C7EFA28006E41C9 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				9CDDE4932C7EFA86006E41C9 /* WQSetUIVM.h */,
+				9CDDE4942C7EFA86006E41C9 /* WQSetUIVM.m */,
+				9CDDE49E2C7F10DF006E41C9 /* WQTestVM.h */,
+				9CDDE49F2C7F10DF006E41C9 /* WQTestVM.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		9CDDE4992C7F08A9006E41C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CDDE4962C7F086E006E41C9 /* WQCycleModel.h */,
+				9CDDE4972C7F086E006E41C9 /* WQCycleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CDDE49A2C7F09FD006E41C9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9CDDE49B2C7F0A29006E41C9 /* WQCycleCell.h */,
+				9CDDE49C2C7F0A29006E41C9 /* WQCycleCell.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		9CE7EB0A2A79E3F600F017B0 /* MainController */ = {
@@ -916,6 +960,7 @@
 				25E18E8428AB2822002AB51A /* WQCyclePMDViewController.m in Sources */,
 				254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */,
 				256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */,
+				9CDDE49D2C7F0A29006E41C9 /* WQCycleCell.m in Sources */,
 				256B47CE26AFABFE007E13C8 /* main.m in Sources */,
 				25EEB41428C640A900057D7D /* WQAutoLayoutVC.m in Sources */,
 				25A2E95628C0A5120029B71B /* WQTimeDependentVC.m in Sources */,
@@ -933,9 +978,12 @@
 				25317A5528261C2A006678F7 /* RandomColorVC.m in Sources */,
 				25EEB42B28C79A3600057D7D /* WQHorizontalStyle001View.m in Sources */,
 				25F8572E2744ECDD004DB99E /* SaveInfoVC.m in Sources */,
+				9CDDE4982C7F086E006E41C9 /* WQCycleModel.m in Sources */,
 				9CAE9DE42BBA44CB00832458 /* WQAdjustCellScaleVC.m in Sources */,
 				2505C23528AE138E00215530 /* WQGridViewController.m in Sources */,
+				9CDDE4A02C7F10DF006E41C9 /* WQTestVM.m in Sources */,
 				25317A5828261DFA006678F7 /* ManagerNet.m in Sources */,
+				9CDDE4952C7EFA86006E41C9 /* WQSetUIVM.m in Sources */,
 				25EEB42428C7926B00057D7D /* WQAutoLayoutHorizontalVC.m in Sources */,
 				25A2E94928BE075A0029B71B /* WQBzyiGradientViewCell.m in Sources */,
 				251677922862A7350025A701 /* CalculateData.m in Sources */,

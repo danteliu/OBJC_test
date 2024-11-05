@@ -67,6 +67,7 @@
 		9CE7EB102A7A032000F017B0 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0E2A7A032000F017B0 /* test.html */; };
 		9CE7EB112A7A032000F017B0 /* jsBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB0F2A7A032000F017B0 /* jsBridge.js */; };
 		9CE7EB132A7A288600F017B0 /* ios_webbox_js.js in Resources */ = {isa = PBXBuildFile; fileRef = 9CE7EB122A7A288600F017B0 /* ios_webbox_js.js */; };
+		9CEB36382CD9F8480071F8BB /* WQTestPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB36372CD9F8480071F8BB /* WQTestPopView.m */; };
 		AD054A5B3E7D9D640C8ED858 /* Pods_OBJC_test_OBJC_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */; };
 		C55011541C6058E47D1D4800 /* Pods_OBJC_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECACE1CBBAC4D80C01436A4E /* Pods_OBJC_testTests.framework */; };
 /* End PBXBuildFile section */
@@ -211,6 +212,8 @@
 		9CE7EB0E2A7A032000F017B0 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		9CE7EB0F2A7A032000F017B0 /* jsBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsBridge.js; sourceTree = "<group>"; };
 		9CE7EB122A7A288600F017B0 /* ios_webbox_js.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ios_webbox_js.js; sourceTree = "<group>"; };
+		9CEB36362CD9F8480071F8BB /* WQTestPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQTestPopView.h; sourceTree = "<group>"; };
+		9CEB36372CD9F8480071F8BB /* WQTestPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQTestPopView.m; sourceTree = "<group>"; };
 		9CF2E99E2B90281A00A502B0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		9CF2E99F2B90281A00A502B0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		DC600EEC90B826B806700341 /* Pods_OBJC_test_OBJC_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OBJC_test_OBJC_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -689,6 +692,8 @@
 			children = (
 				9CDDE49B2C7F0A29006E41C9 /* WQCycleCell.h */,
 				9CDDE49C2C7F0A29006E41C9 /* WQCycleCell.m */,
+				9CEB36362CD9F8480071F8BB /* WQTestPopView.h */,
+				9CEB36372CD9F8480071F8BB /* WQTestPopView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -957,6 +962,7 @@
 				25EEB41B28C6485100057D7D /* WQStyle0001View.m in Sources */,
 				257E1DD727E47579002670DF /* DanteWebVC.m in Sources */,
 				256B47C326AFABFB007E13C8 /* ViewController.m in Sources */,
+				9CEB36382CD9F8480071F8BB /* WQTestPopView.m in Sources */,
 				25E18E8428AB2822002AB51A /* WQCyclePMDViewController.m in Sources */,
 				254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */,
 				256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */,
@@ -1090,7 +1096,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

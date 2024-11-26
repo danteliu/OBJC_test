@@ -59,6 +59,7 @@
 		9CAE9DE42BBA44CB00832458 /* WQAdjustCellScaleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9DE32BBA44CB00832458 /* WQAdjustCellScaleVC.m */; };
 		9CAE9DE72BBA469100832458 /* WQAdjustCellScaleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9DE62BBA469100832458 /* WQAdjustCellScaleLayout.m */; };
 		9CAE9DEA2BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE9DE92BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m */; };
+		9CD93A702CF559AE0059B197 /* NSString+WQAddModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD93A6F2CF559AE0059B197 /* NSString+WQAddModel.m */; };
 		9CDDE4952C7EFA86006E41C9 /* WQSetUIVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDE4942C7EFA86006E41C9 /* WQSetUIVM.m */; };
 		9CDDE4982C7F086E006E41C9 /* WQCycleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDE4972C7F086E006E41C9 /* WQCycleModel.m */; };
 		9CDDE49D2C7F0A29006E41C9 /* WQCycleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDE49C2C7F0A29006E41C9 /* WQCycleCell.m */; };
@@ -199,6 +200,9 @@
 		9CAE9DE62BBA469100832458 /* WQAdjustCellScaleLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQAdjustCellScaleLayout.m; sourceTree = "<group>"; };
 		9CAE9DE82BBA8C8F00832458 /* WQAdjustCellScaleOneCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQAdjustCellScaleOneCell.h; sourceTree = "<group>"; };
 		9CAE9DE92BBA8C8F00832458 /* WQAdjustCellScaleOneCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQAdjustCellScaleOneCell.m; sourceTree = "<group>"; };
+		9CD93A6E2CF559AE0059B197 /* NSString+WQAddModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+WQAddModel.h"; sourceTree = "<group>"; };
+		9CD93A6F2CF559AE0059B197 /* NSString+WQAddModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+WQAddModel.m"; sourceTree = "<group>"; };
+		9CD93A712CF55A720059B197 /* WQGategoryHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQGategoryHeader.h; sourceTree = "<group>"; };
 		9CDDE4932C7EFA86006E41C9 /* WQSetUIVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQSetUIVM.h; sourceTree = "<group>"; };
 		9CDDE4942C7EFA86006E41C9 /* WQSetUIVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WQSetUIVM.m; sourceTree = "<group>"; };
 		9CDDE4962C7F086E006E41C9 /* WQCycleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WQCycleModel.h; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 				2558F66526E7096500117C3A /* NSString */,
 				256B47F126AFADD9007E13C8 /* publicHeader */,
 				251D3CF227A246EB00FC1153 /* SwiftFiles */,
+				9CD93A6D2CF5595D0059B197 /* Category */,
 				25E18E7B28AA3F50002AB51A /* ViewControllers */,
 				25E18E7C28AA3FE1002AB51A /* Views */,
 			);
@@ -665,6 +670,16 @@
 				9CAE9DE32BBA44CB00832458 /* WQAdjustCellScaleVC.m */,
 			);
 			path = adjustCellScale;
+			sourceTree = "<group>";
+		};
+		9CD93A6D2CF5595D0059B197 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9CD93A712CF55A720059B197 /* WQGategoryHeader.h */,
+				9CD93A6E2CF559AE0059B197 /* NSString+WQAddModel.h */,
+				9CD93A6F2CF559AE0059B197 /* NSString+WQAddModel.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		9CDDE4922C7EFA28006E41C9 /* VM */ = {
@@ -963,6 +978,7 @@
 				257E1DD727E47579002670DF /* DanteWebVC.m in Sources */,
 				256B47C326AFABFB007E13C8 /* ViewController.m in Sources */,
 				9CEB36382CD9F8480071F8BB /* WQTestPopView.m in Sources */,
+				9CD93A702CF559AE0059B197 /* NSString+WQAddModel.m in Sources */,
 				25E18E8428AB2822002AB51A /* WQCyclePMDViewController.m in Sources */,
 				254A07A226E06608007A7F50 /* AAQYAlertView.m in Sources */,
 				256B47BD26AFABFB007E13C8 /* AppDelegate.m in Sources */,

@@ -8,6 +8,8 @@
 #import "OBJC_test-Swift.h"
 #import "WQTestPopView.h"
 #import "WQTestVM.h"
+#import "WQGategoryHeader.h"
+
 
 @implementation WQTestVM{
     BaseHScrollview *h;
@@ -19,11 +21,33 @@
 #pragma mark main
 - (void)run {
     DDLog(@"开始运行测试");
-    [self convertUTCDateToLocal];
+//    [self convertUTCDateToLocal];
 //    [self addTestPopView];
+    [self testCategoryAdd];
     DDLog(@"运行测试结束");
 }
 
+#pragma mark -
+#pragma mark 使用分类添加属性
+/// 使用分类添加属性测试
+- (void)testCategoryAdd {
+    NSString *myString = @"Hello, World!";
+    myString.me = @"This is my property";
+
+    DDLog(@"String: %@", myString);
+    DDLog(@"Me: %@", myString.me);
+    
+    // 设置 addModel 属性
+    myString.addModel = ^(id datas) {
+        DDLog(@"Adding model with data: %@", datas);
+    };
+
+    // 调用 addModel
+    if (myString.addModel) {
+        myString.addModel(@{ @"key": @"value" });
+    }
+
+}
 #pragma mark -
 #pragma mark 添加测试色块视图
 /// 添加测试色块视图
